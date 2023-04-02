@@ -28,11 +28,14 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Iert tours</a>
+              <Link to="/tour">IERT TOUR</Link>
+            </li>
+            <li>
+              <Link to="/events">EVENTS</Link>
             </li>
             <li tabIndex={0}>
-              <a className="justify-between">
-                Parent
+              <Link to="/forms" className="justify-between">
+                FORMS
                 <svg
                   className="fill-current"
                   xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +45,7 @@ const Navbar = () => {
                 >
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
-              </a>
+              </Link>
               <ul className="p-2">
                 <li>
                   <a>Submenu 1</a>
@@ -53,23 +56,25 @@ const Navbar = () => {
               </ul>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link to="/contact-us">CONTACT US</Link>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">UDBHAV</a>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          UDBHAV
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1  lg:gap-5">
           <li>
-            <a>IERT TOUR</a>
+            <Link to="/tour">IERT TOUR</Link>
           </li>
           <li>
-            <a>EVENTS</a>
+            <Link to="/events">EVENTS</Link>
           </li>
 
           <li tabIndex={0}>
-            <a>
+            <Link to="/forms">
               FORMS
               <svg
                 className="fill-current"
@@ -80,7 +85,7 @@ const Navbar = () => {
               >
                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
-            </a>
+            </Link>
             <ul className="p-2">
               <li>
                 <a>Submenu 1</a>
@@ -91,7 +96,7 @@ const Navbar = () => {
             </ul>
           </li>
           <li>
-            <a>CONTACT US</a>
+            <Link to="/contact-us">CONTACT US</Link>
           </li>
         </ul>
       </div>

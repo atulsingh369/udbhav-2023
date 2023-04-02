@@ -1,8 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 const Forms = () => {
-  return <div>Forms</div>;
+  return <div className="text-9xl">forms</div>;
 };
 
 export default Forms;

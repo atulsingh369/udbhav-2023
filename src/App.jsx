@@ -5,12 +5,14 @@ import ContactUs from "./pages/ContactUs";
 import Register from "./pages/Register";
 import Events from "./pages/Events";
 import Navbar from "./components/Navbar";
+import Tour from "./pages/Tour";
 const App = () => {
   return (
     <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/tour" element={<Tour />} />
         <Route path="/forms" element={<Forms />} />
         <Route path="/events" element={<Events />} />
         <Route path="/contact-us" element={<ContactUs />} />
