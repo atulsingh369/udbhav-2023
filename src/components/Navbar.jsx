@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate;
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar absolute bg-base-100 ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,7 +28,7 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <a>Iert tours</a>
             </li>
             <li tabIndex={0}>
               <a className="justify-between">
@@ -56,16 +57,20 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <a className="btn btn-ghost normal-case text-xl">UDBHAV</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1  lg:gap-5">
           <li>
-            <a>Item 1</a>
+            <a>IERT TOUR</a>
           </li>
+          <li>
+            <a>EVENTS</a>
+          </li>
+
           <li tabIndex={0}>
             <a>
-              Parent
+              FORMS
               <svg
                 className="fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,12 +91,14 @@ const Navbar = () => {
             </ul>
           </li>
           <li>
-            <a>Item 3</a>
+            <a>CONTACT US</a>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Get started</a>
+        <Link to="/register">
+          <button className="btn ">Sign In</button>
+        </Link>
       </div>
     </div>
   );
