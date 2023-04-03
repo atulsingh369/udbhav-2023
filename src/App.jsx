@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Events from "./pages/Events";
 import Navbar from "./components/Navbar";
 import Tour from "./pages/Tour";
+import TechEventsPage from "./pages/TechEventsPage";
 const App = () => {
   return (
     <div>
@@ -17,6 +18,8 @@ const App = () => {
         <Route path="/events" element={<Events />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/register" element={<Register />} />
+        {/* events pages routing */}
+        <Route path="/tech-events" element={<TechEventsPage />} />
       </Routes>
     </div>
   );
