@@ -2,7 +2,8 @@ const techEvents = {
   webathon: [
     {
       title: "WEB-A-THON",
-      describe: "",
+      describe:
+        "Code your way to innovation - break barriers and bring your ideas to life at the hackathon!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
       link: "",
@@ -11,7 +12,8 @@ const techEvents = {
   pathik: [
     {
       title: "PATHIK",
-      describe: "",
+      describe:
+        "Efficiently navigate your world - let your robot pave the way with intelligent path routing!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
       link: "",
@@ -20,7 +22,8 @@ const techEvents = {
   spartans: [
     {
       title: "SPARTANS",
-      describe: "",
+      describe:
+        "Get ready to rev your robots - navigate obstacles and race to the finish line!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/spartans.png?updatedAt=1680497823254",
       link: "",
@@ -29,7 +32,8 @@ const techEvents = {
   rocketPropulsion: [
     {
       title: "ROCKET REPULSION",
-      describe: "",
+      describe:
+        "Reach for the stars with rocket propulsion - let the power of science launch you to new heights!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/rocketPropulsion.png?updatedAt=1680497823836",
       link: "",
@@ -38,7 +42,8 @@ const techEvents = {
   bridgeIt: [
     {
       title: "BRIDGE IT",
-      describe: "",
+      describe:
+        "Build bridges, connect worlds - let your creativity and skill shine with stick bridge building!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/bridgeIt.png?updatedAt=1680497824188",
       link: "",
@@ -48,7 +53,8 @@ const techEvents = {
   roboSoccer: [
     {
       title: "ROBOSOCCER",
-      describe: "",
+      describe:
+        "Gear up for the ultimate showdown - let your robots take on the competition in the electrifying game of robot soccer!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/roboSoccer.png?updatedAt=1680497825112",
       link: "",
@@ -73,7 +79,7 @@ const TechEvents = () => {
                   return (
                     <a href={value.link}>
                       <div
-                        className="card w-60 h-[24rem] bg-base-100 shadow-xl"
+                        className="card w-64 h-[28rem] bg-base-100 shadow-xl"
                         key={index}
                       >
                         <figure>
@@ -84,7 +90,10 @@ const TechEvents = () => {
                           />
                         </figure>
                         <div className="card-body">
-                          <h2 className="card-title text-sm">{value.title}</h2>
+                          <h2 className="card-title ext-2xl ">{value.title}</h2>
+                          <p className="text-justify font-semibold text-white">
+                            {value.describe}
+                          </p>
                         </div>
                       </div>
                     </a>
