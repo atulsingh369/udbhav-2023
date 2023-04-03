@@ -10,3 +10,8 @@ export default defineConfig({
 server: {
   host: true;
 }
+
+//Exposing on server
+server: {
+  host: true;
+}

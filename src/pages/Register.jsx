@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 
 const Register = () => {
+
+	const [user, setUser] = useState({
+		name: " ",
+		email: " ",
+		password: " "
+	});
+
   const [state, setState] = useState("true");
   //true --> log in page
   //false --> register page
   const changeState = () => setState(!state);
   return (
     <div className="h-screen pt-20 flex justify-center items-center bg-form-background">
-      <div className="bg-white shadow-2xl rounded-lg shadow-blue-800  w-96 flex flex-col items-center justify-evenly gap-7 p-5">
+      <div className="bg-white shadow-2xl rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen flex flex-col items-center justify-evenly gap-7 p-5">
         {state && <p className="font-bold  text-3xl ">Log In</p>}
         {!state && <p className="font-bold  text-3xl ">Register</p>}
         {!state && (
@@ -20,6 +27,9 @@ const Register = () => {
             <input
               type="text"
               placeholder="Type here"
+							
+							autoComplete="off"
+							required
               className="input text-white input-bordered w-full max-w-xs"
             />
           </div>
@@ -33,6 +43,9 @@ const Register = () => {
           <input
             type="text"
             placeholder="Type here"
+						
+						autoComplete="off"
+						required
             className="input text-white input-bordered w-full max-w-xs "
           />
         </div>
@@ -46,6 +59,9 @@ const Register = () => {
             <input
               type="password"
               placeholder="Type here"
+							
+							autoComplete="off"
+							required
               className="input text-white input-bordered w-full max-w-xs"
             />
           </div>
@@ -60,16 +76,19 @@ const Register = () => {
             <input
               type="password"
               placeholder="Type here"
+							
+							autoComplete="off"
+							required
               className="input text-white input-bordered w-full max-w-xs"
             />
           </div>
         )}
-        {state && <button className="btn  ">Log In</button>}
-        {!state && <button className="btn  ">Register</button>}
+        {state && <button type="sumit" className="btn  ">Log In</button>}
+        {!state && <button type="sumit" className="btn  ">Register</button>}
         {state && (
           <p>
             Don't have an account?{" "}
-            <span onClick={changeState} className="cursor-pointer">
+            <span onClick={changeState} className="cursor-pointer text-blue-500">
               Register
             </span>
           </p>
@@ -77,7 +96,7 @@ const Register = () => {
         {!state && (
           <p>
             Already registered?{" "}
-            <span onClick={changeState} className="cursor-pointer">
+            <span onClick={changeState} className="cursor-pointer text-blue-500">
               Sign In
             </span>
           </p>
