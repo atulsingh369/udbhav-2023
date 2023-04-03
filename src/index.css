@@ -7,3 +7,120 @@ body {
   color: black;
   background-color: white;
 }
+/* udbhav text */
+
+#scroll-text {
+  height: 100%;
+  text-align: center;
+
+  /* animation properties */
+  -moz-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+
+  -moz-animation: my-animation 5s linear infinite;
+  -webkit-animation: my-animation 5s linear infinite;
+  animation: my-animation 30s linear infinite;
+}
+#scroll-text:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@keyframes my-animation {
+  to {
+    -moz-transform: translateY(-300%);
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+  from {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+
+#text-drop {
+  position: relative;
+  display: flex;
+  font-size: 100px;
+  font-family: arial;
+  font-weight: 900;
+  justify-content: flex-start;
+}
+
+.u {
+  font-family: samarkan;
+  font-size: 100px;
+  opacity: 0;
+  text-shadow: 6px 6px 2px #ffffff98;
+  animation: drop 0.4s linear forwards;
+}
+
+.d {
+  font-family: samarkan;
+  font-size: 100px;
+  text-shadow: 6px 6px 2px #ffffff98;
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.2s;
+}
+
+.b {
+  font-family: samarkan;
+  text-shadow: 6px 6px 2px #ffffff98;
+  font-size: 100px;
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.4s;
+}
+
+.h {
+  font-family: samarkan;
+  text-shadow: 6px 6px 2px #ffffff98;
+  font-size: 100px;
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.6s;
+}
+
+.a {
+  font-family: samarkan;
+  font-size: 100px;
+  text-shadow: 6px 6px 2px #ffffff98;
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.8s;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-200px) scaleY(0.9);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(-17px) scaleY(0.9);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-22px) scaleY(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+  }
+}
+
+.v {
+  font-family: samarkan;
+  font-size: 100px;
+  text-shadow: 6px 6px 2px #ffffff98;
+  opacity: 0;
+  animation: drop 0.4s linear forwards 1.2s;
+}
