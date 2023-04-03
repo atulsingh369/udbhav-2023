@@ -42,22 +42,7 @@ const SideBarEvents = () => {
                 <Link to="/technovation">TECHNOVATION</Link>
               </li>
               <li>
-                <Link to="/#!">FUSION</Link>
-              </li>
-              <li>
-                <Link to="/#!">MELODIA</Link>
-              </li>
-              <li>
-                <Link to="/#!">SPOTLIGHT</Link>
-              </li>
-              <li>
-                <Link to="/#!">RUNWAY</Link>
-              </li>
-              <li>
-                <Link to="/#!">HARMONIZE</Link>
-              </li>
-              <li>
-                <Link to="/#!">KAVYANICAL</Link>
+                <Link to="/cultural">CULTURAL</Link>
               </li>
             </div>
           )}

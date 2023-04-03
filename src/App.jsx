@@ -7,6 +7,7 @@ import Events from "./pages/Events";
 import Navbar from "./components/Navbar";
 import Tour from "./pages/Tour";
 import TechEventsPage from "./pages/TechEventsPage";
+import CulturalEventPage from "./pages/CulturalEventPage";
 const App = () => {
   return (
     <div className="relative">
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         {/* events pages routing */}
         <Route path="/technovation" element={<TechEventsPage />} />
+        <Route path="/cultural" element={<CulturalEventPage />} />
       </Routes>
     </div>
   );
