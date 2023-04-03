@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate;
   return (
-    <div className="navbar sticky top-0 bg-base-100 text-white z-20">
+    <div className="navbar fixed top-0 bg-base-100 text-white z-20">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

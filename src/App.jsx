@@ -9,7 +9,7 @@ import Tour from "./pages/Tour";
 import TechEventsPage from "./pages/TechEventsPage";
 const App = () => {
   return (
-    <div>
+    <div className="relative">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

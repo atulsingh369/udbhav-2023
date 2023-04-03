@@ -1,205 +1,132 @@
-import React from "react";
-import { GrMail } from "react-icons/gr";
-import { FaWhatsappSquare } from "react-icons/fa";
+import { HiOutlineMail, HiPhone } from "react-icons/hi";
+
+const Department = {
+  Department1: [
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+  ],
+  Department2: [
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+  ],
+  Department3: [
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+  ],
+};
+
 const ContactBox1 = () => {
   return (
-    <>
-      <div id="department-1 ">
-        <p className="text-2xl font-semibold p-2">DEPARTMENT 1</p>
-        <section className="flex flex-row flex-wrap justify-between gap-10 p-5">
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
+    <div className="bg-white flex-1 h-max">
+      {Object.entries(Department).map((item, i) => {
+        return (
+          <div
+            className="flex flex-col gap-8 justify-center items-center p-8"
+            key={i}
+          >
+            <p className="text-xl font-bold">{item[0]}</p>
+            <div className="flex gap-5 flex-wrap justify-center items-center">
+              {item[1].map((value, index) => {
+                return (
+                  <div
+                    className="card w-60 h-[24rem] bg-base-100 shadow-xl"
+                    key={index}
+                  >
+                    <figure>
+                      <img
+                        src={value.image}
+                        alt="Shoes"
+                        className="object-contain"
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <h2 className="card-title text-sm">{value.name}</h2>
+                      <div className="flex flex-row items-center gap-2">
+                        <HiPhone />
+                        <p className="text-sm">{value.contact}</p>
+                      </div>
+
+                      {value.show && (
+                        <div className="flex flex-row items-center gap-2">
+                          <HiOutlineMail />
+                          <p className="text-sm">{value.email}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div id="department-2">
-        <p className="text-2xl font-semibold p-2">DEPARTMENT 2</p>
-        <section className="flex flex-row flex-wrap justify-center  gap-10 p-5">
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div id="department-3">
-        <p className="text-2xl font-semibold p-2">DEPARTMENT 3</p>
-        <section className="flex flex-row flex-wrap justify-evenly gap-10 md:gap-0 lg:gap-0  p-5">
-          <div className="card w-80 md:w-72  lg:w-72 h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-80 md:w-72  h-11/12  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">NAME</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn glass">
-                  <FaWhatsappSquare className="text-2xl" />
-                </button>
-                <button className="btn glass">
-                  <GrMail className="text-2xl" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
+        );
+      })}
+    </div>
   );
 };
 
