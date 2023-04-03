@@ -20,7 +20,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Type here"
-              className="input input-bordered w-full max-w-xs"
+              className="input text-white input-bordered w-full max-w-xs"
             />
           </div>
         )}
@@ -33,7 +33,7 @@ const Register = () => {
           <input
             type="text"
             placeholder="Type here"
-            className="input input-bordered w-full max-w-xs "
+            className="input text-white input-bordered w-full max-w-xs "
           />
         </div>
         {state && (
@@ -46,7 +46,7 @@ const Register = () => {
             <input
               type="password"
               placeholder="Type here"
-              className="input input-bordered w-full max-w-xs"
+              className="input text-white input-bordered w-full max-w-xs"
             />
           </div>
         )}
@@ -60,7 +60,7 @@ const Register = () => {
             <input
               type="password"
               placeholder="Type here"
-              className="input input-bordered w-full max-w-xs"
+              className="input text-white input-bordered w-full max-w-xs"
             />
           </div>
         )}
@@ -68,12 +68,18 @@ const Register = () => {
         {!state && <button className="btn  ">Register</button>}
         {state && (
           <p>
-            Don't have an account? <span onClick={changeState}>Register</span>
+            Don't have an account?{" "}
+            <span onClick={changeState} className="cursor-pointer">
+              Register
+            </span>
           </p>
         )}
         {!state && (
           <p>
-            Already registered? <span onClick={changeState}>Sign In</span>
+            Already registered?{" "}
+            <span onClick={changeState} className="cursor-pointer">
+              Sign In
+            </span>
           </p>
         )}
       </div>
