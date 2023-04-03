@@ -3,7 +3,7 @@ import React from "react";
 const Sidebar = () => {
   return (
     <>
-      <div className="">
+      <div className=" h-full fixed z-10 top-0 left-0 pt-16 ">
         <div className="drawer drawer-mobile md:flex hidden">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col items-center justify-center">
