@@ -1,16 +1,13 @@
 import React from "react";
-import EandS from "../components/EandS";
+import SideBarEvents from "../components/SideBarEvents";
 import TechEvents from "../components/TechEvents";
 
 const TechEventsPage = () => {
   return (
-    <>
-      <section className=" bg-white pt-20 ">
-        {" "}
-        <EandS />
-        <TechEvents />
-      </section>
-    </>
+    <div className="h-full pt-16 flex flex-row justify-between ">
+      <SideBarEvents />
+      <TechEvents />
+    </div>
   );
 };
 

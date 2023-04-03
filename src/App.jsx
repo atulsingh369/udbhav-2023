@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/register" element={<Register />} />
         {/* events pages routing */}
-        <Route path="/tech-events" element={<TechEventsPage />} />
+        <Route path="/technovation" element={<TechEventsPage />} />
       </Routes>
     </div>
   );

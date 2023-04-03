@@ -1,103 +1,101 @@
-import React from "react";
+const techEvents = {
+  webathon: [
+    {
+      title: "WEB-A-THON",
+      describe: "",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
+      link: "",
+    },
+  ],
+  pathik: [
+    {
+      title: "PATHIK",
+      describe: "",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
+      link: "",
+    },
+  ],
+  spartans: [
+    {
+      title: "SPARTANS",
+      describe: "",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/spartans.png?updatedAt=1680497823254",
+      link: "",
+    },
+  ],
+  rocketPropulsion: [
+    {
+      title: "ROCKET REPULSION",
+      describe: "",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/rocketPropulsion.png?updatedAt=1680497823836",
+      link: "",
+    },
+  ],
+  bridgeIt: [
+    {
+      title: "BRIDGE IT",
+      describe: "",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/bridgeIt.png?updatedAt=1680497824188",
+      link: "",
+    },
+  ],
 
+  roboSoccer: [
+    {
+      title: "ROBOSOCCER",
+      describe: "",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/roboSoccer.png?updatedAt=1680497825112",
+      link: "",
+    },
+  ],
+};
 const TechEvents = () => {
   return (
-    <>
-      <section className="">
-        <section className="grid grid-cols-3 overflow-hidden gap-10 p-5">
-          <div className="card w-96 h-4/5 bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059"
-                alt="WEBATHON"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">WAB-A-THON</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Register Now</button>
+    <div className="flex flex-col items-center justify-center">
+      <div>
+        <h1 className="text-3xl p-3 font-semibold ">TECHNOVATION</h1>
+      </div>
+      <div className="bg-white flex flex-row flex-wrap justify-center h-max">
+        {Object.entries(techEvents).map((item, i) => {
+          return (
+            <div
+              className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105"
+              key={i}
+            >
+              <div className="flex gap-5 flex-wrap justify-center items-center">
+                {item[1].map((value, index) => {
+                  return (
+                    <a href={value.link}>
+                      <div
+                        className="card w-60 h-[24rem] bg-base-100 shadow-xl"
+                        key={index}
+                      >
+                        <figure>
+                          <img
+                            src={value.image}
+                            alt="Shoes"
+                            className="object-contain"
+                          />
+                        </figure>
+                        <div className="card-body">
+                          <h2 className="card-title text-sm">{value.title}</h2>
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
-          </div>
-          <div className="card w-96 h-4/5  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564"
-                alt="pathik"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">PATHIK</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Register Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 h-4/5 bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/spartans.png?updatedAt=1680497823254"
-                alt="spartans"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">SPARTANS</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Register Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 h-4/5  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/rocketPropulsion.png?updatedAt=1680497823836"
-                alt="rocket repulsion"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">ROCKET REPULSION</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Register Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 h-4/5 bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/bridgeIt.png?updatedAt=1680497824188"
-                alt="bridge it"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">BRIDGE IT</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Register Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 h-4/5  bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/roboSoccer.png?updatedAt=1680497825112"
-                alt="robo soccer"
-              />
-            </figure>
-            <div className="card-body text-justify">
-              <h2 className="card-title ">ROBOSOCCER</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Register Now</button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-    </>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
