@@ -5,7 +5,7 @@ import TourCarosuel from "../components/TourCarosuel";
 const Tour = () => {
   return (
     <>
-      <section className="h-screen pt-20 bg-home-background bg-no-repeat bg-cover">
+      <section className="h-screen pt-20 bg-white">
         <TourHeader />
         <TourCarosuel />
       </section>

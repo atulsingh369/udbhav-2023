@@ -5,7 +5,7 @@ import EandSText from "../components/EandSText";
 
 const Events = () => {
   return (
-    <section className="bg-home-background bg-no-repeat bg-cover h-screen pt-20">
+    <section className="bg-white h-screen pt-20">
       <EandS />
       <EandSText />
     </section>

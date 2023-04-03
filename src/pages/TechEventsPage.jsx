@@ -5,7 +5,7 @@ import TechEvents from "../components/TechEvents";
 const TechEventsPage = () => {
   return (
     <>
-      <section className=" bg-home-background bg-no-repeat bg-cover pt-20 ">
+      <section className=" bg-white pt-20 ">
         {" "}
         <EandS />
         <TechEvents />
