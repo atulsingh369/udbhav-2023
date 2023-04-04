@@ -7,9 +7,10 @@ import Events from "./pages/Events";
 import Navbar from "./components/Navbar";
 import Tour from "./pages/Tour";
 import TechEventsPage from "./pages/TechEventsPage";
+import CulturalEventPage from "./pages/CulturalEventPage";
 const App = () => {
   return (
-    <div>
+    <div className="relative">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,7 +20,8 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/register" element={<Register />} />
         {/* events pages routing */}
-        <Route path="/tech-events" element={<TechEventsPage />} />
+        <Route path="/technovation" element={<TechEventsPage />} />
+        <Route path="/cultural" element={<CulturalEventPage />} />
       </Routes>
     </div>
   );

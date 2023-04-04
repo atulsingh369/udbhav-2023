@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EandS from "../components/EandS";
-import EandSText from "../components/EandSText";
+import SideBarEvents from "../components/SideBarEvents";
 
 const Events = () => {
   return (
-    <section className="bg-white h-screen pt-20">
-      <EandS />
-      <EandSText />
+    <section className="h-full pt-16  flex flex-row justify-between ">
+      <SideBarEvents />
     </section>
   );
 };

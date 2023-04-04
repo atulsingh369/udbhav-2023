@@ -10,7 +10,12 @@ const Tour = () => {
         <TourHeader />
         <TourCarosuel />
         <div className="flex flex-row items-center justify-evenly bg-base-100 h-56">
-          <button className="btn glass w-32 text-lg font-semibold">IERT</button>
+          <a href="https://www.iert.ac.in/" target="_blank">
+            {" "}
+            <button className="btn glass w-32 text-lg font-semibold">
+              IERT
+            </button>
+          </a>
           <button className="btn glass w-32 text-lg font-semibold">
             ALUMINAI
           </button>
