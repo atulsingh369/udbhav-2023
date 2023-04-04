@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import auth from '../config'
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -32,16 +34,19 @@ const Register = () => {
           }
         );
 
-				// createUserWithEmailAndPassword(auth, email, password)
-        //   .then((userCredential) => {
-        //     // Signed in
-        //     const user = userCredential.user;
-        //   })
-        //   .catch((error) => {
-        //     const errorCode = error.code;
-        //     const errorMessage = error.message;
-        //    console.log(errorCode, errorMessage);
-        //   });
+				createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+						const user = userCredential.user;
+						console.log("Login");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+           console.log(errorCode, errorMessage);
+          });
+
+				
 
         //Empting the column
         if (res) {
