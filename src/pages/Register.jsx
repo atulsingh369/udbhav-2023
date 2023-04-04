@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import auth from '../config'
-
+import React, { useEffect, useState } from "react";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -9,14 +6,6 @@ const Register = () => {
     email: "",
     password: "",
   });
-
-  let name, value;
-  const getUserData = (e) => {
-    name = e.target.name;
-    value = e.target.value;
-
-    setUser({ ...user, [name]: value });
-  };
 
   //Form Registerd
   const postData = async (event) => {
@@ -104,7 +93,8 @@ const Register = () => {
         <form
           onSubmit={postData}
           method="POST"
-          className="bg-white shadow-2xl rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen flex flex-col items-center justify-evenly gap-7 p-5">
+          className="bg-white shadow-2xl rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen flex flex-col items-center justify-evenly gap-7 p-5"
+        >
           <p className="font-bold  text-3xl ">Register</p>
 
           <div className="form-control w-full max-w-xs">
@@ -112,7 +102,7 @@ const Register = () => {
               name="name"
               autoFocus
               value={user.name}
-              onChange={getUserData}
+              onChange={(e) => setUser({ ...user, name: e.target.value })}
               type="text"
               placeholder="Username"
               autoComplete="off"
@@ -126,7 +116,7 @@ const Register = () => {
               type="text"
               name="email"
               value={user.email}
-              onChange={getUserData}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
               placeholder="Email"
               autoComplete="off"
               required
@@ -140,7 +130,7 @@ const Register = () => {
               placeholder="Password"
               name="password"
               value={user.password}
-              onChange={getUserData}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
               autoComplete="off"
               required
               className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs"
@@ -153,7 +143,8 @@ const Register = () => {
             Already registered? &nbsp;
             <span
               onClick={changeState}
-              className="cursor-pointer text-blue-500">
+              className="cursor-pointer text-blue-500"
+            >
               Sign In
             </span>
           </p>
@@ -165,7 +156,8 @@ const Register = () => {
         <form
           onSubmit={getData}
           method="POST"
-          className="bg-white shadow-2xl rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen flex flex-col items-center justify-evenly gap-7 p-5">
+          className="bg-white shadow-2xl rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen flex flex-col items-center justify-evenly gap-7 p-5"
+        >
           <p className="font-bold  text-3xl ">Log In</p>
 
           <div className="form-control w-full max-w-xs">
@@ -174,7 +166,7 @@ const Register = () => {
               type="text"
               name="email"
               value={user.email}
-              onChange={getUserData}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
               placeholder="Email"
               autoComplete="off"
               required
@@ -188,7 +180,7 @@ const Register = () => {
               placeholder="Password"
               name="password"
               value={user.password}
-              onChange={getUserData}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
               autoComplete="off"
               required
               className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs"
@@ -197,7 +189,7 @@ const Register = () => {
 
           <input value="Log In" type="submit" className="btn  " />
           <p>
-            Don't have an account?
+            Don't have an account?&nbsp;
             <span
               onClick={changeState}
               className="cursor-pointer text-blue-500">
@@ -212,3 +204,4 @@ const Register = () => {
 };
 
 export default Register;
+
