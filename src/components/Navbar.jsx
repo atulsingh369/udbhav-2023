@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   return (
     <div className="navbar fixed top-0 bg-base-100 text-white z-20">
       <div className="navbar-start">
@@ -65,7 +65,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1  lg:gap-5">
+        <ul className="menu menu-horizontal px-1 items-center  lg:gap-5">
           <li>
             <Link to="/tour">IERT TOUR</Link>
           </li>
@@ -95,15 +95,21 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li>
-            <Link to="/contact-us">CONTACT US</Link>
+          <li
+            className="cursor-pointer"
+            onClick={() => navigate("/contact-us")}
+          >
+            CONTACT US
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/register">
-          <button className="btn ">Sign In</button>
-        </Link>
+        <button
+          className="btn glass"
+          onClick={() => navigate("/register")}
+        >
+          Sign In
+        </button>
       </div>
     </div>
   );

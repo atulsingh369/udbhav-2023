@@ -1,85 +1,5 @@
-import { HiOutlineMail, HiPhone } from "react-icons/hi";
-
-const Department = {
-  Department1: [
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-  ],
-  Department2: [
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-  ],
-  Department3: [
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-  ],
-};
+import { HiOutlineMail, HiPhone, HiUser } from "react-icons/hi";
+import { Department } from "./Department";
 
 const ContactBox1 = () => {
   return (
@@ -106,7 +26,10 @@ const ContactBox1 = () => {
                       />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title text-sm">{value.name}</h2>
+                      <div className="flex flex-row items-center gap-2">
+                        <HiUser />
+                        <p className="text-sm">{value.name}</p>
+                      </div>
                       <div className="flex flex-row items-center gap-2">
                         <HiPhone />
                         <p className="text-sm">{value.contact}</p>
