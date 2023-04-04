@@ -1,5 +1,5 @@
 import { HiOutlineMail, HiPhone, HiUser } from "react-icons/hi";
-import { Department } from "./Department";
+import { Department } from "./Data";
 
 const ContactBox1 = () => {
   return (

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SideBarEvents = () => {
   const [schedule, setSchedule] = useState(false);
   const [event, setEvent] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="drawer drawer-mobile w-80 sticky top-16 ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -24,26 +25,18 @@ const SideBarEvents = () => {
             <a>SCHEDULE</a>
           </li>
           {schedule && (
-            <div>
-              <li>
-                <a>DAY 1</a>
-              </li>
-              <li>
-                <a>DAY 2</a>
-              </li>
+            <div className="flex flex-col p-3 gap-3 cursor-pointer">
+              <li>DAY 1</li>
+              <li>DAY 2</li>
             </div>
           )}
           <li className="bg-base-300" onClick={() => setEvent(!event)}>
             <a>EVENTS</a>
           </li>
           {event && (
-            <div>
-              <li>
-                <Link to="/technovation">TECHNOVATION</Link>
-              </li>
-              <li>
-                <Link to="/cultural">CULTURAL</Link>
-              </li>
+            <div className="flex flex-col p-3 gap-3 cursor-pointer">
+              <li onClick={() => navigate("/technovation")}>TECHNOVATION</li>
+              <li onClick={() => navigate("/cultural")}>CULTURAL</li>
             </div>
           )}
         </ul>
