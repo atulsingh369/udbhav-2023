@@ -38,7 +38,7 @@ const Register = () => {
           .then((userCredential) => {
             // Signed in
 						const user = userCredential.user;
-						console.log("Login");
+						console.log(user);
           })
           .catch((error) => {
             const errorCode = error.code;
