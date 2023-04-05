@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  signOut,
 } from "firebase/auth";
 import { auth } from "../config";
 import { useDispatch } from "react-redux";
@@ -46,6 +47,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+        alert(error);
       });
   };
 
@@ -62,7 +64,8 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        console.log(err);
+				console.log(error);
+				window.alert(error);
       });
   };
 
@@ -206,8 +209,7 @@ const Register = () => {
             Already registered? &nbsp;
             <span
               onClick={changeState}
-              className="cursor-pointer text-blue-500"
-            >
+              className="cursor-pointer text-blue-500">
               Sign In
             </span>
           </p>
@@ -260,8 +262,7 @@ const Register = () => {
             Don't have an account?&nbsp;
             <span
               onClick={changeState}
-              className="cursor-pointer text-blue-500"
-            >
+              className="cursor-pointer text-blue-500">
               &nbsp;Register
             </span>
           </p>
