@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
-  const user = useSelector((state) => state.user);
-  useEffect(() => {
-    console.log(user);
-  }, []);
+  // const user = useSelector((state) => state.user);
+  // useEffect(() => {
+  //   console.log(user);
+  // }, []);
   const navigate = useNavigate();
   return (
     <section className="bg-home-background bg-blend-soft-light bg-cover h-screen lg:h-screen pt-16 flex flex-col justify-between">

@@ -106,9 +106,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {user.displayName === "" ? (
+        {!user ? (
           <button className="btn glass " onClick={() => navigate("/register")}>
-            Sign In
+            Register
           </button>
         ) : (
           <p>Hi&nbsp;{user.displayName}</p>
