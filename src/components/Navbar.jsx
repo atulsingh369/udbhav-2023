@@ -13,12 +13,13 @@ const Navbar = () => {
   const logOut = async () => {
     await signOut(auth)
       .then(() => {
-        alert("Log Out Succesfully");
+        window.alert("Log Out Succesfully");
       })
       .catch((error) => {
         console.log(error);
       });
 		dispatch(setUser(null));
+		navigate("/");
   };
 
   return (
