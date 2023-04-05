@@ -6,7 +6,7 @@ import Gallery from "../components/Gallery";
 const Tour = () => {
   return (
     <>
-      <section className="h-screen pt- bg-white">
+      <section className="h-screen pt- bg-white pt-16">
         <TourHeader />
         <TourCarosuel />
         <div className="flex flex-row items-center justify-evenly bg-base-100 h-56">
