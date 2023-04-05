@@ -1,7 +1,12 @@
 import React from "react";
+import FormsCards from "../components/FormsCards";
 
 const Forms = () => {
-  return <div className="text-9xl">forms</div>;
+  return (
+    <div>
+      <FormsCards />
+    </div>
+  );
 };
 
 export default Forms;

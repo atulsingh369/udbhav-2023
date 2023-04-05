@@ -4,7 +4,7 @@ const Gallery = () => {
   return (
     <>
       <section id="gallery" className="h-96">
-        <div className="carousel carousel-center   p-4 space-x-4 bg-base-100 ">
+        <div className="carousel carousel-center   p-4 space-x-4 bg-home-background bg-cover ">
           <div className="carousel-item">
             <img
               src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k199.jpg?updatedAt=1680525423399"
