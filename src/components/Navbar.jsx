@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const user = useSelector((state) => state.user);
   const navigate = useNavigate();
   return (
     <div className="navbar w-full fixed top-0 bg-base-100 text-white z-50">
@@ -104,9 +106,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn glass " onClick={() => navigate("/register")}>
-          Sign In
-        </button>
+        {user.displayName === "" ? (
+          <button className="btn glass " onClick={() => navigate("/register")}>
+            Sign In
+          </button>
+        ) : (
+          <p>Hi&nbsp;{user.displayName}</p>
+        )}
       </div>
     </div>
   );
