@@ -2,9 +2,64 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <section className="flex flex-row  items-center flex-wrap-reverse">
+    <section className="flex flex-row  items-center flex-wrap">
+      <section className="w-full    flex flex-row justify-center  pt-10 lg:pt-16 ">
+        <div className="carousel lg:w-11/12 md:w-11/12">
+          <div
+            id="slide1"
+            className="carousel-item relative w-full flex flex-row items-center justify-center"
+          >
+            <img
+              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner.jpg?updatedAt=1680522269752"
+              className="lg:h-11/12 bg-black "
+            />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide3" className="btn btn-circle bg-transparent">
+                ❮
+              </a>
+              <a href="#slide2" className="btn btn-circle bg-transparent">
+                ❯
+              </a>
+            </div>
+          </div>
+          <div
+            id="slide2"
+            className="carousel-item relative w-full flex flex-row items-center justify-center"
+          >
+            <img
+              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner2.jpg?updatedAt=1680522535923"
+              className="lg:h-11/12"
+            />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide1" className="btn btn-circle bg-transparent">
+                ❮
+              </a>
+              <a href="#slide3" className="btn btn-circle bg-transparent">
+                ❯
+              </a>
+            </div>
+          </div>
+          <div
+            id="slide3"
+            className="carousel-item relative w-full flex flex-row items-center justify-center"
+          >
+            <img
+              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner3.jpg?updatedAt=1680524722184"
+              className="lg:h-11/12 md:h-96"
+            />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide2" className="btn btn-circle bg-transparent">
+                ❮
+              </a>
+              <a href="#slide1" className="btn btn-circle bg-transparent">
+                ❯
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="flex flex-row justify-center lg:justify-around md:justify-around w-full flex-wrap  pt-20">
-        <div className="w-screen h-10  overflow-hidden bg-base-200 lg:hidden md:hidden flex items-center">
+        <div className="w-screen h-10  overflow-hidden bg-base-200 lg:hidden md:hidden flex items-center -mt-7 mb-4">
           <p id="target" className="font-bold text-lg  text-white">
             "Udbhav, &nbsp; Where everything begins."
           </p>
@@ -91,63 +146,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
-        <section className="w-full    flex flex-row justify-center  pt-10 lg:pt-16 ">
-          <div className="carousel lg:w-11/12 md:w-11/12">
-            <div
-              id="slide1"
-              className="carousel-item relative w-full flex flex-row items-center justify-center"
-            >
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner.jpg?updatedAt=1680522269752"
-                className="lg:h-11/12 bg-black "
-              />
-              <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide3" className="btn btn-circle bg-transparent">
-                  ❮
-                </a>
-                <a href="#slide2" className="btn btn-circle bg-transparent">
-                  ❯
-                </a>
-              </div>
-            </div>
-            <div
-              id="slide2"
-              className="carousel-item relative w-full flex flex-row items-center justify-center"
-            >
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner2.jpg?updatedAt=1680522535923"
-                className="lg:h-11/12"
-              />
-              <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide1" className="btn btn-circle bg-transparent">
-                  ❮
-                </a>
-                <a href="#slide3" className="btn btn-circle bg-transparent">
-                  ❯
-                </a>
-              </div>
-            </div>
-            <div
-              id="slide3"
-              className="carousel-item relative w-full flex flex-row items-center justify-center"
-            >
-              <img
-                src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner3.jpg?updatedAt=1680524722184"
-                className="lg:h-11/12 md:h-96"
-              />
-              <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide2" className="btn btn-circle bg-transparent">
-                  ❮
-                </a>
-                <a href="#slide1" className="btn btn-circle bg-transparent">
-                  ❯
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      <div></div>
     </section>
   );
 };

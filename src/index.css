@@ -135,14 +135,14 @@ body {
 }
 
 #target {
-  animation: rightToLeft 4.5s linear infinite;
+  animation: rightToLeft 7.5s linear infinite;
 }
 @keyframes rightToLeft {
   0% {
-    transform: translateX(700px);
+    transform: translateX(470px);
   }
   100% {
-    transform: translateX(-760px);
+    transform: translateX(-300px);
   }
 }
 #top-bar {
