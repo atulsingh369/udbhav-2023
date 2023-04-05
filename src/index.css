@@ -126,6 +126,9 @@ body {
   opacity: 0;
   animation: drop 0.4s linear forwards 1.2s;
 }
+#scroll-container::-webkit-scrollbar {
+  display: none;
+}
 
 .wrapper {
   width: 200px;

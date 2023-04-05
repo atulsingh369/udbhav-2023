@@ -1,4 +1,3 @@
-import React from "react";
 import SideBarEvents from "../components/SideBarEvents";
 import TechEvents from "../components/TechEvents";
 import EventTopBar from "../components/EventTopBar";

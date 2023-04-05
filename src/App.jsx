@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Tour from "./pages/Tour";
 import TechEventsPage from "./pages/TechEventsPage";
 import CulturalEventPage from "./pages/CulturalEventPage";
+import FormEvent from "./pages/FormEvent";
 const App = () => {
   return (
     <div className="relative">
@@ -22,6 +23,8 @@ const App = () => {
         {/* events pages routing */}
         <Route path="/technovation" element={<TechEventsPage />} />
         <Route path="/cultural" element={<CulturalEventPage />} />
+        {/* Form pages */}
+        <Route path="/form-event" element={<FormEvent />} />
       </Routes>
     </div>
   );

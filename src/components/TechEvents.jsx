@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const techEvents = {
   webathon: [
     {
@@ -6,7 +8,7 @@ const techEvents = {
         "Code your way to innovation - break barriers and bring your ideas to life at the hackathon!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "",
+      link: "/form-event",
     },
   ],
   pathik: [
@@ -77,7 +79,7 @@ const TechEvents = () => {
               <div className="flex gap-5 flex-wrap justify-center items-center">
                 {item[1].map((value, index) => {
                   return (
-                    <a href={value.link}>
+                    <Link to={value.link}>
                       <div
                         className="card w-64 h-[28rem] bg-base-100 shadow-xl"
                         key={index}
@@ -96,7 +98,7 @@ const TechEvents = () => {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
