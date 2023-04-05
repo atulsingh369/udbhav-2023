@@ -1,10 +1,26 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../config";
+import { setUser } from "../store";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user);
-  const navigate = useNavigate();
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
+  const logOut = async () => {
+    await signOut(auth)
+      .then(() => {
+        alert("Log Out Succesfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+		dispatch(setUser(null));
+  };
+
   return (
     <div className="navbar w-full fixed top-0 bg-base-100 text-white z-50">
       <div className="navbar-start">
@@ -15,8 +31,7 @@ const Navbar = () => {
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -27,8 +42,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
               <Link to="/tour">IERT TOUR</Link>
             </li>
@@ -43,8 +57,7 @@ const Navbar = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
               </Link>
@@ -83,8 +96,7 @@ const Navbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
             </Link>
@@ -99,19 +111,34 @@ const Navbar = () => {
           </li>
           <li
             className="cursor-pointer"
-            onClick={() => navigate("/contact-us")}
-          >
+            onClick={() => navigate("/contact-us")}>
             CONTACT US
           </li>
         </ul>
       </div>
       <div className="navbar-end">
         {!user ? (
-          <button className="btn glass " onClick={() => navigate("/register")}>
+          <button
+            className="btn glass mx-8"
+            onClick={() => navigate("/register")}>
             Register
           </button>
         ) : (
-          <p>Hi&nbsp;{user.displayName}</p>
+          <div className="dropdown dropdown-hover">
+            <span tabIndex={0} className="btn mx-12 m-1">
+              Hi&nbsp;{user.displayName}
+            </span>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li>
+                <Link to="/">Profile</Link>
+              </li>
+              <li>
+                <span onClick={logOut}>Logout</span>
+              </li>
+            </ul>
+          </div>
         )}
       </div>
     </div>
