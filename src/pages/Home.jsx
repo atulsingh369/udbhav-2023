@@ -8,7 +8,7 @@ const Home = () => {
   // }, []);
   const navigate = useNavigate();
   return (
-    <section className="bg-home-background bg-blend-soft-light bg-cover ">
+    <section className="bg-home-background h-screen bg-blend-soft-light bg-cover ">
       <section className=" pt-24 md:pt-16 lg:pt-16  grid grid-cols-1 md:grid-cols-2">
         <div
           id="text-drop"

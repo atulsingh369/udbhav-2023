@@ -20,7 +20,7 @@ const Forms = {
 };
 const FormsCards = () => {
   return (
-    <div className="bg-home-background bg-cover flex flex-row flex-wrap justify-center pt-16 ">
+    <div className="bg-home-background h-screen bg-cover flex flex-row flex-wrap justify-center pt-16 ">
       {Object.entries(Forms).map((item, i) => {
         return (
           <div
