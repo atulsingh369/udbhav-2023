@@ -134,7 +134,7 @@ body {
   overflow-x: hidden;
 }
 
-.target {
+#target {
   animation: rightToLeft 4.5s linear infinite;
 }
 @keyframes rightToLeft {
@@ -143,5 +143,16 @@ body {
   }
   100% {
     transform: translateX(-760px);
+  }
+}
+#top-bar {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  #side-bar {
+    display: none;
+  }
+  #top-bar {
+    display: inline-block;
   }
 }

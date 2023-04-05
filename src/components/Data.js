@@ -7,6 +7,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      id: "dep-1",
     },
     {
       name: "Abhishek kant",
@@ -49,6 +50,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      id: "dep-2",
     },
     {
       name: "Abhishek kant",
@@ -91,6 +93,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      id: "dep-3",
     },
     {
       name: "Abhishek kant",

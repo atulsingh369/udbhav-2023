@@ -6,7 +6,7 @@ const SideBarEvents = () => {
   const [event, setEvent] = useState(false);
   const navigate = useNavigate();
   return (
-    <div className="drawer drawer-mobile w-80 sticky top-16 ">
+    <div id="side-bar" className="drawer drawer-mobile w-80 sticky top-16 ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* <!-- Page content here --> */}

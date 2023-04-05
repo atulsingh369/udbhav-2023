@@ -63,7 +63,7 @@ const techEvents = {
 };
 const TechEvents = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mt-14 lg:mt-0">
       <div>
         <h1 className="text-3xl p-3 font-semibold ">TECHNOVATION</h1>
       </div>

@@ -3,7 +3,7 @@ import { Department } from "./Data";
 
 const ContactBox1 = () => {
   return (
-    <div className="bg-white flex-1 h-max">
+    <div className="bg-white flex-1 mt-5 lg:mt-0 h-max">
       {Object.entries(Department).map((item, i) => {
         return (
           <div
@@ -15,6 +15,7 @@ const ContactBox1 = () => {
               {item[1].map((value, index) => {
                 return (
                   <div
+                    id={value.id}
                     className="card w-60 h-[24rem] bg-base-100 shadow-xl"
                     key={index}
                   >

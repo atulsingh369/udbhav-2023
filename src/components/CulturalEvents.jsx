@@ -2,7 +2,7 @@ import { techEvents } from "./Data";
 
 const CulturalEvents = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mt-14 lg:mt-0">
       <div>
         <h1 className="text-3xl p-3 font-semibold ">CULTURAL EVENTS</h1>
       </div>
