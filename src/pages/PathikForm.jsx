@@ -1,11 +1,11 @@
-import { useState } from "react";
-import TextMoving from "./TextMoving";
+import React from "react";
+import TextMoving from "../components/TextMoving";
 
-const Form = () => {
+const PathikForm = () => {
   return (
-    <div className="bg-group-dance  bg-cover h-screen opacity-95 flex flex-col items-center justify-center md:pt-16">
+    <div className="bg-pathik-form-background-light   h-screen  flex flex-col items-center justify-center md:pt-16">
       <TextMoving />
-      <div className="bg-group-dance  bg-cover    flex flex-col items-center justify-evenly w-screen md:w-1/2 h-4/5 shadow-lg shadow- ">
+      <div className="bg-pathik-form-background bg-cover flex flex-col items-center justify-evenly w-screen md:w-1/2 h-4/5 shadow-lg shadow- ">
         <h3 className="text-xl font-semibold text-white text-center">
           REGISTRATION FORM
         </h3>
@@ -40,4 +40,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default PathikForm;

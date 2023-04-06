@@ -164,7 +164,8 @@ const Register = () => {
               Already registered? &nbsp;
               <span
                 onClick={changeState}
-                className="cursor-pointer text-blue-500">
+                className="cursor-pointer text-blue-500"
+              >
                 Sign In
               </span>
             </p>
@@ -216,7 +217,8 @@ const Register = () => {
               Don't have an account?&nbsp;
               <span
                 onClick={changeState}
-                className="cursor-pointer text-blue-500">
+                className="cursor-pointer text-blue-500"
+              >
                 &nbsp;Register
               </span>
             </p>

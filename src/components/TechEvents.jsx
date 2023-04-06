@@ -18,7 +18,7 @@ const techEvents = {
         "Efficiently navigate your world - let your robot pave the way with intelligent path routing!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
-      link: "",
+      link: "/pathik-form-event",
     },
   ],
   spartans: [

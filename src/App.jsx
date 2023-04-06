@@ -9,7 +9,8 @@ import Tour from "./pages/Tour";
 import TechEventsPage from "./pages/TechEventsPage";
 import CulturalEventPage from "./pages/CulturalEventPage";
 import FormEvent from "./pages/FormEvent";
-import Profile from './pages/Profile'
+import Profile from "./pages/Profile";
+import PathikForm from "./pages/PathikForm";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/cultural" element={<CulturalEventPage />} />
         {/* Form pages */}
         <Route path="/form-event" element={<FormEvent />} />
+        <Route path="/pathik-form-event" element={<PathikForm />} />
         {/* Profile page */}
         <Route path="/profile" element={<Profile />} />
       </Routes>
