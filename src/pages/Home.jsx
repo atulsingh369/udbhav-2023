@@ -96,7 +96,7 @@ const Home = () => {
               alt="Shoes"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body ">
             <p className="font-bold text-lg text-justify text-white">
               Udbhav is a Sanskrit word that means "origin" or "source". It is
               often used in spiritual and philosophical contexts to refer to the

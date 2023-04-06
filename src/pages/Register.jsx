@@ -100,11 +100,11 @@ const Register = () => {
   //false --> register page
   const changeState = () => setState(!state);
   return (
-    <div className="h-screen pt-20 flex justify-center items-center bg-form-background">
-      <div className="bg-white shadow-2xl rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen p-5">
+    <div className="h-screen pt-32 flex justify-center items-center bg-form-background">
+      <div className="bg-white shadow-2xl  rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen p-5">
         {!state && (
           //Register Page
-          <div className="flex flex-col items-center justify-evenly gap-7">
+          <div className="flex pt-4 md:pt-0 flex-col items-center justify-evenly gap-7">
             <p className="font-bold  text-3xl ">Register</p>
 
             <div className="form-control w-full max-w-xs">

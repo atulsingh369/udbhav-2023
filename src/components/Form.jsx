@@ -3,7 +3,7 @@ import { useState } from "react";
 const Form = () => {
   return (
     <div className="bg-group-dance  bg-cover h-screen opacity-95 flex flex-col items-center justify-center md:pt-16">
-      <div className="bg-white w-screen h-8 md:h-10 overflow-hidden flex items-center">
+      <div className="bg-transparent text-accent w-screen h-8 md:h-10 overflow-hidden flex items-center">
         <div
           id="target"
           className=" whitespace-nowrap  text-xl font-semibold tracking-wide"

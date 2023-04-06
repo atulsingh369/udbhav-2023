@@ -159,4 +159,16 @@ body {
   #top-bar {
     display: inline-block;
   }
+	#target {
+  width: fit-content;
+  animation: rightToLeft 25s linear infinite;
+}
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(400px);
+  }
+  100% {
+    transform: translateX(-1450px);
+  }
+}
 }
