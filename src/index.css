@@ -138,14 +138,15 @@ body {
 }
 
 #target {
-  animation: rightToLeft 7.5s linear infinite;
+  width: fit-content;
+  animation: rightToLeft 25s linear infinite;
 }
 @keyframes rightToLeft {
   0% {
-    transform: translateX(470px);
+    transform: translateX(1300px);
   }
   100% {
-    transform: translateX(-300px);
+    transform: translateX(-1450px);
   }
 }
 #top-bar {
@@ -157,5 +158,19 @@ body {
   }
   #top-bar {
     display: inline-block;
+  }
+}
+@media only screen and (max-width: 765px) {
+  #target {
+    width: fit-content;
+    animation: rightToLeft 25s linear infinite;
+  }
+  @keyframes rightToLeft {
+    0% {
+      transform: translateX(380px);
+    }
+    100% {
+      transform: translateX(-1450px);
+    }
   }
 }
