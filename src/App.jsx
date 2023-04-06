@@ -9,6 +9,8 @@ import Tour from "./pages/Tour";
 import TechEventsPage from "./pages/TechEventsPage";
 import CulturalEventPage from "./pages/CulturalEventPage";
 import FormEvent from "./pages/FormEvent";
+import Profile from './pages/Profile'
+
 const App = () => {
   return (
     <div className="relative">
@@ -25,6 +27,8 @@ const App = () => {
         <Route path="/cultural" element={<CulturalEventPage />} />
         {/* Form pages */}
         <Route path="/form-event" element={<FormEvent />} />
+        {/* Profile page */}
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );

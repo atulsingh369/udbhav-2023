@@ -160,17 +160,3 @@ body {
     display: inline-block;
   }
 }
-@media only screen and (max-width: 765px) {
-  #target {
-    width: fit-content;
-    animation: rightToLeft 25s linear infinite;
-  }
-  @keyframes rightToLeft {
-    0% {
-      transform: translateX(380px);
-    }
-    100% {
-      transform: translateX(-1450px);
-    }
-  }
-}
