@@ -8,7 +8,7 @@ const Home = () => {
   // }, []);
   const navigate = useNavigate();
   return (
-    <section className="bg-home-background h-screen bg-blend-soft-light bg-cover ">
+    <section className="bg-home-background bg-blend-soft-light bg-cover ">
       <section className=" pt-24 md:pt-16 lg:pt-16  grid grid-cols-1 md:grid-cols-2">
         <div
           id="text-drop"
@@ -89,7 +89,7 @@ const Home = () => {
       </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-items-center">
-        <div className="card w-96 mt-10 image-full ">
+        <div className="card w-96 my-10 mb-16 image-full ">
           <figure>
             <img
               src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/homeCard.png?updatedAt=1680669210627"

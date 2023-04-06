@@ -124,9 +124,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {!user ? (
-          <buttons className="btn glass" onClick={() => navigate("/register")}>
+          <button className="btn glass" onClick={() => navigate("/register")}>
             Register
-          </buttons>
+          </button>
         ) : (
           <div className="dropdown dropdown-hover">
             <span tabIndex={0} className="btn m-1">
@@ -137,7 +137,7 @@ const Navbar = () => {
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to="/">Profile</Link>
+                <Link to="/profile">Profile</Link>
               </li>
               <li>
                 <span onClick={logOut}>Logout</span>
