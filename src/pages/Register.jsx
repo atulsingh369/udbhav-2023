@@ -156,7 +156,7 @@ const Register = () => {
             <input
               value="Register"
               type={loading ? "Registering..." : "Register"}
-              className="btn"
+              className="btn select-none"
               onClick={() => signUp()}
             />
 
