@@ -11,6 +11,8 @@ module.exports = {
           "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/formBack.png?updatedAt=1680457028910')",
         "home-background":
           "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/homeBack.png?updatedAt=1680685345682')",
+        "group-dance":
+          "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/groupDance.png?updatedAt=1680722733157')",
       },
     },
   },
