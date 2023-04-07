@@ -18,7 +18,7 @@ export const authSlice = createSlice({
 					uid: action.payload.uid,
 					email: action.payload.email,
 					displayName: action.payload.displayName,
-					// photoURL: action.payload.photoURL,
+					photoURL: action.payload.photoURL,
 					// Add other necessary properties here
 				};
 			} else {
