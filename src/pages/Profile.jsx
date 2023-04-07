@@ -5,7 +5,7 @@ import ProfileInfo from "../components/ProfileInfo";
 const Profile = () => {
   return (
     <div className="h-screen  bg-white justify-evenly">
-      <div className="grid grid">
+      <div className="grid">
         <ProfileDp />
         <ProfileInfo />
       </div>
