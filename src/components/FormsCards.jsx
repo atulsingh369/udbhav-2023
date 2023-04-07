@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Forms = {
   poster: [
     {
@@ -5,7 +7,7 @@ const Forms = {
       describe: "",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "",
+      link: "/forms",
     },
   ],
   logo: [
@@ -14,7 +16,7 @@ const Forms = {
       describe: "",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "",
+      link: "/forms",
     },
   ],
 };
@@ -25,16 +27,14 @@ const FormsCards = () => {
         return (
           <div
             className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105"
-            key={i}
-          >
+            key={i}>
             <div className="flex gap-5 flex-wrap justify-center items-center">
               {item[1].map((value, index) => {
                 return (
-                  <a href={value.link}>
+                  <Link to={value.link}>
                     <div
                       className="card w-full h-[20rem] bg-base-100 shadow-xl"
-                      key={index}
-                    >
+                      key={index}>
                       <figure>
                         <img
                           src={value.image}
@@ -51,7 +51,7 @@ const FormsCards = () => {
                         </p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>

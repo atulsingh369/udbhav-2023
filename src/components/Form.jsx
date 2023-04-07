@@ -12,24 +12,24 @@ const Form = () => {
         <input
           type="text"
           placeholder="Team Name"
-          className="input input-bordered input-accent w-3/4 md:w-2/3 lg:w-2/3 tracking-widest bg-transparent rounded-none focus:bg-white text-black font-semibold focus:placeholder:text-black"
+          className="input input-bordered input-accent text-white w-3/4 md:w-2/3 lg:w-2/3 tracking-widest bg-transparent rounded-none focus:bg-white focus:text-black font-semibold focus:placeholder:text-black"
         />
         <input
           type="text"
           placeholder="Team Leader "
-          className="input input-bordered input-accent  w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white text-black font-semibold focus:placeholder:text-black"
+          className="input input-bordered input-accent text-white w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white focus:text-black font-semibold focus:placeholder:text-black"
         />
         <input
           type="text"
           placeholder="Theme/Category"
-          className="input input-bordered input-accent  w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white text-black font-semibold focus:placeholder:text-black"
+          className="input input-bordered input-accent text-white w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white focus:text-black font-semibold focus:placeholder:text-black"
         />
         <textarea
-          className="textarea textarea-accent  w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white text-black font-semibold focus:placeholder:text-black"
+          className="textarea textarea-accent text-white w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white focus:text-black font-semibold focus:placeholder:text-black"
           placeholder="Team Members Name"
         ></textarea>
         <textarea
-          className="textarea textarea-accent  w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white text-black font-semibold focus:placeholder:text-black"
+          className="textarea textarea-accent text-white w-3/4 md:w-2/3 lg:w-2/3 tracking-widest rounded-none bg-transparent  focus:bg-white focus:text-black font-semibold focus:placeholder:text-black"
           placeholder="Additional Information (props, etc)"
         ></textarea>
         <button className="btn border-none rounded-none text-black font-bold w-1/2 bg-white">

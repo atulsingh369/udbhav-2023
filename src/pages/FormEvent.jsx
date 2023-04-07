@@ -3,9 +3,9 @@ import Form from "../components/Form";
 
 const FormEvent = () => {
   return (
-    <div>
+    <>
       <Form />
-    </div>
+    </>
   );
 };
 
