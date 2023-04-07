@@ -82,7 +82,8 @@ const Register = () => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         console.log(user);
-        dispatch(setUser(user));
+				dispatch(setUser(user));
+				navigate("/");
       })
       .catch((error) => {
         // Handle Errors here.
