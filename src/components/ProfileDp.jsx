@@ -3,6 +3,8 @@ import { IoMdAddCircle } from "react-icons/io";
 import { useSelector } from "react-redux";
 
 const ProfileDp = () => {
+  const [edit, setEdit] = useState(false);
+  const user = useSelector((state) => state.user);
   return (
     <div className="bg-base-100 pt-20">
       <div className="avatar w-fit flex flex-col items-end ">
