@@ -11,13 +11,14 @@ import CulturalEventPage from "./pages/CulturalEventPage";
 import FormEvent from "./pages/FormEvent";
 import Profile from "./pages/Profile";
 import PathikForm from "./pages/PathikForm";
+import Landing from "./components/Landing";
 
 const App = () => {
   return (
     <div className="relative">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/tour" element={<Tour />} />
         <Route path="/forms" element={<Forms />} />
         <Route path="/events" element={<Events />} />

@@ -14,9 +14,11 @@ module.exports = {
         "form-background":
           "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/formBack.png?updatedAt=1680457028910')",
         "home-background":
-          "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/homeBack.png?updatedAt=1680685345682')",
+          "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/herobg.png?updatedAt=1680952991336')",
         "group-dance":
           "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/groupDance.png?updatedAt=1680722733157')",
+        "profile-events-registered-background":
+          "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/profileRegisterd.png?updatedAt=1680867639747')",
       },
     },
   },
