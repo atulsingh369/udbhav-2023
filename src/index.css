@@ -159,16 +159,24 @@ body {
   #top-bar {
     display: inline-block;
   }
-	#target {
-  width: fit-content;
-  animation: rightToLeft 25s linear infinite;
-}
-@keyframes rightToLeft {
-  0% {
-    transform: translateX(400px);
+  #target {
+    width: fit-content;
+    animation: rightToLeft 25s linear infinite;
   }
-  100% {
-    transform: translateX(-1450px);
+  @keyframes rightToLeft {
+    0% {
+      transform: translateX(400px);
+    }
+    100% {
+      transform: translateX(-1450px);
+    }
   }
 }
+#card-home {
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
+@media only screen and (max-width: 765px) {
+  #card-home {
+    display: none;
+  }
 }
