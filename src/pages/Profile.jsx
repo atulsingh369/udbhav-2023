@@ -5,12 +5,9 @@ import RegisteredEvents from "../components/RegisteredEvents";
 
 const Profile = () => {
   return (
-    <div className="h-screen  bg-white justify-evenly">
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center bg-base-100 sticky">
-        <ProfileDp />
-        <ProfileInfo />
-      </div>
-      <RegisteredEvents />
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center bg-home-background bg-cover sticky h-screen">
+      <ProfileDp />
+      <ProfileInfo />
     </div>
   );
 };

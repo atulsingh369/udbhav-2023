@@ -6,10 +6,13 @@ const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
   return (
-    <>
-      <div className="bg-base-100 pt-20">
+    <div
+      div
+      className="flex flex-col items-center h-full justify-center gap-28 md:gap-10"
+    >
+      <div className=" ">
         <div className="avatar w-fit flex flex-col items-end  ">
-          <div className="w-36 md:w-48 rounded-full ">
+          <div className="w-48 md:w-48 rounded-full ">
             {user.photoURL && <img src={user.photoURL} />}
             {!user.photoURL && (
               <img src="https://ik.imagekit.io/xji6otwwkb/Profile.png?updatedAt=1680849745697" />
@@ -31,7 +34,20 @@ const ProfileDp = () => {
           )}
         </div>
       </div>
-    </>
+      <div
+        id="card-profile"
+        className="card w-96 text-white border border-white"
+      >
+        <div className="card-body">
+          <h2 className="card-title">Abhishek Kant</h2>
+          <p>Branch</p>
+          <p>Batch/Year</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Edit Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

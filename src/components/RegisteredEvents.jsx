@@ -1,7 +1,7 @@
 const RegisteredEvents = () => {
   return (
-    <div className="bg-profile-events-registered-background bg-contain h-full ">
-      lkmnbvcx
+    <div className="grid grid-cols-1">
+      <div></div>
     </div>
   );
 };

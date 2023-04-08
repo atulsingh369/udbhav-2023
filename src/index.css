@@ -175,8 +175,14 @@ body {
 #card-home {
   box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 }
+#card-profile {
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
 @media only screen and (max-width: 765px) {
   #card-home {
+    display: none;
+  }
+  #spline-animation {
     display: none;
   }
 }

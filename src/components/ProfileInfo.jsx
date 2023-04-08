@@ -1,17 +1,16 @@
 import React from "react";
+import Spline from "@splinetool/react-spline";
 
 const ProfileInfo = () => {
   return (
-    <div className="flex flex-col justify-evenly text-white md:pt-20 bg-base-100 items-center -mt-5 gap-5 mb-5 md:mb-0">
-      <div className="flex flex-row items-end gap-5">
-        <h1 className="text-3xl font-semibold">Abhishek Kant</h1>
-        <h1 className="text-1xl font-bold">User's UDBHAV ID</h1>
-      </div>
-      <div>
-        <h1 className="text-lg md:text-2xl ">Branch</h1>
-        <h1 className="text-lg md:text-2xl ">Batch</h1>
-        <h1 className="text-lg md:text-2xl ">Number of Events Participated</h1>
-      </div>
+    <div
+      id="spline-animation"
+      className="flex items-center justify-center h-full w-full"
+    >
+      <Spline
+        scene="https://prod.spline.design/KWdFdzq04YUoci4P/scene.splinecode"
+        className="scale-75"
+      />
     </div>
   );
 };
