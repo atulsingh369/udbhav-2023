@@ -1,10 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const ProfileInfo = () => {
+  const user = useSelector((state) => state.user);
   return (
     <div className="flex flex-col justify-evenly text-white md:pt-20 bg-base-100 items-center -mt-5 gap-5 mb-5 md:mb-0">
       <div className="flex flex-row items-end gap-5">
-        <h1 className="text-3xl font-semibold">Abhishek Kant</h1>
+        <h1 className="text-3xl font-semibold">{user.displayName}</h1>
         <h1 className="text-1xl font-bold">User's UDBHAV ID</h1>
       </div>
       <div>
