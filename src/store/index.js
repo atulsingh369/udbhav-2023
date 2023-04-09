@@ -19,6 +19,9 @@ export const authSlice = createSlice({
 					email: action.payload.email,
 					displayName: action.payload.displayName,
 					photoURL: action.payload.photoURL,
+					branch: action.payload.photoURL,
+					year: action.payload.year,
+					eventName: action.payload.eventName,
 					// Add other necessary properties here
 				};
 			} else {

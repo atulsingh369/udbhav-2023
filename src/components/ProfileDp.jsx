@@ -40,11 +40,29 @@ const ProfileDp = () => {
     );
   };
 
+  const editProfile = () => {
+    let branch = prompt("Enter Branch");
+    let year = prompt("Enter Year");
+    console.log(user, branch, year);
+    // () => {
+    //   updateProfile(user, {
+    //     branch: branch,
+    //     year: year,
+    //   })
+    //     .then(() => {
+    //       console.log("Profile Updated");
+    //       window.alert("Updated");
+    //       setLoading(false);
+    //       dispatch(setUser(user));
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // };
+  };
+
   return (
-    <div
-      div
-      className="flex flex-col items-center h-full justify-center gap-28 md:gap-10"
-    >
+    <div className="flex flex-col items-center h-full justify-center gap-28 md:gap-10">
       <div className=" ">
         <div className="avatar w-fit flex flex-col items-end  ">
           <div className="w-48 md:w-48 rounded-full ">
@@ -79,14 +97,15 @@ const ProfileDp = () => {
       </div>
       <div
         id="card-profile"
-        className="card w-96 text-white border border-white"
-      >
+        className="card w-96 text-white border border-white">
         <div className="card-body">
-          <h2 className="card-title">Abhishek Kant</h2>
+          <h2 className="card-title">{user.displayName}</h2>
           <p>Branch</p>
           <p>Batch/Year</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Edit Profile</button>
+            <button className="btn btn-primary" onClick={editProfile}>
+              Edit Profile
+            </button>
           </div>
         </div>
       </div>
