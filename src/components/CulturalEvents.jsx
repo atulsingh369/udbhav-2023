@@ -4,7 +4,9 @@ const CulturalEvents = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-14 lg:mt-0">
       <div>
-        <h1 className="text-3xl p-3 font-semibold ">CULTURAL EVENTS</h1>
+        <h1 className="text-3xl p-3 font-semibold text-white">
+          CULTURAL EVENTS
+        </h1>
       </div>
       <div className="bg-white flex flex-row flex-wrap justify-center h-max">
         {Object.entries(techEvents).map((item, i) => {
