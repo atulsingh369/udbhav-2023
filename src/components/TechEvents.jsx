@@ -48,7 +48,7 @@ const techEvents = {
         "Build bridges, connect worlds - let your creativity and skill shine with stick bridge building!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/bridgeIt.png?updatedAt=1680497824188",
-      link: "",
+      link: "/bridge-it-form",
     },
   ],
 
@@ -67,7 +67,7 @@ const TechEvents = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-14 lg:mt-0">
       <div>
-        <h1 className="text-3xl p-3 font-semibold ">TECHNOVATION</h1>
+        <h1 className="text-3xl p-3 font-semibold text-white ">TECHNOVATION</h1>
       </div>
       <div className="bg-white flex flex-row flex-wrap justify-center h-max">
         {Object.entries(techEvents).map((item, i) => {

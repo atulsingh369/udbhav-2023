@@ -12,6 +12,7 @@ import FormEvent from "./pages/FormEvent";
 import Profile from "./pages/Profile";
 import PathikForm from "./pages/PathikForm";
 import Landing from "./components/Landing";
+import BridgeItForm from "./components/forms/BridgeItForm";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         {/* Form pages */}
         <Route path="/form-event" element={<FormEvent />} />
         <Route path="/pathik-form-event" element={<PathikForm />} />
+        <Route path="/bridge-it-form" element={<BridgeItForm />} />
         {/* Profile page */}
         <Route path="/profile" element={<Profile />} />
       </Routes>
