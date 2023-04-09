@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const techEvents = {
   technical: [
     {
-      title: "TECHNOVATIO",
+      title: "TECHNOVATION",
       describe: "",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
