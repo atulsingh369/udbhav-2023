@@ -15,6 +15,7 @@
     "@react-three/fiber": "^8.12.0",
     "@reduxjs/toolkit": "^1.9.3",
     "@splinetool/react-spline": "^2.2.6",
+    "cors": "^2.8.5",
     "daisyui": "^2.51.5",
     "firebase": "^9.19.1",
     "framer-motion": "^10.11.2",
