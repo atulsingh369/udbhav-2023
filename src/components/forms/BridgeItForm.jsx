@@ -1,5 +1,6 @@
 import React from "react";
 import "./FormStyle.scss";
+import TextMoving from "../TextMoving";
 const BridgeItForm = () => {
   return (
     <div className="h-screen">
