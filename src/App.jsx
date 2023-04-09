@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import PathikForm from "./pages/PathikForm";
 import Landing from "./components/Landing";
 import BridgeItForm from "./components/forms/BridgeItForm";
+import HackathonForm from "./components/forms/HackathonForm";
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
         <Route path="/technovation" element={<TechEventsPage />} />
         <Route path="/cultural" element={<CulturalEventPage />} />
         {/* Form pages */}
-        <Route path="/form-event" element={<FormEvent />} />
+        <Route path="/WAB-a-thon-form" element={<HackathonForm />} />
         <Route path="/pathik-form-event" element={<PathikForm />} />
         <Route path="/bridge-it-form" element={<BridgeItForm />} />
         {/* Profile page */}

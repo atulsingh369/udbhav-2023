@@ -8,7 +8,7 @@ const techEvents = {
         "Code your way to innovation - break barriers and bring your ideas to life at the hackathon!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "/form-event",
+      link: "/WAB-a-thon-form",
     },
   ],
   pathik: [
