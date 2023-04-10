@@ -3,7 +3,7 @@ import "./FormStyle.scss";
 import TextMoving from "../TextMoving";
 const BridgeItForm = () => {
   return (
-    <div className="h-screen">
+    <div id="form-body" className="h-screen">
       <div class="login-box">
         <h2 className="text-2xl font-semibold">Bridge It</h2>
         <form>
