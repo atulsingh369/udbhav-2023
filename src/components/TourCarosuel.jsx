@@ -3,7 +3,7 @@ import React from "react";
 const TourCarosuel = () => {
   return (
     <>
-      <section className="w-full    flex flex-row justify-center bg-home-background bg-cover pt-10 lg:pt-10 ">
+      <section className="w-full    flex flex-row justify-center  pt-10 lg:pt-10 ">
         <div className="carousel lg:w-11/12 md:w-11/12">
           <div
             id="slide1"

@@ -6,9 +6,15 @@ const HackathonForm = () => {
       <div class="login-box ">
         <h2 className="text-2xl font-semibold">WAB-A-THON</h2>
         <form>
-          <div class="user-box">
-            <input type="text" name="" required="" />
-            <label>Team Name*</label>
+          <div className="flex flex-row gap-10">
+            <div class="user-box">
+              <input type="text" name="" required="" />
+              <label>Team Name*</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="" required="" />
+              <label>GitHub repository*</label>
+            </div>
           </div>
           <div className="flex flex-row gap-10">
             <div class="user-box">

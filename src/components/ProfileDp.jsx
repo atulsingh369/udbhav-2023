@@ -109,6 +109,7 @@ const ProfileDp = () => {
       >
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
+          <p>{user.uid}</p>
           {user.branch && <p>{user.branch}</p>}
           {!user.branch && <p>Branch</p>}
           {user.year && <p>{user.year}</p>}

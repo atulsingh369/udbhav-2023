@@ -1,5 +1,5 @@
 export const Department = {
-  Department1: [
+  "General Captain": [
     {
       name: "Abhishek kant",
       image:
@@ -17,32 +17,8 @@ export const Department = {
       email: "test@test.test",
       show: true,
     },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-    },
   ],
-  Department2: [
+  "Additional General Captain": [
     {
       name: "Abhishek kant",
       image:
@@ -60,6 +36,66 @@ export const Department = {
       email: "test@test.test",
       show: true,
     },
+  ],
+  Captain: [
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
     {
       name: "Abhishek kant",
       image:
@@ -85,7 +121,200 @@ export const Department = {
       show: true,
     },
   ],
-  Department3: [
+  "Additional Captain": [
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+  ],
+  Technical: [
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+    },
+  ],
+  "Fooding & Lodging": [
     {
       name: "Abhishek kant",
       image:
@@ -200,7 +429,7 @@ export const techEvents = {
 				"Code your way to innovation - break barriers and bring your ideas to life at the hackathon!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-			link: "/form-event",
+			link: "/WAB-a-thon-form",
 		},
 	],
 	pathik: [
@@ -240,18 +469,18 @@ export const techEvents = {
 				"Build bridges, connect worlds - let your creativity and skill shine with stick bridge building!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/bridgeIt.png?updatedAt=1680497824188",
-			link: "",
+			link: "/bridge-it-form",
 		},
 	],
 
-	roboSoccer: [
-		{
-			title: "ROBOSOCCER",
-			describe:
-				"Gear up for the ultimate showdown - let your robots take on the competition in the electrifying game of robot soccer!",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/roboSoccer.png?updatedAt=1680497825112",
-			link: "",
-		},
-	],
+  roboSoccer: [
+    {
+      title: "ROBOSOCCER",
+      describe:
+        "Gear up for the ultimate showdown - let your robots take on the competition in the electrifying game of robot soccer!",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/roboSoccer.png?updatedAt=1680497825112",
+      link: "",
+    },
+  ],
 };

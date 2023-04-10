@@ -1,4 +1,4 @@
-import React from "react";
+import { Department } from "./Data";
 
 const Sidebar = () => {
   return (
@@ -16,26 +16,23 @@ const Sidebar = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+          <ul className="menu p-4 w-80 bg-base-100 text-base-content gap-5">
             {/* <!-- Sidebar content here --> */}
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>{" "}
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>{" "}
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>
+            {Object.entries(Department).map((item, i) => {
+              return (
+                <li
+                  key={i}
+                  className="text-bold rounded-lg shadow-sm hover:bg-base-200 cursor-pointer shadow-zinc-800"
+                >
+                  <a
+                    className="active:bg-base-200 active:text-white"
+                    href={`#${item[0]}`}
+                  >
+                    {item[0]}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
