@@ -3,11 +3,13 @@ import { setUser } from "../store";
 import { IoMdAddCircle } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../config";
+import { auth, storage } from "../config";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 
 const ProfileDp = () => {
+  const res = auth.currentUser;
+  console.log(res);
   const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -45,21 +47,21 @@ const ProfileDp = () => {
 
   const editProfile = () => {
     console.log(user);
-    let branch = prompt("Enter Branch");
-    let year = prompt("Enter Year");
+    // let branch = prompt("Enter Branch");
+    // let year = prompt("Enter Year");
     // user.branch = branch;
     // console.log(user);
     // dispatch(setUser(user));
 
-    updateProfile(user, {
+    updateProfile(auth.currentUser, {
       branch: branch,
       year: year,
     })
       .then(() => {
         console.log("Profile Updated");
         window.alert("Updated");
+        console.log();
         dispatch(setUser(user));
-        console.log(user);
       })
       .catch((err) => {
         console.log(err);
@@ -92,7 +94,8 @@ const ProfileDp = () => {
                     className="hidden"
                     type="file"
                     accept="image/*"
-                    onChange={change}></input>
+                    onChange={change}
+                  ></input>
                   <a className="btn">Edit Profile</a>
                 </li>
               </ul>
@@ -102,7 +105,8 @@ const ProfileDp = () => {
       </div>
       <div
         id="card-profile"
-        className="card w-96 text-white border border-white">
+        className="card w-96 text-white border border-white"
+      >
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
           {user.branch && <p>{user.branch}</p>}
