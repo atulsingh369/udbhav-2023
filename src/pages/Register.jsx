@@ -7,7 +7,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../config";
+import { auth, db } from "../config";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store";
 import { useNavigate } from "react-router-dom";
@@ -47,11 +47,26 @@ const Register = () => {
           .catch((err) => {
             console.log(err);
           });
+        db.collection("users").add({
+          uid: user.uid,
+          displayName,
+          email,
+          photoURL: url,
+          branch: null,
+          year: null,
+          event: null,
+        });
       })
       .catch((error) => {
         console.log(error);
         alert(error);
       });
+    // await setDoc(doc(db, "users", user.uid), {
+    //   uid: user.uid,
+    //   displayName,
+    //   email,
+    //   photoURL: url,
+    // });
   };
 
   const signIn = async () => {
@@ -82,8 +97,8 @@ const Register = () => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         console.log(user);
-				dispatch(setUser(user));
-				navigate("/");
+        dispatch(setUser(user));
+        navigate("/");
       })
       .catch((error) => {
         // Handle Errors here.
@@ -165,8 +180,7 @@ const Register = () => {
               Already registered? &nbsp;
               <span
                 onClick={changeState}
-                className="cursor-pointer text-blue-500"
-              >
+                className="cursor-pointer text-blue-500">
                 Sign In
               </span>
             </p>
@@ -218,8 +232,7 @@ const Register = () => {
               Don't have an account?&nbsp;
               <span
                 onClick={changeState}
-                className="cursor-pointer text-blue-500"
-              >
+                className="cursor-pointer text-blue-500">
                 &nbsp;Register
               </span>
             </p>
