@@ -92,7 +92,8 @@ const ProfileDp = () => {
                     className="hidden"
                     type="file"
                     accept="image/*"
-                    onChange={change}></input>
+                    onChange={change}
+                  ></input>
                   <a className="btn">Edit Profile</a>
                 </li>
               </ul>
@@ -102,9 +103,11 @@ const ProfileDp = () => {
       </div>
       <div
         id="card-profile"
-        className="card w-96 text-white border border-white">
+        className="card w-96 text-white border border-white"
+      >
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
+          <p>{user.uid}</p>
           {user.branch && <p>{user.branch}</p>}
           {!user.branch && <p>Branch</p>}
           {user.year && <p>{user.year}</p>}
