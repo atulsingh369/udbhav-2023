@@ -52,7 +52,7 @@ const formsEvent = () => {
       {Object.entries(techEvents).map((item, i) => {
         if (item[0] === id) {
           return (
-            <div className="login-box overflow-y-scroll h-2/3" key={i}>
+            <div className="login-box scrollbar-hidden overflow-y-auto" key={i}>
               {item[1].map((value, index) => {
                 return (
                   <div key={index}>
@@ -92,7 +92,9 @@ const formsEvent = () => {
                                     />
                                     <label>Phone No.*</label>
                                   </div>
-                                  <button onClick={() => handleUpdate(item, i)}>
+                                  <button
+                                    className="text-white"
+                                    onClick={() => handleUpdate(item, i)}>
                                     Update
                                   </button>
                                 </div>
@@ -141,7 +143,7 @@ const formsEvent = () => {
                         </div>
                       )}
                       {value.type === "solo" && (
-                        <div className="flex flex-row gap-10">
+                        <div className="flex flex-col gap-10">
                           <div className="user-box">
                             <input
                               type="text"
