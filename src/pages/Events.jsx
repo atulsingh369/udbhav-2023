@@ -3,7 +3,7 @@ import EventCards from "../components/EventCards";
 
 const Events = () => {
   return (
-    <section className="h-full pt-16  flex flex-row justify-between ">
+    <section className=" pt-16 sm:min-h-screen bg-home-background bg-cover flex flex-row justify-between  ">
       <SideBarEvents />
       <EventCards />
     </section>

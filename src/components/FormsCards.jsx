@@ -26,15 +26,17 @@ const FormsCards = () => {
       {Object.entries(Forms).map((item, i) => {
         return (
           <div
-            className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105"
-            key={i}>
+            className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer "
+            key={i}
+          >
             <div className="flex gap-5 flex-wrap justify-center items-center">
               {item[1].map((value, index) => {
                 return (
                   <Link to={value.link}>
                     <div
                       className="card w-full h-[20rem] bg-base-100 shadow-xl"
-                      key={index}>
+                      key={index}
+                    >
                       <figure>
                         <img
                           src={value.image}

@@ -4,7 +4,7 @@ import EventTopBar from "../components/EventTopBar";
 
 const TechEventsPage = () => {
   return (
-    <div className="h-full pt-16 flex flex-row justify-between ">
+    <div className=" pt-16 h-full flex flex-row justify-between ">
       <EventTopBar />
       <SideBarEvents />
       <TechEvents />

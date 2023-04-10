@@ -65,15 +65,17 @@ const techEvents = {
 };
 const TechEvents = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-14 lg:mt-0">
-      <div>
-        <h1 className="text-3xl p-3 font-semibold text-white ">TECHNOVATION</h1>
+    <div className="flex flex-col items-center justify-center mt-14 lg:mt-0 ">
+      <div className="">
+        <h1 className="text-3xl  p-3 font-semibold text-white  ">
+          TECHNOVATION
+        </h1>
       </div>
-      <div className="bg-white flex flex-row flex-wrap justify-center h-max">
+      <div className=" bg-home-background bg-cover flex flex-row flex-wrap justify-center h-max">
         {Object.entries(techEvents).map((item, i) => {
           return (
             <div
-              className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105"
+              className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105 transition-all ease-in-out duration-300"
               key={i}
             >
               <div className="flex gap-5 flex-wrap justify-center items-center">

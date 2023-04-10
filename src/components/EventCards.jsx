@@ -1,15 +1,6 @@
 import { Link } from "react-router-dom";
 
 const techEvents = {
-  technical: [
-    {
-      title: "TECHNOVATION",
-      describe: "",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "/technovation",
-    },
-  ],
   cultural: [
     {
       title: "UDBHAV",
@@ -19,12 +10,21 @@ const techEvents = {
       link: "/cultural",
     },
   ],
+  technical: [
+    {
+      title: "TECHNOVATION",
+      describe: "",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
+      link: "/technovation",
+    },
+  ],
 };
 
 const EventCards = () => {
   return (
-    <div className="w-full pt-16 ">
-      <div className="bg-white flex flex-row flex-wrap justify-evenly w-full h-max">
+    <div className="w-full pt-16 text-white ">
+      <div className=" flex flex-row flex-wrap justify-evenly w-full h-max">
         {Object.entries(techEvents).map((item, i) => {
           return (
             <div
