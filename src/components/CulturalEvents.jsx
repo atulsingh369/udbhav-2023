@@ -1,4 +1,4 @@
-import { techEvents } from "./Data";
+import { cultEvents } from "./Data";
 
 const CulturalEvents = () => {
   return (
@@ -9,20 +9,18 @@ const CulturalEvents = () => {
         </h1>
       </div>
       <div className="bg-white flex flex-row flex-wrap justify-center h-max">
-        {Object.entries(techEvents).map((item, i) => {
+        {Object.entries(cultEvents).map((item, i) => {
           return (
             <div
               className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105"
-              key={i}
-            >
+              key={i}>
               <div className="flex gap-5 flex-wrap justify-center items-center">
                 {item[1].map((value, index) => {
                   return (
                     <a href={value.link}>
                       <div
                         className="card w-64 h-[28rem] bg-base-100 shadow-xl"
-                        key={index}
-                      >
+                        key={index}>
                         <figure>
                           <img
                             src={value.image}

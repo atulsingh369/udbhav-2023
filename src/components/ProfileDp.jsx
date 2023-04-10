@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { setUser } from "../store";
 import { IoMdAddCircle } from "react-icons/io";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../config";
 import { useNavigate } from "react-router-dom";
+import { updateProfile } from "firebase/auth";
 
 const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const change = async (e) => {
@@ -40,11 +43,31 @@ const ProfileDp = () => {
     );
   };
 
+  const editProfile = () => {
+    console.log(user);
+    let branch = prompt("Enter Branch");
+    let year = prompt("Enter Year");
+    // user.branch = branch;
+    // console.log(user);
+    // dispatch(setUser(user));
+
+    updateProfile(user, {
+      branch: branch,
+      year: year,
+    })
+      .then(() => {
+        console.log("Profile Updated");
+        window.alert("Updated");
+        dispatch(setUser(user));
+        console.log(user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div
-      div
-      className="flex flex-col items-center h-full justify-center gap-28 md:gap-10"
-    >
+    <div className="flex flex-col items-center h-full justify-center gap-28 md:gap-10">
       <div className=" ">
         <div className="avatar w-fit flex flex-col items-end  ">
           <div className="w-48 md:w-48 rounded-full ">
@@ -84,13 +107,14 @@ const ProfileDp = () => {
       >
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
-          <h2 className="flex gap-2">
-            UID:
-            <p>{user.uid}</p>
-          </h2>
-          <p>Batch/Year</p>
+          {user.branch && <p>{user.branch}</p>}
+          {!user.branch && <p>Branch</p>}
+          {user.year && <p>{user.year}</p>}
+          {!user.year && <p>Year</p>}
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Edit Profile</button>
+            <button className="btn btn-primary" onClick={editProfile}>
+              Edit Profile
+            </button>
           </div>
         </div>
       </div>
