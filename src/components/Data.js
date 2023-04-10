@@ -424,6 +424,7 @@ export const cultEvents = {
 export const techEvents = {
 	webathon: [
 		{
+			type: "group",
 			title: "WEB-A-THON",
 			describe:
 				"Code your way to innovation - break barriers and bring your ideas to life at the hackathon!",
@@ -432,10 +433,12 @@ export const techEvents = {
 			link: "/WAB-a-thon-form",
 			id: "webathon",
 			limit: 4,
+			extra: ["xyx", "hafd"]
 		},
 	],
 	pathik: [
 		{
+			type: "group",
 			title: "PATHIK",
 			describe:
 				"Efficiently navigate your world - let your robot pave the way with intelligent path routing!",
@@ -444,21 +447,26 @@ export const techEvents = {
 			link: "/pathik-form-event",
 			id: "pathik",
 			limit: 4,
+			extra: ""
 		},
 	],
 	spartans: [
 		{
+			type: "solo",
 			title: "SPARTANS",
 			describe:
 				"Get ready to rev your robots - navigate obstacles and race to the finish line!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/spartans.png?updatedAt=1680497823254",
 			link: "",
-			id: "spartans"
+			id: "spartans",
+			limit: 4,
+			extra: ""
 		},
 	],
 	rocketPropulsion: [
 		{
+			type: "group",
 			title: "ROCKET REPULSION",
 			describe:
 				"Reach for the stars with rocket propulsion - let the power of science launch you to new heights!",
@@ -467,10 +475,12 @@ export const techEvents = {
 			link: "",
 			id: "rocketPropulsion",
 			limit: 4,
+			extra: ""
 		},
 	],
 	bridgeIt: [
 		{
+			type: "group",
 			title: "BRIDGE IT",
 			describe:
 				"Build bridges, connect worlds - let your creativity and skill shine with stick bridge building!",
@@ -479,11 +489,13 @@ export const techEvents = {
 			link: "/bridge-it-form",
 			id: "bridgeIt",
 			limit: 4,
+			extra: ""
 		},
 	],
 
 	roboSoccer: [
 		{
+			type: "group",
 			title: "ROBOSOCCER",
 			describe:
 				"Gear up for the ultimate showdown - let your robots take on the competition in the electrifying game of robot soccer!",
@@ -492,6 +504,7 @@ export const techEvents = {
 			link: "",
 			id: "roboSoccer",
 			limit: 4,
+			extra: ""
 		},
 	],
 };
