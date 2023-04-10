@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const techEvents = {
   cultural: [
     {
-      title: "UDBHV",
+      title: "UDBHAV",
       describe: "",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",

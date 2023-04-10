@@ -430,7 +430,8 @@ export const techEvents = {
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
 			link: "/WAB-a-thon-form",
-			id: "webathon"
+			id: "webathon",
+			limit: 4,
 		},
 	],
 	pathik: [
@@ -441,7 +442,8 @@ export const techEvents = {
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
 			link: "/pathik-form-event",
-			id: "pathik"
+			id: "pathik",
+			limit: 4,
 		},
 	],
 	spartans: [
@@ -463,7 +465,8 @@ export const techEvents = {
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/rocketPropulsion.png?updatedAt=1680497823836",
 			link: "",
-			id: "rocketPropulsion"
+			id: "rocketPropulsion",
+			limit: 4,
 		},
 	],
 	bridgeIt: [
@@ -474,7 +477,8 @@ export const techEvents = {
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/bridgeIt.png?updatedAt=1680497824188",
 			link: "/bridge-it-form",
-			id: "bridgeIt"
+			id: "bridgeIt",
+			limit: 4,
 		},
 	],
 
@@ -486,7 +490,8 @@ export const techEvents = {
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/roboSoccer.png?updatedAt=1680497825112",
 			link: "",
-			id: "roboSoccer"
+			id: "roboSoccer",
+			limit: 4,
 		},
 	],
 };
