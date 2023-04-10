@@ -1,5 +1,6 @@
 import { HiOutlineMail, HiPhone, HiUser } from "react-icons/hi";
 import { Department } from "./Data";
+import img from "../assets/img.jpeg";
 
 const ContactBox1 = () => {
   return (
@@ -10,21 +11,19 @@ const ContactBox1 = () => {
             className="flex flex-col gap-8 justify-center items-center p-8"
             key={i}
           >
-            <p className="text-xl font-bold">{item[0]}</p>
-            <div className="flex gap-5 flex-wrap justify-center items-center">
+            <p className="text-2xl font-bold pt-20" id={`${item[0]}`}>
+              {item[0]}
+            </p>
+            <div className="flex gap-10 flex-wrap justify-center items-center">
+              {/* Card */}
               {item[1].map((value, index) => {
                 return (
                   <div
-                    id={value.id}
-                    className="card w-60 h-[24rem] bg-base-100 shadow-xl"
+                    className="card w-60 h-[24rem] bg-base-100 hover:scale-110 transition-all ease-in-out duration-300"
                     key={index}
                   >
                     <figure>
-                      <img
-                        src={value.image}
-                        alt="Shoes"
-                        className="object-contain"
-                      />
+                      <img src={img} alt="Shoes" className="object-contain" />
                     </figure>
                     <div className="card-body">
                       <div className="flex flex-row items-center gap-2">

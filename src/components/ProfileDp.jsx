@@ -69,7 +69,8 @@ const ProfileDp = () => {
                     className="hidden"
                     type="file"
                     accept="image/*"
-                    onChange={change}></input>
+                    onChange={change}
+                  ></input>
                   <a className="btn">Edit Profile</a>
                 </li>
               </ul>
@@ -82,8 +83,11 @@ const ProfileDp = () => {
         className="card w-96 text-white border border-white"
       >
         <div className="card-body">
-          <h2 className="card-title">Abhishek Kant</h2>
-          <p>Branch</p>
+          <h2 className="card-title">{user.displayName}</h2>
+          <h2 className="flex gap-2">
+            UID:
+            <p>{user.uid}</p>
+          </h2>
           <p>Batch/Year</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Edit Profile</button>
