@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import Forms from "./pages/Forms";
 import ContactUs from "./pages/ContactUs";
 import Register from "./pages/Register";
@@ -15,6 +15,7 @@ import Landing from "./components/Landing";
 import BridgeItForm from "./components/forms/BridgeItForm";
 import HackathonForm from "./components/forms/HackathonForm";
 import FormsEvent from "./pages/formsEvent";
+import EasterEgg from "./components/EasterEgg";
 
 const App = () => {
   return (
@@ -37,6 +38,8 @@ const App = () => {
         <Route path="/bridge-it-form" element={<BridgeItForm />} />
         {/* Profile page */}
         <Route path="/profile" element={<Profile />} />
+        {/* hidden eatser */}
+        <Route path="/hidden-easter" element={<EasterEgg />} />
       </Routes>
     </div>
   );
