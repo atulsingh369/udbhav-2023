@@ -9,6 +9,8 @@ import { updateProfile } from "firebase/auth";
 import { BiCopy } from "react-icons/bi";
 import { auth, db } from "../config";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
@@ -34,7 +36,7 @@ const ProfileDp = () => {
         setProgresspercent(progress);
       },
       (error) => {
-        alert(error);
+       toast(error);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
