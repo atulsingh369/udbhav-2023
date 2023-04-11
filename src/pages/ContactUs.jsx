@@ -2,6 +2,8 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import ContactBox1 from "../components/ContactBox1";
 import TopBar from "../components/TopBar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactUs = () => {
   return (
@@ -9,6 +11,7 @@ const ContactUs = () => {
       <TopBar />
       <Sidebar />
       <ContactBox1 />
+      <ToastContainer />
     </section>
   );
 };

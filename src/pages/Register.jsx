@@ -204,7 +204,8 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black ">
+                  className="p-4 border border-base-100 bg-white text-black "
+                >
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -218,7 +219,8 @@ const Register = () => {
                 Already registered? &nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500">
+                  className="cursor-pointer text-blue-500"
+                >
                   Sign In
                 </span>
               </p>
@@ -260,7 +262,8 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black ">
+                  className="p-4 border border-base-100 bg-white text-black "
+                >
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -274,7 +277,8 @@ const Register = () => {
                 Don't have an account?&nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500">
+                  className="cursor-pointer text-blue-500"
+                >
                   &nbsp;Register
                 </span>
               </p>
