@@ -13,7 +13,6 @@ import { setUser } from "../store";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { doc, setDoc } from "firebase/firestore";
-import MainLoader from "../components/MainLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,6 +33,17 @@ const Register = () => {
 
   const signUp = async () => {
     setLoading(true);
+    if (!curUser.email || !curUser.password || !curUser.name) {
+      toast.error("Enter Required Details");
+      setCurUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setLoading(false);
+      setPasswordType("password");
+      return;
+    }
     try {
       const credential = await createUserWithEmailAndPassword(
         auth,
@@ -61,7 +71,14 @@ const Register = () => {
         password: "",
       });
     } catch (error) {
-      toast(error);
+      toast.error("Invalid Credential");
+      setCurUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setLoading(false);
+      setPasswordType("password");
     }
   };
 

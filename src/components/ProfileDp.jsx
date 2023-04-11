@@ -36,7 +36,7 @@ const ProfileDp = () => {
         setProgresspercent(progress);
       },
       (error) => {
-       toast(error);
+        toast(error);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -58,14 +58,14 @@ const ProfileDp = () => {
         year: year,
       });
       const res = await getDoc(doc(db, "users", auth.currentUser.uid));
-      const newData = res._document.data.value.mapValue.fields;
+      window.newData = res._document.data.value.mapValue.fields;
       // const data = newData.map((newData) => ({
       //   ...doc.data(),
       //   id: doc.id,
-      // }));
-      console.log(typeof newData);
+      // }));f
+
       // dispatch(setUser(newData));
-      console.log(user);
+      console.log(newData);
     } catch (error) {
       console.log(error);
     }
@@ -128,8 +128,8 @@ const ProfileDp = () => {
             <button onClick={copy}>
               <BiCopy />
             </button>
-          </div>
-          {user.branch && <p>{user.branch}</p>}
+					</div>
+					{/* <p>{ newData.branch }</p> */}
           {!user.branch && <p>Branch</p>}
           {user.year && <p>{user.year}</p>}
           {!user.year && <p>Year</p>}
