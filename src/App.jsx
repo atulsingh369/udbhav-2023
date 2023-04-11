@@ -40,6 +40,7 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         {/* hidden eatser */}
         <Route path="/hidden-easter" element={<EasterEgg />} />
+        {/* Loader */}
       </Routes>
     </div>
   );
