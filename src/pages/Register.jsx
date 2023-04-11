@@ -11,11 +11,15 @@ import { auth, db } from "../config";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const [state, setState] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [passwordType, setPasswordType] = useState("password");
+
   const provider = new GoogleAuthProvider();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [curUser, setCurUser] = useState({
@@ -110,6 +114,12 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
         window.alert(error);
+        setCurUser({
+          name: "",
+          email: "",
+          password: "",
+        });
+        setPasswordType("password");
       });
   };
 
@@ -133,8 +143,20 @@ const Register = () => {
         const email = error.customData.email;
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+        setCurUser({
+          name: "",
+          email: "",
+          password: "",
+        });
       });
+  };
+
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+      return;
+    }
+    setPasswordType("password");
   };
 
   //Form Display
@@ -180,9 +202,9 @@ const Register = () => {
               />
             </div>
 
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
               <input
-                type="password"
+                type={passwordType}
                 placeholder="Password"
                 name="password"
                 value={curUser.password}
@@ -191,8 +213,14 @@ const Register = () => {
                 }
                 autoComplete="off"
                 required
-                className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs"
+                className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
               />
+              <button
+                onClick={togglePassword}
+                className="p-4 border border-base-100 bg-white text-black "
+              >
+                {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
 
             <input
@@ -234,9 +262,9 @@ const Register = () => {
               />
             </div>
 
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
               <input
-                type="password"
+                type={passwordType}
                 placeholder="Password"
                 name="password"
                 value={curUser.password}
@@ -245,8 +273,14 @@ const Register = () => {
                 }
                 autoComplete="off"
                 required
-                className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs"
+                className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
               />
+              <button
+                onClick={togglePassword}
+                className="p-4 border border-base-100 bg-white text-black "
+              >
+                {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
 
             <input

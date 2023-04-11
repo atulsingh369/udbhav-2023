@@ -46,7 +46,7 @@ const Landing = () => {
               id="card-home"
             >
               <div className="card-body">
-                <p>
+                <p className="leading-7 tracking-wide font-semibold">
                   Udbhav is a Sanskrit word which means "origin" or "source". It
                   is often used to refer to the beginning or creation of
                   something.
@@ -54,7 +54,9 @@ const Landing = () => {
                 <div className="card-actions justify-end">
                   <Link to="/tour">
                     {" "}
-                    <button className="btn">Know More</button>
+                    <button className="btn bg-base-100 border-none">
+                      Know More
+                    </button>
                   </Link>
                 </div>
               </div>

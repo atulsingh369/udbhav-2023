@@ -16,9 +16,7 @@ const Tour = () => {
               IERT
             </button>
           </a>
-          <button className="btn glass w-32 text-lg font-semibold">
-            ALUMINI
-          </button>
+
           <a href="#gallery">
             <button className="btn glass w-32 text-lg font-semibold">
               GALLERY
