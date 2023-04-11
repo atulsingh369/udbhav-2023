@@ -55,11 +55,29 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                  <Link to="/tour">IERT TOUR</Link>
+                  {user ? (
+                    <Link to="/tour">IERT TOUR</Link>
+                  ) : (
+                    <span
+                      onClick={() => {
+                        toast.warning("Login to continue");
+                      }}>
+                      IERT TOUR
+                    </span>
+                  )}
                 </li>
-                <li>
+               <li>
+                {user ? (
                   <Link to="/events">EVENTS</Link>
-                </li>
+                ) : (
+                  <span
+                    onClick={() => {
+                      toast.warning("Login to continue");
+                    }}>
+                    EVENTS
+                  </span>
+                )}
+              </li>
                 {/* <li tabIndex={0}>
                   <Link to="/forms" className="justify-between">
                     FORMS
@@ -93,10 +111,28 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 items-center  lg:gap-5">
               <li>
-                <Link to="/tour">IERT TOUR</Link>
+                {user ? (
+                  <Link to="/tour">IERT TOUR</Link>
+                ) : (
+                  <span
+                    onClick={() => {
+                      toast.warning("Login to continue");
+                    }}>
+                    IERT TOUR
+                  </span>
+                )}
               </li>
               <li>
-                <Link to="/events">EVENTS</Link>
+                {user ? (
+                  <Link to="/events">EVENTS</Link>
+                ) : (
+                  <span
+                    onClick={() => {
+                      toast.warning("Login to continue");
+                    }}>
+                    EVENTS
+                  </span>
+                )}
               </li>
 
               {/* <li tabIndex={0}>

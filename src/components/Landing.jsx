@@ -4,13 +4,17 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { EarthCanvas, StarsCanvas } from "./canvas";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { slideIn } from "../utils/motion";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import MainLoader from "./MainLoader";
+import { useSelector } from "react-redux";
 
 const Landing = () => {
   const [loading, setLoading] = useState(false);
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
   useEffect(() => {}, [loading]);
   return (
     <>
@@ -56,12 +60,21 @@ const Landing = () => {
                       creation of something.
                     </p>
                     <div className="card-actions justify-end">
-                      <Link to="/tour">
-                        {" "}
-                        <button className="btn bg-base-100 border-none">
+                      {user ? (
+                        <Link to="/tour">
+                          <button className="btn bg-base-100 border-none">
+                            Know More
+                          </button>
+                        </Link>
+                      ) : (
+                        <button
+                          onClick={() => {
+                            toast.warning("Login to continue");
+                          }}
+                          className="btn bg-base-100 border-none">
                           Know More
                         </button>
-                      </Link>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -74,6 +87,7 @@ const Landing = () => {
               <EarthCanvas />
             </motion.div>
           </div>
+          <ToastContainer />
         </div>
       )}
     </>
