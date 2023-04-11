@@ -9,7 +9,11 @@ const TechEvents = () => {
 
   const alert = () => {
     toast.warning("Forms will be available soon");
-  };
+	};
+	
+		const login = () => {
+      toast.warning("Login to Continue");
+    };
 
   return (
     <div className="flex flex-col items-center justify-center mt-14 lg:mt-0 ">
@@ -66,7 +70,8 @@ const TechEvents = () => {
                 <div className="flex gap-5 flex-wrap justify-center items-center">
                   {item[1].map((value, index) => {
                     return (
-                      <div
+											<div
+												onClick={login}
                         className="card w-64 h-[28rem] bg-base-100 shadow-xl"
                         key={index}>
                         <figure>
