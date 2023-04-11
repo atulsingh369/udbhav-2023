@@ -13,6 +13,7 @@ import { setUser } from "../store";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { doc, setDoc } from "firebase/firestore";
+import MainLoader from "../components/MainLoader";
 
 const Register = () => {
   const [state, setState] = useState(false);
@@ -31,7 +32,6 @@ const Register = () => {
 
   const signUp = async () => {
     try {
-      setLoading(true);
       const credential = await createUserWithEmailAndPassword(
         auth,
         curUser.email,
@@ -52,13 +52,13 @@ const Register = () => {
         email: "",
         password: "",
       });
-      setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
   const signIn = async () => {
+    setLoading(true);
     await signInWithEmailAndPassword(auth, curUser.email, curUser.password)
       .then((userCredential) => {
         const res = userCredential.user;
@@ -78,6 +78,7 @@ const Register = () => {
           email: "",
           password: "",
         });
+        setLoading(false);
         setPasswordType("password");
       });
   };
@@ -122,145 +123,150 @@ const Register = () => {
   //true --> log in page
   //false --> register page
   const changeState = () => setState(!state);
+
+  useEffect(() => {}, [loading]);
+
   return (
-    <div className="h-screen pt-32 flex justify-center items-center bg-form-background">
-      <div className="bg-white shadow-2xl  rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen p-5">
-        {!state && (
-          //Register Page
-          <div className="flex pt-4 md:pt-0 flex-col items-center justify-evenly gap-7">
-            <p className="font-bold  text-3xl ">Register</p>
+    <>
+      {loading ? (
+        <MainLoader />
+      ) : (
+        <div className="h-screen pt-32 flex justify-center items-center bg-form-background">
+          <div className="bg-white shadow-2xl  rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen p-5">
+            {!state && (
+              //Register Page
+              <div className="flex pt-4 md:pt-0 flex-col items-center justify-evenly gap-7">
+                <p className="font-bold  text-3xl ">Register</p>
 
-            <div className="form-control w-full max-w-xs">
-              <input
-                name="name"
-                autoFocus
-                value={curUser.name}
-                onChange={(e) =>
-                  setCurUser({ ...curUser, name: e.target.value })
-                }
-                type="text"
-                placeholder="Username"
-                autoComplete="off"
-                required
-                className="input bg-white border border-base-100 shadow-lg   input-bordered w-full max-w-xs"
-              />
+                <div className="form-control w-full max-w-xs">
+                  <input
+                    name="name"
+                    autoFocus
+                    value={curUser.name}
+                    onChange={(e) =>
+                      setCurUser({ ...curUser, name: e.target.value })
+                    }
+                    type="text"
+                    placeholder="Username"
+                    autoComplete="off"
+                    required
+                    className="input bg-white border border-base-100 shadow-lg   input-bordered w-full max-w-xs"
+                  />
+                </div>
+
+                <div className="form-control w-full max-w-xs">
+                  <input
+                    type="text"
+                    name="email"
+                    value={curUser.email}
+                    onChange={(e) =>
+                      setCurUser({ ...curUser, email: e.target.value })
+                    }
+                    placeholder="Email"
+                    autoComplete="off"
+                    required
+                    className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
+                  />
+                </div>
+
+                <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
+                  <input
+                    type={passwordType}
+                    placeholder="Password"
+                    name="password"
+                    value={curUser.password}
+                    onChange={(e) =>
+                      setCurUser({ ...curUser, password: e.target.value })
+                    }
+                    autoComplete="off"
+                    required
+                    className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
+                  />
+                  <button
+                    onClick={togglePassword}
+                    className="p-4 border border-base-100 bg-white text-black ">
+                    {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
+
+                <div className="btn" onClick={() => signUp()}>
+                  {loading ? "Registering..." : "Register"}
+                </div>
+
+                <p>
+                  Already registered? &nbsp;
+                  <span
+                    onClick={changeState}
+                    className="cursor-pointer text-blue-500">
+                    Sign In
+                  </span>
+                </p>
+              </div>
+            )}
+            {state && (
+              // Login Page
+              <div className="flex flex-col items-center justify-evenly gap-7">
+                <p className="font-bold  text-3xl ">Log In</p>
+
+                <div className="form-control w-full max-w-xs">
+                  <input
+                    autoFocus
+                    type="text"
+                    name="email"
+                    value={curUser.email}
+                    onChange={(e) =>
+                      setCurUser({ ...curUser, email: e.target.value })
+                    }
+                    placeholder="Email"
+                    autoComplete="off"
+                    required
+                    className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
+                  />
+                </div>
+
+                <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
+                  <input
+                    type={passwordType}
+                    placeholder="Password"
+                    name="password"
+                    value={curUser.password}
+                    onChange={(e) =>
+                      setCurUser({ ...curUser, password: e.target.value })
+                    }
+                    autoComplete="off"
+                    required
+                    className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
+                  />
+                  <button
+                    onClick={togglePassword}
+                    className="p-4 border border-base-100 bg-white text-black ">
+                    {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
+
+                <div className="btn" onClick={() => signIn()}>
+                  {loading ? "Loading.." : "Log In"}
+                </div>
+
+                <p>
+                  Don't have an account?&nbsp;
+                  <span
+                    onClick={changeState}
+                    className="cursor-pointer text-blue-500">
+                    &nbsp;Register
+                  </span>
+                </p>
+              </div>
+            )}
+            ;
+            <div className="flex flex-col justify-center items-center">
+              <p className="mb-4">OR</p>
+              <GoogleButton onClick={googleLogin} />
             </div>
-
-            <div className="form-control w-full max-w-xs">
-              <input
-                type="text"
-                name="email"
-                value={curUser.email}
-                onChange={(e) =>
-                  setCurUser({ ...curUser, email: e.target.value })
-                }
-                placeholder="Email"
-                autoComplete="off"
-                required
-                className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
-              />
-            </div>
-
-            <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
-              <input
-                type={passwordType}
-                placeholder="Password"
-                name="password"
-                value={curUser.password}
-                onChange={(e) =>
-                  setCurUser({ ...curUser, password: e.target.value })
-                }
-                autoComplete="off"
-                required
-                className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
-              />
-              <button
-                onClick={togglePassword}
-                className="p-4 border border-base-100 bg-white text-black "
-              >
-                {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-
-            <div className="btn" onClick={() => signUp()}>
-              {loading ? "Registering..." : "Register"}
-            </div>
-
-            <p>
-              Already registered? &nbsp;
-              <span
-                onClick={changeState}
-                className="cursor-pointer text-blue-500"
-              >
-                Sign In
-              </span>
-            </p>
           </div>
-        )}
-        {state && (
-          // Login Page
-          <div className="flex flex-col items-center justify-evenly gap-7">
-            <p className="font-bold  text-3xl ">Log In</p>
-
-            <div className="form-control w-full max-w-xs">
-              <input
-                autoFocus
-                type="text"
-                name="email"
-                value={curUser.email}
-                onChange={(e) =>
-                  setCurUser({ ...curUser, email: e.target.value })
-                }
-                placeholder="Email"
-                autoComplete="off"
-                required
-                className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
-              />
-            </div>
-
-            <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
-              <input
-                type={passwordType}
-                placeholder="Password"
-                name="password"
-                value={curUser.password}
-                onChange={(e) =>
-                  setCurUser({ ...curUser, password: e.target.value })
-                }
-                autoComplete="off"
-                required
-                className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
-              />
-              <button
-                onClick={togglePassword}
-                className="p-4 border border-base-100 bg-white text-black "
-              >
-                {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-
-            <div className="btn" onClick={() => signIn()}>
-              {loading ? "Loading.." : "Log In"}
-            </div>
-
-            <p>
-              Don't have an account?&nbsp;
-              <span
-                onClick={changeState}
-                className="cursor-pointer text-blue-500"
-              >
-                &nbsp;Register
-              </span>
-            </p>
-          </div>
-        )}
-        ;
-        <div className="flex flex-col justify-center items-center">
-          <p className="mb-4">OR</p>
-          <GoogleButton onClick={googleLogin} />
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
