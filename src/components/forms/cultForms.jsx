@@ -53,12 +53,15 @@ const cultForms = () => {
       {Object.entries(cultEvents).map((item, i) => {
         if (item[0] === id) {
           return (
-            <div className="login-box scrollbar-hidden overflow-y-auto" key={i}>
+            <div
+              className="login-box scrollbar-hidden overflow-y-scroll w-full md:w-1/2  "
+              key={i}
+            >
               {item[1].map((value, index) => {
                 return (
                   <div key={index}>
                     <h2 className="text-2xl font-semibold">{value.title}</h2>
-                    <form>
+                    <form className="flex flex-col h-96 ">
                       {value.type === "group" && (
                         <div className="flex flex-col gap-5">
                           <div className="user-box">
@@ -95,7 +98,8 @@ const cultForms = () => {
                                   </div>
                                   <button
                                     className="text-white"
-                                    onClick={() => handleUpdate(item, i)}>
+                                    onClick={() => handleUpdate(item, i)}
+                                  >
                                     Update
                                   </button>
                                 </div>
@@ -104,7 +108,7 @@ const cultForms = () => {
                         </div>
                       )}
                       {value.type === "group" && (
-                        <div ref={memberRef} className="flex flex-row gap-10">
+                        <div ref={memberRef} className="flex flex-row gap-10 ">
                           <div className="user-box">
                             <input
                               type="text"
@@ -187,7 +191,8 @@ const cultForms = () => {
                         <button
                           type="button"
                           onClick={addMember}
-                          className="text-white my-5 rounded-xl p-3 border-2 border-white">
+                          className="text-white my-5 rounded-xl p-3 border-2 border-white w-fit"
+                        >
                           Add more
                         </button>
                       )}
@@ -197,7 +202,7 @@ const cultForms = () => {
                           <label>{value.extra}*</label>
                         </div>
                       )}
-                      <a href="#">
+                      <a href="#" className="w-fit">
                         <span></span>
                         <span></span>
                         <span></span>

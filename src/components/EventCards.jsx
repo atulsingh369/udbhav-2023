@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Events } from "../components/Data";
-
+import { BiDownload } from "react-icons/bi";
 const EventCards = () => {
   return (
     <div className="w-full pt-16 text-white ">
@@ -9,14 +9,17 @@ const EventCards = () => {
           return (
             <div
               className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105 transition-all ease-in-out duration-300"
-              key={i}>
+              key={i}
+            >
               <div className="flex gap-5 flex-wrap justify-center items-center">
                 {item[1].map((value, index) => {
                   return (
-                    <Link to={value.link}>
-                      <div
-                        className="card w-64 h-[28rem] bg-base-100 shadow-xl"
-                        key={index}>
+                    <div
+                      className="card w-64 h-[28rem] bg-base-100 shadow-xl"
+                      key={index}
+                    >
+                      {" "}
+                      <Link to={value.link}>
                         <figure>
                           <img
                             src={value.image}
@@ -24,14 +27,26 @@ const EventCards = () => {
                             className="object-contain"
                           />
                         </figure>
-                        <div className="card-body">
+                      </Link>
+                      <div className="card-body">
+                        <Link to={value.link}>
                           <h2 className="card-title ext-2xl ">{value.title}</h2>
-                          <p className="text-justify font-semibold text-white">
-                            {value.describe}
-                          </p>
+                        </Link>
+                        <p className="text-justify font-semibold text-white">
+                          {value.describe}
+                        </p>
+                        <div className="card-actions justify-end">
+                          <a href={value.rules} target="_blank">
+                            <button className="btn flex flex-row gap-5 items-center justify-center ">
+                              Rules{" "}
+                              <div>
+                                <BiDownload className="text-xl" />
+                              </div>
+                            </button>
+                          </a>
                         </div>
                       </div>
-                    </Link>
+                    </div>
                   );
                 })}
               </div>
