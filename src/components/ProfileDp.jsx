@@ -15,7 +15,6 @@ const ProfileDp = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
- 
 
   const change = async (e) => {
     e.preventDefault();
@@ -57,12 +56,14 @@ const ProfileDp = () => {
         year: year,
       });
       const res = await getDoc(doc(db, "users", auth.currentUser.uid));
-      let newData = res._document.data.value.mapValue.fields;
+      const newData = res._document.data.value.mapValue.fields;
       // const data = newData.map((newData) => ({
       //   ...doc.data(),
       //   id: doc.id,
       // }));
-      console.log(newData.branch);
+      console.log(typeof(newData));
+      // dispatch(setUser(newData));
+      console.log(user);
     } catch (error) {
       console.log(error);
     }
@@ -128,11 +129,10 @@ const ProfileDp = () => {
               <BiCopy />
             </button>
           </div>
-          <p>{newData.branch}</p>
-          {newData.branch && <p>{newData.branch}</p>}
-          {!newData.branch && <p>Branch</p>}
-          {newData.year && <p>{newData.year}</p>}
-          {!newData.year && <p>Year</p>}
+          {user.branch && <p>{user.branch}</p>}
+          {!user.branch && <p>Branch</p>}
+          {user.year && <p>{user.year}</p>}
+          {!user.year && <p>Year</p>}
           <div className="card-actions justify-end">
             <button className="btn btn-primary" onClick={editProfile}>
               Edit Profile
