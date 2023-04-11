@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { techEvents } from "../Data";
 import "./FormStyle.scss";
 
 const techForms = () => {
   const { id } = useParams();
-  // const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
 
   const memberRef = useRef();
 

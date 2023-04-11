@@ -61,14 +61,12 @@ const ProfileDp = () => {
       //   ...doc.data(),
       //   id: doc.id,
       // }));
-      console.log(typeof(newData));
+      console.log(typeof newData);
       // dispatch(setUser(newData));
       console.log(user);
     } catch (error) {
       console.log(error);
     }
-
-    console.log(user);
   };
 
   const copy = () => {
