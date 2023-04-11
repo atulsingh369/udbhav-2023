@@ -68,11 +68,9 @@ const Landing = () => {
                         </Link>
                       ) : (
                         <button
-                          onClick={() => {
-                            toast.warning("Login to continue");
-                          }}
-                          className="btn bg-base-100 border-none">
-                          Know More
+                          className="btn bg-base-100 border-none"
+                          onClick={() => navigate("/register")}>
+                          Register
                         </button>
                       )}
                     </div>

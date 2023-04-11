@@ -25,10 +25,10 @@ const ContactBox1 = () => {
                       <img
                         src={value.image}
                         alt="coordinator_image"
-                        className=" object-fill w-full h-[16rem]"
+                        className=" object-cover w-full h-[16rem]"
                       />
                     </figure>
-                    <div className="flex flex-col items-center tracking-widest justify-center gap-1 h-full text-white">
+                    <div className="flex flex-col items-center tracking-wider justify-center gap-1 h-full text-white">
                       <p className="text-sm">{value.name}</p>
                       <p className="text-sm">{value.email}</p>
                       <p className="text-sm">{value.contact}</p>
