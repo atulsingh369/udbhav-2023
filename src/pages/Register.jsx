@@ -34,6 +34,17 @@ const Register = () => {
 
   const signUp = async () => {
     setLoading(true);
+    if (!curUser.email || !curUser.password || !curUser.name) {
+      toast.error("Enter Required Details");
+      setCurUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setLoading(false);
+      setPasswordType("password");
+      return;
+    }
     try {
       const credential = await createUserWithEmailAndPassword(
         auth,
