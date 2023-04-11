@@ -45,6 +45,9 @@ const Register = () => {
         uid: res.uid,
         displayName: res.displayName,
         email: res.email,
+        branch: null,
+        year: null,
+        events: null,
       });
       setState(!state);
       setCurUser({
