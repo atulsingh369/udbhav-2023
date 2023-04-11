@@ -7,15 +7,17 @@ export const Department = {
       contact: 6391511267,
       email: "fahack111@gmail.com",
       show: true,
+      post: "",
       id: "dep-1",
     },
     {
-      name: "Abhishek kant",
+      name: "Sabaa Parvez",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/xcvbn.jpg?updatedAt=1681236364856",
       contact: 123456789,
-      email: "test@test.test",
-      show: true,
+      email: "sabaparvez016@gmail.com",
+      show: false,
+      post: "",
     },
   ],
   "Additional General Captain": [
@@ -26,15 +28,17 @@ export const Department = {
       contact: 6388643755,
       email: "shivasingh18734@gmail.com",
       show: true,
+      post: "",
       id: "dep-2",
     },
     {
-      name: "Abhishek kant",
+      name: "Priyanshi Sagar",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/priya.jpg?updatedAt=1681239217937",
+      contact: 9368918518,
+      email: "priyanshisagar30@gmail.com",
       show: true,
+      post: "",
     },
   ],
   Captain: [
@@ -45,6 +49,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -54,6 +59,7 @@ export const Department = {
       contact: 7348105821,
       email: "ayushrajmishra21@gmail.com",
       show: true,
+      post: "",
     },
     {
       name: "Abhisht pandey",
@@ -62,6 +68,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Prakhar Singh",
@@ -70,6 +77,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -78,6 +86,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -86,15 +95,26 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
-      name: "Abhishek kant",
+      name: "Shreya Rai",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_000014.jpg?updatedAt=1681237991933",
+      contact: 9336041946,
+      email: "shreyarai1508@gmail.com",
       show: true,
+      post: "",
+    },
+    {
+      name: "Arpita Singh",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/sdfgh.jpg?updatedAt=1681239521179",
+      contact: 9528183647,
+      email: "as2002.doaks@gmail.com",
+      show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -103,6 +123,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -111,6 +132,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -119,6 +141,16 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-11_at_23.20.30.jpg?updatedAt=1681235531784",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      post: "",
     },
   ],
   "Additional Captain": [
@@ -129,6 +161,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -138,6 +171,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -146,30 +180,35 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Abhinav Rai",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-11_at_23.04.03.jpg?updatedAt=1681235630810",
+      contact: 8299539686,
+      email: "abhi9raisaheb@gmail.com",
+      post: "",
       show: true,
+      post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Rohit Rajput",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/rohit.png?updatedAt=1681238353409",
+      contact: 9112785863,
+      email: "rajputrohit9049@gmail.com",
       show: true,
+      post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Akshat Varshney",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_00.08.49.jpg?updatedAt=1681238454256",
+      contact: 8630844212,
+      email: "akshatvarshney61@gmail.com",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -179,6 +218,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -187,6 +227,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -195,6 +236,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -203,6 +245,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -211,6 +254,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -220,6 +264,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -228,6 +273,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -236,6 +282,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -244,6 +291,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -252,6 +300,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -261,6 +310,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -269,16 +319,68 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
   ],
   Discipline: [
     {
-      name: "Abhishek kant",
+      name: "Nityam Upadhyay",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Screenshot_20230411-234301-503.png?updatedAt=1681236949967",
+      contact: 9696766400,
+      email: "iamnityamupadhyay@gmail.com",
       show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Suraj Yadav",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/suraj.jpg?updatedAt=1681237246505",
+      contact: 7054044344,
+      email: "yadavsuraj0443@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Siddhant Sharanroy",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20211017-WA0021.jpg?updatedAt=1681237316602",
+      contact: 6386823704,
+      email: "siddhantsharanroy@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Udit Pratap Singh",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230225_225336.jpg?updatedAt=1681237502189",
+      contact: 9897415620,
+      email: "uditpratap7075@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Rohit Kumar",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/rohitsir.jpg?updatedAt=1681238717369",
+      contact: 6387540764,
+      email: "rkflash22@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Yash Srivastava",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/yashsir.jpg?updatedAt=1681238821003",
+      contact: 6391550263,
+      email: "shekhar.yash01@gmail.com",
+      show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -288,6 +390,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -297,62 +400,19 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
-      id: "dep-3",
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-      id: "dep-3",
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-      id: "dep-3",
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-      id: "dep-3",
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-      id: "dep-3",
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
+      post: "",
       id: "dep-3",
     },
   ],
   Technical: [
     {
-      name: "Abhishek kant",
+      name: "Mukul Pandey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230411_233229_3.jpg?updatedAt=1681237594386",
+      contact: 9936873603,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -362,6 +422,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -370,6 +431,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -378,6 +440,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -386,6 +449,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
   ],
   "Fooding & Lodging": [
@@ -396,6 +460,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
       id: "dep-3",
     },
     {
@@ -405,6 +470,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -413,6 +479,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -421,6 +488,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
     {
       name: "Abhishek kant",
@@ -429,6 +497,7 @@ export const Department = {
       contact: 123456789,
       email: "test@test.test",
       show: true,
+      post: "",
     },
   ],
 };

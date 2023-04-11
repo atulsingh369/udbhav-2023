@@ -33,17 +33,21 @@ const ContactBox1 = () => {
                         <HiUser />
                         <p className="text-sm">{value.name}</p>
                       </div>
-                      <div className="flex flex-row items-center gap-2">
-                        <HiPhone />
-                        <p className="text-sm">{value.contact}</p>
+
+                      <div className="flex flex-row items-center ">
+                        <HiOutlineMail />
+                        <p className="text-sm">{value.email}</p>
                       </div>
 
                       {value.show && (
-                        <div className="flex flex-row items-center ">
-                          <HiOutlineMail />
-                          <p className="text-sm">{value.email}</p>
+                        <div className="flex flex-row items-center gap-2">
+                          <HiPhone />
+                          <p className="text-sm">{value.contact}</p>
                         </div>
                       )}
+                      <div className="flex flex-row items-center gap-2">
+                        <p className="text-sm">{value.post}</p>
+                      </div>
                     </div>
                   </div>
                 );
