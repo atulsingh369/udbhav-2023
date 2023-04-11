@@ -117,11 +117,11 @@ export const Department = {
       post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Khushi Yadav",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_00.54.35.jpg?updatedAt=1681241206909",
+      contact: 7068040982,
+      email: "9889khushi@gmail.com",
       show: true,
       post: "",
     },
@@ -155,11 +155,11 @@ export const Department = {
   ],
   "Additional Captain": [
     {
-      name: "Abhishek kant",
+      name: "Aditya Singh",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230411_215102.jpg?updatedAt=1681230558846",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Picsart_23-04-12_00-35-28-332.jpg?updatedAt=1681240669235",
+      contact: 6396764402,
+      email: "adisingh2402@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -322,6 +322,44 @@ export const Department = {
       post: "",
     },
   ],
+  "Vice Captain": [
+    {
+      name: "Ankita  Mall",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230412-WA0002.jpg?updatedAt=1681241319302",
+      contact: 7007204032,
+      email: "ankitamall1405@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20220204_172222.jpg?updatedAt=1681241529300",
+      contact: 7408099356,
+      email: "22sharmaaditi@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      post: "",
+    },
+  ],
   Discipline: [
     {
       name: "Nityam Upadhyay",
@@ -384,21 +422,21 @@ export const Department = {
       id: "dep-3",
     },
     {
-      name: "Abhishek kant",
+      name: "Divyanshu Singh",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Screenshot_20230412-002034_2.png?updatedAt=1681240283524",
+      contact: 9839221142,
+      email: "divyanshusinghpbh00@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
     },
     {
-      name: "Abhishek kant",
+      name: "",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+      contact: 55,
+      email: "",
       show: true,
       post: "",
       id: "dep-3",
