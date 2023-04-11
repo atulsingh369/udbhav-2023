@@ -9,13 +9,14 @@ import { updateProfile } from "firebase/auth";
 import { BiCopy } from "react-icons/bi";
 import { auth, db } from "../config";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
- 
 
   const change = async (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const ProfileDp = () => {
         setProgresspercent(progress);
       },
       (error) => {
-        alert(error);
+        toast(error);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -57,17 +58,17 @@ const ProfileDp = () => {
         year: year,
       });
       const res = await getDoc(doc(db, "users", auth.currentUser.uid));
-      let newData = res._document.data.value.mapValue.fields;
+      window.newData = res._document.data.value.mapValue.fields;
       // const data = newData.map((newData) => ({
       //   ...doc.data(),
       //   id: doc.id,
-      // }));
-      console.log(newData.branch);
+      // }));f
+
+      // dispatch(setUser(newData));
+      console.log(newData);
     } catch (error) {
       console.log(error);
     }
-
-    console.log(user);
   };
 
   const copy = () => {
@@ -127,12 +128,11 @@ const ProfileDp = () => {
             <button onClick={copy}>
               <BiCopy />
             </button>
-          </div>
-          <p>{newData.branch}</p>
-          {newData.branch && <p>{newData.branch}</p>}
-          {!newData.branch && <p>Branch</p>}
-          {newData.year && <p>{newData.year}</p>}
-          {!newData.year && <p>Year</p>}
+					</div>
+					{/* <p>{ newData.branch }</p> */}
+          {!user.branch && <p>Branch</p>}
+          {user.year && <p>{user.year}</p>}
+          {!user.year && <p>Year</p>}
           <div className="card-actions justify-end">
             <button className="btn btn-primary" onClick={editProfile}>
               Edit Profile

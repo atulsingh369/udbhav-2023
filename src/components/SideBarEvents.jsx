@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const SideBarEvents = () => {
-  const [schedule, setSchedule] = useState(false);
+  // const [schedule, setSchedule] = useState(false);
   const [event, setEvent] = useState(false);
   const navigate = useNavigate();
   return (
@@ -24,7 +24,7 @@ const SideBarEvents = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
-          <li className="bg-base-300" onClick={() => setSchedule(!schedule)}>
+          {/* <li className="bg-base-300" onClick={() => setSchedule(!schedule)}>
             <a>SCHEDULE</a>
           </li>
           {schedule && (
@@ -32,7 +32,7 @@ const SideBarEvents = () => {
               <li>DAY 1</li>
               <li>DAY 2</li>
             </div>
-          )}
+          )} */}
           <li className="bg-base-300" onClick={() => setEvent(!event)}>
             <a>EVENTS</a>
           </li>

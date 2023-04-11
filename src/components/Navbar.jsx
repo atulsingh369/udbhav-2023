@@ -5,6 +5,8 @@ import { signOut } from "firebase/auth";
 import { auth } from "../config";
 import { setUser } from "../store";
 import MainLoader from "./MainLoader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user);
@@ -20,7 +22,7 @@ const Navbar = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        toast(error);
       });
     dispatch(setUser(null));
     navigate("/");
@@ -58,7 +60,7 @@ const Navbar = () => {
                 <li>
                   <Link to="/events">EVENTS</Link>
                 </li>
-                <li tabIndex={0}>
+                {/* <li tabIndex={0}>
                   <Link to="/forms" className="justify-between">
                     FORMS
                     <svg
@@ -78,7 +80,7 @@ const Navbar = () => {
                       <a>Submenu 2</a>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/contact-us">CONTACT US</Link>
                 </li>
@@ -97,9 +99,9 @@ const Navbar = () => {
                 <Link to="/events">EVENTS</Link>
               </li>
 
-              <li tabIndex={0}>
+              {/* <li tabIndex={0}>
                 <Link to="/forms">
-                  FORMS
+                  UPDATES
                   <svg
                     className="fill-current"
                     xmlns="http://www.w3.org/2000/svg"
@@ -111,13 +113,13 @@ const Navbar = () => {
                 </Link>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <a>Forms</a>
                   </li>
                   <li>
                     <a>Submenu 2</a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li
                 className="cursor-pointer"
                 onClick={() => navigate("/contact-us")}>

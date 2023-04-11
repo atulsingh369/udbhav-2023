@@ -13,7 +13,8 @@ import { setUser } from "../store";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { doc, setDoc } from "firebase/firestore";
-import MainLoader from "../components/MainLoader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [state, setState] = useState(false);
@@ -31,8 +32,19 @@ const Register = () => {
   });
 
   const signUp = async () => {
+    setLoading(true);
+    if (!curUser.email || !curUser.password || !curUser.name) {
+      toast.error("Enter Required Details");
+      setCurUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setLoading(false);
+      setPasswordType("password");
+      return;
+    }
     try {
-      setLoading(true);
       const credential = await createUserWithEmailAndPassword(
         auth,
         curUser.email,
@@ -45,20 +57,28 @@ const Register = () => {
       await setDoc(doc(db, "users", res.uid), {
         uid: res.uid,
         displayName: res.displayName,
+        photoURL: res.photoURL,
         email: res.email,
         branch: null,
         year: null,
         events: null,
       });
+      setLoading(false);
       setState(!state);
       setCurUser({
         name: "",
         email: "",
         password: "",
       });
-      setLoading(false);
     } catch (error) {
-      console.log(error);
+      toast.error("Invalid Credential");
+      setCurUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setLoading(false);
+      setPasswordType("password");
     }
   };
 
@@ -76,8 +96,7 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
-        window.alert(error);
+        toast.error("Invalid Credential");
         setCurUser({
           name: "",
           email: "",
@@ -97,13 +116,12 @@ const Register = () => {
         // The signed-in user info.
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
-        console.log(user);
         dispatch(setUser(user));
         navigate("/");
       })
       .catch((error) => {
         // Handle Errors here.
-        console.log(error);
+        toast(error);
         // The email of the user's account used.
         const email = error.customData.email;
         // The AuthCredential type that was used.
@@ -133,148 +151,147 @@ const Register = () => {
 
   return (
     <>
-      {loading ? (
-        <MainLoader />
-      ) : (
-        <div className="h-screen pt-32 flex justify-center items-center bg-form-background">
-          <div className="bg-white shadow-2xl  rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen p-5">
-            {!state && (
-              //Register Page
-              <div className="flex pt-4 md:pt-0 flex-col items-center justify-evenly gap-7">
-                <p className="font-bold  text-3xl ">Register</p>
+      <div className="h-screen pt-32 flex justify-center items-center bg-form-background">
+        <div className="bg-white shadow-2xl  rounded-lg shadow-blue-800 md:h-auto h-screen md:w-96 w-screen p-5">
+          {!state && (
+            //Register Page
+            <div className="flex pt-4 md:pt-0 flex-col items-center justify-evenly gap-7">
+              <p className="font-bold  text-3xl ">Register</p>
 
-                <div className="form-control w-full max-w-xs">
-                  <input
-                    name="name"
-                    autoFocus
-                    value={curUser.name}
-                    onChange={(e) =>
-                      setCurUser({ ...curUser, name: e.target.value })
-                    }
-                    type="text"
-                    placeholder="Username"
-                    autoComplete="off"
-                    required
-                    className="input bg-white border border-base-100 shadow-lg   input-bordered w-full max-w-xs"
-                  />
-                </div>
-
-                <div className="form-control w-full max-w-xs">
-                  <input
-                    type="text"
-                    name="email"
-                    value={curUser.email}
-                    onChange={(e) =>
-                      setCurUser({ ...curUser, email: e.target.value })
-                    }
-                    placeholder="Email"
-                    autoComplete="off"
-                    required
-                    className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
-                  />
-                </div>
-
-                <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
-                  <input
-                    type={passwordType}
-                    placeholder="Password"
-                    name="password"
-                    value={curUser.password}
-                    onChange={(e) =>
-                      setCurUser({ ...curUser, password: e.target.value })
-                    }
-                    autoComplete="off"
-                    required
-                    className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
-                  />
-                  <button
-                    onClick={togglePassword}
-                    className="p-4 border border-base-100 bg-white text-black "
-                  >
-                    {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
-                  </button>
-                </div>
-
-                <div className="btn" onClick={() => signUp()}>
-                  {loading ? "Registering..." : "Register"}
-                </div>
-
-                <p>
-                  Already registered? &nbsp;
-                  <span
-                    onClick={changeState}
-                    className="cursor-pointer text-blue-500"
-                  >
-                    Sign In
-                  </span>
-                </p>
+              <div className="form-control w-full max-w-xs">
+                <input
+                  name="name"
+                  autoFocus
+                  value={curUser.name}
+                  onChange={(e) =>
+                    setCurUser({ ...curUser, name: e.target.value })
+                  }
+                  type="text"
+                  placeholder="Username"
+                  autoComplete="off"
+                  required
+                  className="input bg-white border border-base-100 shadow-lg   input-bordered w-full max-w-xs"
+                />
               </div>
-            )}
-            {state && (
-              // Login Page
-              <div className="flex flex-col items-center justify-evenly gap-7">
-                <p className="font-bold  text-3xl ">Log In</p>
 
-                <div className="form-control w-full max-w-xs">
-                  <input
-                    autoFocus
-                    type="text"
-                    name="email"
-                    value={curUser.email}
-                    onChange={(e) =>
-                      setCurUser({ ...curUser, email: e.target.value })
-                    }
-                    placeholder="Email"
-                    autoComplete="off"
-                    required
-                    className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
-                  />
-                </div>
-
-                <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
-                  <input
-                    type={passwordType}
-                    placeholder="Password"
-                    name="password"
-                    value={curUser.password}
-                    onChange={(e) =>
-                      setCurUser({ ...curUser, password: e.target.value })
-                    }
-                    autoComplete="off"
-                    required
-                    className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
-                  />
-                  <button
-                    onClick={togglePassword}
-                    className="p-4 border border-base-100 bg-white text-black "
-                  >
-                    {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
-                  </button>
-                </div>
-
-                <div className="btn" onClick={() => signIn()}>
-                  {loading ? "Loading.." : "Log In"}
-                </div>
-
-                <p>
-                  Don't have an account?&nbsp;
-                  <span
-                    onClick={changeState}
-                    className="cursor-pointer text-blue-500"
-                  >
-                    &nbsp;Register
-                  </span>
-                </p>
+              <div className="form-control w-full max-w-xs">
+                <input
+                  type="text"
+                  name="email"
+                  value={curUser.email}
+                  onChange={(e) =>
+                    setCurUser({ ...curUser, email: e.target.value })
+                  }
+                  placeholder="Email"
+                  autoComplete="off"
+                  required
+                  className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
+                />
               </div>
-            )}
-            ;
-            <div className="flex flex-col justify-center items-center">
-              <p className="mb-4">OR</p>
-              <GoogleButton onClick={googleLogin} />
+
+              <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
+                <input
+                  type={passwordType}
+                  placeholder="Password"
+                  name="password"
+                  value={curUser.password}
+                  onChange={(e) =>
+                    setCurUser({ ...curUser, password: e.target.value })
+                  }
+                  autoComplete="off"
+                  required
+                  className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
+                />
+                <button
+                  onClick={togglePassword}
+                  className="p-4 border border-base-100 bg-white text-black "
+                >
+                  {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
+              <div className="btn" onClick={() => signUp()}>
+                {loading ? "Registering..." : "Register"}
+              </div>
+              <ToastContainer />
+
+              <p>
+                Already registered? &nbsp;
+                <span
+                  onClick={changeState}
+                  className="cursor-pointer text-blue-500"
+                >
+                  Sign In
+                </span>
+              </p>
             </div>
+          )}
+          {state && (
+            // Login Page
+            <div className="flex flex-col items-center justify-evenly gap-7">
+              <p className="font-bold  text-3xl ">Log In</p>
+
+              <div className="form-control w-full max-w-xs">
+                <input
+                  autoFocus
+                  type="text"
+                  name="email"
+                  value={curUser.email}
+                  onChange={(e) =>
+                    setCurUser({ ...curUser, email: e.target.value })
+                  }
+                  placeholder="Email"
+                  autoComplete="off"
+                  required
+                  className="input bg-white border border-base-100 shadow-lg  input-bordered w-full max-w-xs "
+                />
+              </div>
+
+              <div className="form-control flex justify-center flex-row input-group w-full max-w-xs">
+                <input
+                  type={passwordType}
+                  placeholder="Password"
+                  name="password"
+                  value={curUser.password}
+                  onChange={(e) =>
+                    setCurUser({ ...curUser, password: e.target.value })
+                  }
+                  autoComplete="off"
+                  required
+                  className="input bg-white border w-full border-base-100 shadow-lg  input-bordered  max-w-xs"
+                />
+                <button
+                  onClick={togglePassword}
+                  className="p-4 border border-base-100 bg-white text-black "
+                >
+                  {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+
+              <div className="btn" onClick={() => signIn()}>
+                {loading ? "Loading.." : "Log In"}
+              </div>
+              <ToastContainer />
+
+              <p>
+                Don't have an account?&nbsp;
+                <span
+                  onClick={changeState}
+                  className="cursor-pointer text-blue-500"
+                >
+                  &nbsp;Register
+                </span>
+              </p>
+            </div>
+          )}
+          ;
+          <div className="flex flex-col justify-center items-center">
+            <p className="mb-4">OR</p>
+            <GoogleButton onClick={googleLogin} />
+            <ToastContainer />
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 };
