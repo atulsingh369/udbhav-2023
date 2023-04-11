@@ -1,4 +1,4 @@
-import React from "react";
+import { Department } from "./Data";
 
 const TopBar = () => {
   return (
@@ -12,12 +12,13 @@ const TopBar = () => {
             tabIndex={0}
             className="dropdown-content menu p-2 shadow bg-base-100 text-white w-screen"
           >
-            <li>
-              <a href="#dep-1">Department 1</a>
-            </li>
-            <li>
-              <a href="#dep-2">Department 2</a>
-            </li>
+            {Object.entries(Department).map((item, i) => {
+              return (
+                <li>
+                  <a href={`#${item[0]}`}>{item[0]}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
