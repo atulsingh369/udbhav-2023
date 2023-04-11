@@ -60,7 +60,7 @@ const Navbar = () => {
                 <li>
                   <Link to="/events">EVENTS</Link>
                 </li>
-                <li tabIndex={0}>
+                {/* <li tabIndex={0}>
                   <Link to="/forms" className="justify-between">
                     FORMS
                     <svg
@@ -80,7 +80,7 @@ const Navbar = () => {
                       <a>Submenu 2</a>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/contact-us">CONTACT US</Link>
                 </li>
@@ -99,7 +99,7 @@ const Navbar = () => {
                 <Link to="/events">EVENTS</Link>
               </li>
 
-              <li tabIndex={0}>
+              {/* <li tabIndex={0}>
                 <Link to="/forms">
                   UPDATES
                   <svg
@@ -119,7 +119,7 @@ const Navbar = () => {
                     <a>Submenu 2</a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li
                 className="cursor-pointer"
                 onClick={() => navigate("/contact-us")}>

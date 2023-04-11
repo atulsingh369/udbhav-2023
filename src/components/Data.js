@@ -142,7 +142,7 @@ export const Department = {
     {
       name: "Abhishek kant",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-11_at_21.12.09.jpg?updatedAt=1681232048685",
       contact: 123456789,
       email: "test@test.test",
       show: true,
