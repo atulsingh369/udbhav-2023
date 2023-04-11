@@ -13,7 +13,6 @@ import { setUser } from "../store";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { doc, setDoc } from "firebase/firestore";
-import MainLoader from "../components/MainLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

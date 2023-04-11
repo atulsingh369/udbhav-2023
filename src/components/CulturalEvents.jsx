@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import { cultEvents } from "./Data";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CulturalEvents = () => {
-	const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
+
+  const alert = () => {
+    toast.warning("Forms will be available soon");
+  };
+
   return (
     <div className="flex flex-col items-center justify-center mt-14 lg:mt-0">
       <div>
@@ -22,7 +29,7 @@ const CulturalEvents = () => {
                   {item[1].map((value, index) => {
                     return (
                       // <Link to={`/techform/${value.id}`}>
-                      <div
+                      <div onClick={alert}
                         className="card w-64 h-[28rem] bg-base-100 shadow-xl"
                         key={index}>
                         <figure>
@@ -82,7 +89,8 @@ const CulturalEvents = () => {
             );
           })}
         </div>
-      )}
+      )}{" "}
+      <ToastContainer />
     </div>
   );
 };

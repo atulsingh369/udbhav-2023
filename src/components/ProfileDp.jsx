@@ -129,7 +129,7 @@ const ProfileDp = () => {
               <BiCopy />
             </button>
 					</div>
-					<p>{ newData.branch }</p>
+					{/* <p>{ newData.branch }</p> */}
           {!user.branch && <p>Branch</p>}
           {user.year && <p>{user.year}</p>}
           {!user.year && <p>Year</p>}
