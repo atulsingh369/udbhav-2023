@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-const techEvents = {
+const Events = {
   cultural: [
     {
-      title: "UDBHAV",
+      title: "UDBHV",
       describe: "",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
@@ -25,10 +25,10 @@ const EventCards = () => {
   return (
     <div className="w-full pt-16 text-white ">
       <div className=" flex flex-row flex-wrap justify-evenly w-full h-max">
-        {Object.entries(techEvents).map((item, i) => {
+        {Object.entries(Events).map((item, i) => {
           return (
             <div
-              className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105"
+              className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105 transition-all ease-in-out duration-300"
               key={i}
             >
               <div className="flex gap-5 flex-wrap justify-center items-center">

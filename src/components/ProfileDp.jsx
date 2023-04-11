@@ -6,6 +6,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../config";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
+import { BiCopy } from "react-icons/bi";
 
 const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
@@ -65,9 +66,21 @@ const ProfileDp = () => {
         console.log(err);
       });
   };
+  const copy = () => {
+    var text = document.getElementById("copyId");
 
+    // Select the text field
+    text.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(text.value);
+
+    // Alert the copied text
+    alert("Copied the text: " + text.value);
+  };
   return (
-    <div className="flex flex-col items-center h-full justify-center gap-28 md:gap-10">
+    <div className="flex flex-col items-center  justify-center gap-28 md:gap-10 ">
       <div className=" ">
         <div className="avatar w-fit flex flex-col items-end  ">
           <div className="w-48 md:w-48 rounded-full ">
@@ -107,7 +120,12 @@ const ProfileDp = () => {
       >
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
-          <p>{user.uid}</p>
+          <div className="flex flex-row">
+            <p id="copyId">{user.uid}</p>
+            <button onClick={copy}>
+              <BiCopy />
+            </button>
+          </div>
           {user.branch && <p>{user.branch}</p>}
           {!user.branch && <p>Branch</p>}
           {user.year && <p>{user.year}</p>}

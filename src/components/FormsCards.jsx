@@ -1,25 +1,6 @@
 import { Link } from "react-router-dom";
+import { Forms } from "./Data";
 
-const Forms = {
-  poster: [
-    {
-      title: "POSTER MAKING COMPETITION",
-      describe: "",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "/forms",
-    },
-  ],
-  logo: [
-    {
-      title: "POSTER MAKING COMPETITION",
-      describe: "",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "/forms",
-    },
-  ],
-};
 const FormsCards = () => {
   return (
     <div className="bg-home-background h-screen bg-cover flex flex-row flex-wrap justify-center pt-16 ">

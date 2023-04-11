@@ -1,7 +1,11 @@
 import React from "react";
 import Spline from "@splinetool/react-spline";
-
+import { useNavigate } from "react-router-dom";
 const ProfileInfo = () => {
+  const navigate = useNavigate();
+  const easter =()=>{
+    navigate("/hidden-easter")
+  }
   return (
     <div
       id="spline-animation"
@@ -10,6 +14,7 @@ const ProfileInfo = () => {
       <Spline
         scene="https://prod.spline.design/KWdFdzq04YUoci4P/scene.splinecode"
         className="scale-75"
+        onDoubleClick={easter}
       />
     </div>
   );
