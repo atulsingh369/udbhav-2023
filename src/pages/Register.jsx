@@ -61,7 +61,14 @@ const Register = () => {
         password: "",
       });
     } catch (error) {
-      toast(error);
+      toast.error("Invalid Credential");
+      setCurUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setLoading(false);
+      setPasswordType("password");
     }
   };
 

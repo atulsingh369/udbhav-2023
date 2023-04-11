@@ -28,7 +28,7 @@ const ContactBox1 = () => {
                         className=" object-fill"
                       />
                     </figure>
-                    <div className="card-body">
+                    <div className="card-body text-white">
                       <div className="flex flex-row items-center gap-2">
                         <HiUser />
                         <p className="text-sm">{value.name}</p>
