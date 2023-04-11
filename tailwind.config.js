@@ -19,6 +19,8 @@ module.exports = {
           "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/groupDance.png?updatedAt=1680722733157')",
         "profile-events-registered-background":
           "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/profileRegisterd.png?updatedAt=1680867639747')",
+        "loader-main":
+          "url('https://ik.imagekit.io/e5ixuxrlb/Udbhav/Loaders/loaderGaneshJi.gif?updatedAt=1681194788893')",
       },
     },
   },
