@@ -17,7 +17,7 @@ const Landing = () => {
       {loading ? (
         <MainLoader />
       ) : (
-        <div className="  ">
+        <div className="">
           <div
             className={` flex xl:flex-row flex-col-reverse gap-10 overflow-hidden  bg-home-background bg-cover h-screen items-center`}>
             <motion.div
@@ -71,7 +71,7 @@ const Landing = () => {
             <motion.div
               variants={slideIn("right", "tween", 0.2, 1)}
               className=" xl:flex-1  h-[550px] w-full justify-center items-center">
-								<EarthCanvas />
+              <EarthCanvas />
             </motion.div>
           </div>
         </div>
