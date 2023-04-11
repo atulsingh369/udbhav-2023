@@ -49,7 +49,6 @@ const ProfileDp = () => {
   };
 
   const editProfile = async () => {
-    console.log(user);
     let branch = prompt("Enter Branch");
     let year = prompt("Enter Year");
     try {
@@ -58,17 +57,13 @@ const ProfileDp = () => {
         year: year,
       });
       const res = await getDoc(doc(db, "users", auth.currentUser.uid));
-      window.newData = res._document.data.value.mapValue.fields;
-      // const data = newData.map((newData) => ({
-      //   ...doc.data(),
-      //   id: doc.id,
-      // }));f
+      const newData = res._document.data.value.mapValue.fields;
 
-      // dispatch(setUser(newData));
       console.log(newData);
     } catch (error) {
       console.log(error);
     }
+    return newData;
   };
 
   const copy = () => {
@@ -128,8 +123,8 @@ const ProfileDp = () => {
             <button onClick={copy}>
               <BiCopy />
             </button>
-					</div>
-					{/* <p>{ newData.branch }</p> */}
+          </div>
+          {user.branch && <p>{user.branch}</p>}
           {!user.branch && <p>Branch</p>}
           {user.year && <p>{user.year}</p>}
           {!user.year && <p>Year</p>}
