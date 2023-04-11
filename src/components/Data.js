@@ -344,9 +344,9 @@ export const Department = {
     {
       name: "Abhishek kant",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_00.18.19.jpg?updatedAt=1681241877891",
+      contact: 8423039502,
+      email: "avneeshtripathi08c1@gmail.com",
       show: true,
       post: "",
     },
@@ -432,11 +432,11 @@ export const Department = {
       id: "dep-3",
     },
     {
-      name: "",
+      name: "Piyush Singh Rajput",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 55,
-      email: "",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_010413.jpg?updatedAt=1681241761770",
+      contact: 9936513754,
+      email: "ps8335691@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
