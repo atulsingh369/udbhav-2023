@@ -32,11 +32,10 @@ const formsEvent = () => {
   };
 
   const addMember = () => {
-    // dispatch(setEvent(...values))
-    // setMembers([...members, values]);
-    // // setValues(initialValues);
-    // setCount(count + 1);
+    setMembers([...members, values]);
     // setValues(initialValues);
+    setCount(count + 1);
+    setValues(initialValues);
     console.log(members);
   };
 
@@ -138,8 +137,10 @@ const formsEvent = () => {
 
                       {count < value.limit && (
                         <button
+                          type="button"
                           onClick={addMember}
-                          className="text-white my-5 rounded-xl p-3 border-2 border-white">
+                          className="text-white my-5 rounded-xl p-3 border-2 border-white"
+                        >
                           Add more
                         </button>
                       )}

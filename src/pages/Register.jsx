@@ -24,49 +24,75 @@ const Register = () => {
     password: "",
   });
 
+  // const signUp = async () => {
+  //   setLoading(true);
+  //   await createUserWithEmailAndPassword(auth, curUser.email, curUser.password)
+  //     .then((userCredential) => {
+  //       const res = userCredential.user;
+  //       console.log(res);
+  //       updateProfile(res, {
+  //         displayName: curUser.name,
+  //       })
+  //         .then(() => {
+  //           console.log("Profile Updated");
+  //           setState(!state);
+  //           setCurUser({
+  //             name: "",
+  //             email: "",
+  //             password: "",
+  //           });
+  //           window.alert("Registered");
+  //           setLoading(false);
+  //         })
+  //         .catch((err) => {
+  //           console.log(err);
+  //         });
+  //       db.collection("users").add({
+  //         uid: user.uid,
+  //         displayName,
+  //         email,
+  //         photoURL: url,
+  //         branch: null,
+  //         year: null,
+  //         event: null,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       alert(error);
+  //     });
+
+  // };
+
   const signUp = async () => {
-    setLoading(true);
-    await createUserWithEmailAndPassword(auth, curUser.email, curUser.password)
-      .then((userCredential) => {
-        const res = userCredential.user;
-        console.log(res);
-        updateProfile(res, {
-          displayName: curUser.name,
-        })
-          .then(() => {
-            console.log("Profile Updated");
-            setState(!state);
-            setCurUser({
-              name: "",
-              email: "",
-              password: "",
-            });
-            window.alert("Registered");
-            setLoading(false);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-        db.collection("users").add({
-          uid: user.uid,
-          displayName,
-          email,
-          photoURL: url,
-          branch: null,
-          year: null,
-          event: null,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        alert(error);
+    try {
+      setLoading(true);
+      const credential = await createUserWithEmailAndPassword(
+        auth,
+        curUser.email,
+        curUser.password
+      );
+      const res = credential.user;
+      updateProfile(res, {
+        displayName: curUser.name,
       });
-    // await setDoc(doc(db, "users", user.uid), {
-    //   uid: user.uid,
-    //   displayName,
-    //   email,
-    //   photoURL: url,
-    // });
+      setState(!state);
+      setCurUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      window.alert("Registered");
+      setLoading(false);
+
+      await setDoc(doc(db, "users", res.uid), {
+        uid: res.uid,
+        displayName: curUser.displayName,
+        email: curUser.email,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const signIn = async () => {
@@ -180,7 +206,8 @@ const Register = () => {
               Already registered? &nbsp;
               <span
                 onClick={changeState}
-                className="cursor-pointer text-blue-500">
+                className="cursor-pointer text-blue-500"
+              >
                 Sign In
               </span>
             </p>
@@ -232,7 +259,8 @@ const Register = () => {
               Don't have an account?&nbsp;
               <span
                 onClick={changeState}
-                className="cursor-pointer text-blue-500">
+                className="cursor-pointer text-blue-500"
+              >
                 &nbsp;Register
               </span>
             </p>
