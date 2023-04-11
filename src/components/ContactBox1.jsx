@@ -1,6 +1,5 @@
 import { HiOutlineMail, HiPhone, HiUser } from "react-icons/hi";
 import { Department } from "./Data";
-import img from "../assets/img.jpeg";
 
 const ContactBox1 = () => {
   return (
@@ -23,7 +22,11 @@ const ContactBox1 = () => {
                     key={index}
                   >
                     <figure>
-                      <img src={img} alt="Shoes" className="object-contain" />
+                      <img
+                        src={value.image}
+                        alt="coordinator_image"
+                        className=" object-fill"
+                      />
                     </figure>
                     <div className="card-body">
                       <div className="flex flex-row items-center gap-2">
@@ -36,7 +39,7 @@ const ContactBox1 = () => {
                       </div>
 
                       {value.show && (
-                        <div className="flex flex-row items-center gap-2">
+                        <div className="flex flex-row items-center ">
                           <HiOutlineMail />
                           <p className="text-sm">{value.email}</p>
                         </div>

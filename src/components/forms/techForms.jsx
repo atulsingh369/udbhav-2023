@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { techEvents } from "../Data";
-import './FormStyle.scss'
+import "./FormStyle.scss";
 
 const techForms = () => {
   const { id } = useParams();
@@ -94,8 +94,9 @@ const techForms = () => {
                                     <label>Phone No.*</label>
                                   </div>
                                   <button
-                                    className="text-white"
-                                    onClick={() => handleUpdate(item, i)}>
+                                    className="text-white my-5 rounded-xl p-3 border-2 border-white"
+                                    onClick={() => handleUpdate(item, i)}
+                                  >
                                     Update
                                   </button>
                                 </div>
@@ -187,7 +188,8 @@ const techForms = () => {
                         <button
                           type="button"
                           onClick={addMember}
-                          className="text-white my-5 rounded-xl p-3 border-2 border-white">
+                          className="text-white my-5 rounded-xl p-3 border-2 border-white"
+                        >
                           Add more
                         </button>
                       )}
