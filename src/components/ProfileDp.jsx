@@ -16,7 +16,8 @@ const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+	const navigate = useNavigate();
+	
 
   const change = async (e) => {
     e.preventDefault();
@@ -36,7 +37,7 @@ const ProfileDp = () => {
         setProgresspercent(progress);
       },
       (error) => {
-       toast(error);
+        toast(error);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -62,7 +63,8 @@ const ProfileDp = () => {
       // const data = newData.map((newData) => ({
       //   ...doc.data(),
       //   id: doc.id,
-      // }));
+      // }));f
+			window.data = newData;
       console.log(typeof newData);
       // dispatch(setUser(newData));
       console.log(user);
@@ -129,7 +131,6 @@ const ProfileDp = () => {
               <BiCopy />
             </button>
           </div>
-          {user.branch && <p>{user.branch}</p>}
           {!user.branch && <p>Branch</p>}
           {user.year && <p>{user.year}</p>}
           {!user.year && <p>Year</p>}
