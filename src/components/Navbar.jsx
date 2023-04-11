@@ -13,8 +13,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  localStorage.clear();
-
   const [loading, setLoading] = useState(false);
 
   const logOut = async () => {
