@@ -7,12 +7,15 @@ import { storage } from "../config";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { BiCopy } from "react-icons/bi";
+import { auth, db } from "../config";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 
 const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+ 
 
   const change = async (e) => {
     e.preventDefault();
@@ -44,28 +47,29 @@ const ProfileDp = () => {
     );
   };
 
-  const editProfile = () => {
+  const editProfile = async () => {
     console.log(user);
     let branch = prompt("Enter Branch");
     let year = prompt("Enter Year");
-    // user.branch = branch;
-    // console.log(user);
-    // dispatch(setUser(user));
-
-    updateProfile(user, {
-      branch: branch,
-      year: year,
-    })
-      .then(() => {
-        console.log("Profile Updated");
-        window.alert("Updated");
-        dispatch(setUser(user));
-        console.log(user);
-      })
-      .catch((err) => {
-        console.log(err);
+    try {
+      await updateDoc(doc(db, "users", auth.currentUser.uid), {
+        branch: branch,
+        year: year,
       });
+      const res = await getDoc(doc(db, "users", auth.currentUser.uid));
+      let newData = res._document.data.value.mapValue.fields;
+      // const data = newData.map((newData) => ({
+      //   ...doc.data(),
+      //   id: doc.id,
+      // }));
+      console.log(newData.branch);
+    } catch (error) {
+      console.log(error);
+    }
+
+    console.log(user);
   };
+
   const copy = () => {
     var text = document.getElementById("copyId");
 
@@ -105,8 +109,7 @@ const ProfileDp = () => {
                     className="hidden"
                     type="file"
                     accept="image/*"
-                    onChange={change}
-                  ></input>
+                    onChange={change}></input>
                   <a className="btn">Edit Profile</a>
                 </li>
               </ul>
@@ -116,8 +119,7 @@ const ProfileDp = () => {
       </div>
       <div
         id="card-profile"
-        className="card w-96 text-white border border-white"
-      >
+        className="card w-96 text-white border border-white">
         <div className="card-body">
           <h2 className="card-title">{user.displayName}</h2>
           <div className="flex flex-row">
@@ -126,10 +128,11 @@ const ProfileDp = () => {
               <BiCopy />
             </button>
           </div>
-          {user.branch && <p>{user.branch}</p>}
-          {!user.branch && <p>Branch</p>}
-          {user.year && <p>{user.year}</p>}
-          {!user.year && <p>Year</p>}
+          <p>{newData.branch}</p>
+          {newData.branch && <p>{newData.branch}</p>}
+          {!newData.branch && <p>Branch</p>}
+          {newData.year && <p>{newData.year}</p>}
+          {!newData.year && <p>Year</p>}
           <div className="card-actions justify-end">
             <button className="btn btn-primary" onClick={editProfile}>
               Edit Profile
