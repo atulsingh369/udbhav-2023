@@ -51,19 +51,26 @@ const ProfileDp = () => {
   const editProfile = async () => {
     let branch = prompt("Enter Branch");
     let year = prompt("Enter Year");
-    try {
-      await updateDoc(doc(db, "users", auth.currentUser.uid), {
-        branch: branch,
-        year: year,
-      });
-      const res = await getDoc(doc(db, "users", auth.currentUser.uid));
-      const newData = res._document.data.value.mapValue.fields;
+    // try {
+    //   await updateDoc(doc(db, "users", auth.currentUser.uid), {
+    //     branch: branch,
+    //     year: year,
+    //   });
+    //   const res = await getDoc(doc(db, "users", auth.currentUser.uid));
+    //   const newData = res._document.data.value.mapValue.fields;
 
-      console.log(newData);
-    } catch (error) {
-      console.log(error);
-    }
-    return newData;
+    //   console.log(newData);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    // return newData;
+
+    await auth
+      .setCustomUserClaims(auth.currentUser.uid, { branch: branch, year: year })
+      .then(() => {
+        const res = auth.currentUser;
+        console.log(res);
+      });
   };
 
   const copy = () => {
