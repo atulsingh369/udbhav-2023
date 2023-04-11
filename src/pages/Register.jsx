@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../store";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { doc, setDoc } from "firebase/firestore";
 
 const Register = () => {
   const [state, setState] = useState(false);
@@ -28,46 +29,6 @@ const Register = () => {
     password: "",
   });
 
-  // const signUp = async () => {
-  //   setLoading(true);
-  //   await createUserWithEmailAndPassword(auth, curUser.email, curUser.password)
-  //     .then((userCredential) => {
-  //       const res = userCredential.user;
-  //       console.log(res);
-  //       updateProfile(res, {
-  //         displayName: curUser.name,
-  //       })
-  //         .then(() => {
-  //           console.log("Profile Updated");
-  //           setState(!state);
-  //           setCurUser({
-  //             name: "",
-  //             email: "",
-  //             password: "",
-  //           });
-  //           window.alert("Registered");
-  //           setLoading(false);
-  //         })
-  //         .catch((err) => {
-  //           console.log(err);
-  //         });
-  //       db.collection("users").add({
-  //         uid: user.uid,
-  //         displayName,
-  //         email,
-  //         photoURL: url,
-  //         branch: null,
-  //         year: null,
-  //         event: null,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       alert(error);
-  //     });
-
-  // };
-
   const signUp = async () => {
     try {
       setLoading(true);
@@ -77,8 +38,13 @@ const Register = () => {
         curUser.password
       );
       const res = credential.user;
-      updateProfile(res, {
+      await updateProfile(res, {
         displayName: curUser.name,
+      });
+      await setDoc(doc(db, "users", res.uid), {
+        uid: res.uid,
+        displayName: res.displayName,
+        email: res.email,
       });
       setState(!state);
       setCurUser({
@@ -86,14 +52,7 @@ const Register = () => {
         email: "",
         password: "",
       });
-      window.alert("Registered");
       setLoading(false);
-
-      await setDoc(doc(db, "users", res.uid), {
-        uid: res.uid,
-        displayName: curUser.displayName,
-        email: curUser.email,
-      });
     } catch (error) {
       console.log(error);
     }
@@ -223,12 +182,9 @@ const Register = () => {
               </button>
             </div>
 
-            <input
-              value="Register"
-              type={loading ? "Registering..." : "Register"}
-              className="btn select-none"
-              onClick={() => signUp()}
-            />
+            <div className="btn" onClick={() => signUp()}>
+              {loading ? "Registering..." : "Register"}
+            </div>
 
             <p>
               Already registered? &nbsp;
@@ -283,12 +239,10 @@ const Register = () => {
               </button>
             </div>
 
-            <input
-              value="Log In"
-              type="submit"
-              className="btn "
-              onClick={() => signIn()}
-            />
+            <div className="btn" onClick={() => signIn()}>
+              {loading ? "Loading.." : "Log In"}
+            </div>
+
             <p>
               Don't have an account?&nbsp;
               <span
