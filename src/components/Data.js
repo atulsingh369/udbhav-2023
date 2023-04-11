@@ -508,3 +508,24 @@ export const techEvents = {
 		},
 	],
 };
+
+export const Forms = {
+	poster: [
+		{
+			title: "POSTER MAKING COMPETITION",
+			describe: "",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
+			link: "/forms",
+		},
+	],
+	logo: [
+		{
+			title: "POSTER MAKING COMPETITION",
+			describe: "",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
+			link: "/forms",
+		},
+	],
+};
