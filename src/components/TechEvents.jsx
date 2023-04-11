@@ -19,7 +19,7 @@ const TechEvents = () => {
               <div className="flex gap-5 flex-wrap justify-center items-center">
 								{item[1].map((value, index) => {
 									return (
-                    <Link to={`/form/${value.id}`}>
+                    <Link to={`/techform/${value.id}`}>
                       <div
                         className="card w-64 h-[28rem] bg-base-100 shadow-xl"
                         key={index}>

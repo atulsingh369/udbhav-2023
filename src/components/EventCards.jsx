@@ -1,25 +1,5 @@
 import { Link } from "react-router-dom";
-
-const Events = {
-  cultural: [
-    {
-      title: "UDBHV",
-      describe: "",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
-      link: "/cultural",
-    },
-  ],
-  technical: [
-    {
-      title: "TECHNOVATION",
-      describe: "",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "/technovation",
-    },
-  ],
-};
+import { Events } from "../components/Data";
 
 const EventCards = () => {
   return (
@@ -29,16 +9,14 @@ const EventCards = () => {
           return (
             <div
               className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105 transition-all ease-in-out duration-300"
-              key={i}
-            >
+              key={i}>
               <div className="flex gap-5 flex-wrap justify-center items-center">
                 {item[1].map((value, index) => {
                   return (
                     <Link to={value.link}>
                       <div
                         className="card w-64 h-[28rem] bg-base-100 shadow-xl"
-                        key={index}
-                      >
+                        key={index}>
                         <figure>
                           <img
                             src={value.image}

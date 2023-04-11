@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { techEvents } from "../components/Data";
+import { cultEvents } from "../Data";
+import "./FormStyle.scss";
 
-const formsEvent = () => {
+const cultForms = () => {
   const { id } = useParams();
   // const user = useSelector((state) => state.user);
 
@@ -49,7 +50,7 @@ const formsEvent = () => {
 
   return (
     <div className="h-screen  ">
-      {Object.entries(techEvents).map((item, i) => {
+      {Object.entries(cultEvents).map((item, i) => {
         if (item[0] === id) {
           return (
             <div className="login-box scrollbar-hidden overflow-y-auto" key={i}>
@@ -215,4 +216,4 @@ const formsEvent = () => {
   );
 };
 
-export default formsEvent;
+export default cultForms;

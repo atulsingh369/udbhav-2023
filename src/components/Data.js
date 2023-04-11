@@ -362,61 +362,85 @@ export const Department = {
 export const cultEvents = {
 	fusion: [
 		{
+			type: "group",
 			title: "FUSION",
 			describe: "Let your feet do the talking - dance to the rhythm of life!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/fusion.png?updatedAt=1680540755181",
 			link: "",
+			id: "fusion",
+			limit: 4,
+			extra: ""
 		},
 	],
 	melodia: [
 		{
+			type: "solo",
 			title: "MELODIA",
 			describe:
 				"Unleash your voice and set your soul free - sing your heart out!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/melodia.png?updatedAt=1680541071833",
 			link: "",
+			id: "melodia",
+			limit: 4,
+			extra: ""
 		},
 	],
 	spotLight: [
 		{
+			type: "group",
 			title: "SPOTLIGHT",
 			describe:
 				"Step into the spotlight and bring your story to life - the world is your stage!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/spotlight.png?updatedAt=1680541374488",
 			link: "",
+			id: "spotLight",
+			limit: 4,
+			extra: ""
 		},
 	],
 	runway: [
 		{
+			type: "solo",
 			title: "RUNWAY",
 			describe: "Make a statement with style - let fashion be your voice!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/runway.png?updatedAt=1680541647038",
 			link: "",
+			id: "runway",
+			limit: 4,
+			extra: ""
 		},
 	],
 	harmonize: [
 		{
+			type: "group",
 			title: "HARMONIZE",
 			describe:
 				"Create a symphony with your fingertips - let your music speak louder than words!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/harmonize.png?updatedAt=1680541886718",
 			link: "",
+			id: "harmonize",
+			limit: 4,
+			extra: ""
 		},
 	],
 
 	kavyanical: [
 		{
+			type: "group",
 			title: "KAVYANICAL",
 			describe:
 				"Paint a picture with your words - let your poetry capture the heart and soul!",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/kavyanical.png?updatedAt=1680542035401",
 			link: "",
+			id: "kavyanical",
+			limit: 4,
+			extra: ""
 		},
 	],
 };
@@ -526,6 +550,27 @@ export const Forms = {
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
 			link: "/forms",
+		},
+	],
+};
+
+export const Events = {
+	cultural: [
+		{
+			title: "UDBHAV",
+			describe: "",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
+			link: "/cultural",
+		},
+	],
+	technical: [
+		{
+			title: "TECHNOVATION",
+			describe: "",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
+			link: "/technovation",
 		},
 	],
 };
