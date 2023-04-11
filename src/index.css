@@ -189,6 +189,9 @@ body {
   #spline-animation {
     display: none;
   }
+	#hello{
+		display: none;
+	}
 }
 /* loader */
 #loader-container {

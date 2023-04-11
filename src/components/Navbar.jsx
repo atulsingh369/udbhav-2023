@@ -144,7 +144,7 @@ const Navbar = () => {
             ) : (
               <div className="dropdown dropdown-hover">
                 <span tabIndex={0} className="btn m-1">
-                  Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
+                  <span id="hello"> Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;</span>
                   <div className="avatar">
                     <div className="w-9 rounded-full">
                       {user.photoURL && <img src={user.photoURL} />}
