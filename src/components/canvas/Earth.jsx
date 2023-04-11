@@ -23,7 +23,8 @@ const EarthCanvas = () => {
         near: 0.1,
         far: 200,
         position: [-4, 3, 6],
-      }}>
+      }}
+    >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate={true}
@@ -32,6 +33,8 @@ const EarthCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Earth />
+
+        <Preload all />
       </Suspense>
     </Canvas>
   );
