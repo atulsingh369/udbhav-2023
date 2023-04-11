@@ -14,7 +14,10 @@ import { useSelector } from "react-redux";
 const Landing = () => {
   const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user);
-  const navigate = useNavigate();
+	const navigate = useNavigate();
+	
+	localStorage.clear();
+
   useEffect(() => {}, [loading]);
   return (
     <>
