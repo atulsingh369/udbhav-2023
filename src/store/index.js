@@ -2,7 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	mode: "light",
-	user: null,
+	user: {
+		uid: null,
+		email: null,
+		displayName: null,
+		photoURL: null,
+		branch: null,
+		year: null,
+		event: null,
+	}
 };
 
 export const authSlice = createSlice({
@@ -21,7 +29,7 @@ export const authSlice = createSlice({
 					photoURL: action.payload.photoURL,
 					branch: action.payload.branch,
 					year: action.payload.year,
-					eventName: action.payload.eventName,
+					event: action.payload.event,
 					// Add other necessary properties here
 				};
 			} else {
