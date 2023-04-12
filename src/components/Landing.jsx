@@ -23,14 +23,17 @@ const Landing = () => {
       ) : (
         <div className="">
           <div
-            className={` flex xl:flex-row flex-col-reverse gap-10 overflow-hidden  bg-home-background bg-cover h-screen items-center`}>
+            className={` flex xl:flex-row flex-col-reverse gap-10 overflow-hidden  bg-home-background bg-cover h-screen items-center`}
+          >
             <motion.div
               variants={slideIn("left", "tween", 0.2, 1)}
-              className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
+              className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+            >
               <div className="flex flex-col justify-center items-center gap-5">
                 <div
                   id="text-drop"
-                  className=" flex flex-row items-center justify-center p-5  ">
+                  className=" flex flex-row items-center justify-center p-5  "
+                >
                   <div className="u text-white font-semibold text-8xl lg:text-8xl xl:text-[7rem]">
                     U
                   </div>
@@ -52,7 +55,8 @@ const Landing = () => {
                 </div>
                 <div
                   className="card w-96 text-white border border-white  "
-                  id="card-home">
+                  id="card-home"
+                >
                   <div className="card-body">
                     <p className="leading-7 tracking-wide font-semibold">
                       Udbhav is a Sanskrit word which means "origin" or
@@ -69,7 +73,8 @@ const Landing = () => {
                       ) : (
                         <button
                           className="btn bg-base-100 border-none"
-                          onClick={() => navigate("/register")}>
+                          onClick={() => navigate("/register")}
+                        >
                           Register
                         </button>
                       )}
@@ -79,11 +84,11 @@ const Landing = () => {
               </div>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               variants={slideIn("right", "tween", 0.2, 1)}
               className=" xl:flex-1  h-[550px] w-full justify-center items-center">
               <EarthCanvas />
-            </motion.div>
+            </motion.div> */}
           </div>
           <ToastContainer />
         </div>
