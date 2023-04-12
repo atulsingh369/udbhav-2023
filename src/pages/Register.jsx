@@ -63,6 +63,7 @@ const Register = () => {
         year: null,
         events: null,
       });
+      toast.success("Registerd Succesfully");
       setLoading(false);
       setState(!state);
       setCurUser({
@@ -88,6 +89,7 @@ const Register = () => {
       .then((userCredential) => {
         const res = userCredential.user;
         dispatch(setUser(res));
+        toast.success(`Welcome ${res.displayName}`);
         navigate("/");
         setCurUser({
           name: "",
@@ -115,6 +117,7 @@ const Register = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
+        toast.success(`Welcome ${user.displayName}`);
         // IdP data available using getAdditionalUserInfo(result)
         dispatch(setUser(user));
         navigate("/");
