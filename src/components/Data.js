@@ -135,7 +135,7 @@ export const Department = {
 			post: "",
 		},
 		{
-			name: "Komal Kanoji",
+			name: "Komal Kanojia",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_01.38.56.jpg?updatedAt=1681243926144",
 			contact: 9120108525,
@@ -144,7 +144,7 @@ export const Department = {
 			post: "",
 		},
 		{
-			name: "Abhishek kant",
+			name: "Abhishek Narayan Singh",
 			image:
 				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-11_at_23.20.30.jpg?updatedAt=1681235531784",
 			contact: 123456789,
