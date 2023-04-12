@@ -1,5 +1,9 @@
 @import url(//db.onlinewebfonts.com/c/f56de887103fafbc50b8d846974cd5d4?family=Samarkan);
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap");
+@font-face {
+  font-family: 'samarkan';
+  src: local('samarkan'), url("../public/SAMAN___.ttf") format('ttf');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,46 +56,40 @@ body {
 #text-drop {
   position: relative;
   display: flex;
-
   font-family: arial;
   font-weight: 900;
 }
 
 .u {
-  font-family: samarkan;
-
+  font-family: "samarkan";
   opacity: 0;
   text-shadow: 6px 6px 2px #ffffff49;
   animation: drop 0.4s linear forwards;
 }
 
 .d {
-  font-family: samarkan;
-
+  font-family: "samarkan";
   text-shadow: 6px 6px 2px #ffffff49;
   opacity: 0;
   animation: drop 0.4s linear forwards 0.2s;
 }
 
 .b {
-  font-family: samarkan;
+  font-family: "samarkan";
   text-shadow: 6px 6px 2px #ffffff49;
-
   opacity: 0;
   animation: drop 0.4s linear forwards 0.4s;
 }
 
 .h {
-  font-family: samarkan;
+  font-family: "samarkan";
   text-shadow: 6px 6px 2px #ffffff49;
-
   opacity: 0;
   animation: drop 0.4s linear forwards 0.6s;
 }
 
 .a {
-  font-family: samarkan;
-
+  font-family: "samarkan";
   text-shadow: 6px 6px 2px #ffffff49;
   opacity: 0;
   animation: drop 0.4s linear forwards 0.8s;
