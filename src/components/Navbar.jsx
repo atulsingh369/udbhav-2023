@@ -19,10 +19,11 @@ const Navbar = () => {
     setLoading(true);
     await signOut(auth)
       .then(() => {
+        toast.success("Logout Succesfully");
         setLoading(false);
       })
       .catch((error) => {
-        toast(error);
+        toast.error("Error while logging out");
       });
     dispatch(setUser(null));
     navigate("/");
@@ -54,30 +55,17 @@ const Navbar = () => {
               <ul
                 tabIndex={0}
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                <li>
-                  {user ? (
+                {user && (
+                  <li>
                     <Link to="/tour">IERT TOUR</Link>
-                  ) : (
-                    <span
-                      onClick={() => {
-                        toast.warning("Login to continue");
-                      }}>
-                      IERT TOUR
-                    </span>
-                  )}
-                </li>
-               <li>
-                {user ? (
-                  <Link to="/events">EVENTS</Link>
-                ) : (
-                  <span
-                    onClick={() => {
-                      toast.warning("Login to continue");
-                    }}>
-                    EVENTS
-                  </span>
+                  </li>
                 )}
-              </li>
+                {user && (
+                  <li>
+                    <Link to="/events">EVENTS</Link>
+                  </li>
+                )}
+
                 {/* <li tabIndex={0}>
                   <Link to="/forms" className="justify-between">
                     FORMS
@@ -110,30 +98,16 @@ const Navbar = () => {
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 items-center  lg:gap-5">
-              <li>
-                {user ? (
+              {user && (
+                <li>
                   <Link to="/tour">IERT TOUR</Link>
-                ) : (
-                  <span
-                    onClick={() => {
-                      toast.warning("Login to continue");
-                    }}>
-                    IERT TOUR
-                  </span>
-                )}
-              </li>
-              <li>
-                {user ? (
+                </li>
+              )}
+              {user && (
+                <li>
                   <Link to="/events">EVENTS</Link>
-                ) : (
-                  <span
-                    onClick={() => {
-                      toast.warning("Login to continue");
-                    }}>
-                    EVENTS
-                  </span>
-                )}
-              </li>
+                </li>
+              )}
 
               {/* <li tabIndex={0}>
                 <Link to="/forms">
@@ -156,10 +130,8 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li> */}
-              <li
-                className="cursor-pointer"
-                onClick={() => navigate("/contact-us")}>
-                CONTACT US
+              <li>
+                <Link to="/contact-us">CONTACT US</Link>
               </li>
             </ul>
           </div>
@@ -173,7 +145,10 @@ const Navbar = () => {
             ) : (
               <div className="dropdown dropdown-hover">
                 <span tabIndex={0} className="btn m-1">
-                  Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
+                  <span id="hello">
+                    {" "}
+                    Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
+                  </span>
                   <div className="avatar">
                     <div className="w-9 rounded-full">
                       {user.photoURL && <img src={user.photoURL} />}
