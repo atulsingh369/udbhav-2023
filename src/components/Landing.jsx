@@ -84,11 +84,12 @@ const Landing = () => {
               </div>
             </motion.div>
 
-            {/* <motion.div
+            <motion.div
               variants={slideIn("right", "tween", 0.2, 1)}
-              className=" xl:flex-1  h-[550px] w-full justify-center items-center">
+              className=" xl:flex-1  h-[550px] w-full justify-center items-center"
+            >
               <EarthCanvas />
-            </motion.div> */}
+            </motion.div>
           </div>
           <ToastContainer />
         </div>
