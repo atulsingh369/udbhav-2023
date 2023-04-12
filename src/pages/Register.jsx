@@ -63,6 +63,7 @@ const Register = () => {
         year: null,
         events: null,
       });
+      toast.success("Registerd Succesfully");
       setLoading(false);
       setState(!state);
       setCurUser({
@@ -88,6 +89,7 @@ const Register = () => {
       .then((userCredential) => {
         const res = userCredential.user;
         dispatch(setUser(res));
+        toast.success(`Welcome ${res.displayName}`);
         navigate("/");
         setCurUser({
           name: "",
@@ -115,6 +117,7 @@ const Register = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
+        toast.success(`Welcome ${user.displayName}`);
         // IdP data available using getAdditionalUserInfo(result)
         dispatch(setUser(user));
         navigate("/");
@@ -204,8 +207,7 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black "
-                >
+                  className="p-4 border border-base-100 bg-white text-black ">
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -219,8 +221,7 @@ const Register = () => {
                 Already registered? &nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500"
-                >
+                  className="cursor-pointer text-blue-500">
                   Sign In
                 </span>
               </p>
@@ -262,8 +263,7 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black "
-                >
+                  className="p-4 border border-base-100 bg-white text-black ">
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -277,8 +277,7 @@ const Register = () => {
                 Don't have an account?&nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500"
-                >
+                  className="cursor-pointer text-blue-500">
                   &nbsp;Register
                 </span>
               </p>
