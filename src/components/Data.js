@@ -80,7 +80,7 @@ export const Department = {
       post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Harsh Mishra",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/SAVE_20211203_164655__2_.jpg?updatedAt=1681229245295",
       contact: 123456789,
