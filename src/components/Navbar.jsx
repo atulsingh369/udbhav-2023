@@ -135,7 +135,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            {!user.displayName ? (
+            {!user ? (
               <button
                 className="btn glass"
                 onClick={() => navigate("/register")}>
@@ -144,10 +144,7 @@ const Navbar = () => {
             ) : (
               <div className="dropdown dropdown-hover">
                 <span tabIndex={0} className="btn m-1">
-                  <span id="hello">
-                    {" "}
-                    Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
-                  </span>
+                  <span id="hello"> Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;</span>
                   <div className="avatar">
                     <div className="w-9 rounded-full">
                       {user.photoURL && <img src={user.photoURL} />}
@@ -157,7 +154,6 @@ const Navbar = () => {
                     </div>
                   </div>
                 </span>
-
                 <ul
                   tabIndex={0}
                   className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
