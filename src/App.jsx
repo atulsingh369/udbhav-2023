@@ -14,7 +14,6 @@ import CultForm from "./components/forms/cultForms";
 import EasterEgg from "./components/EasterEgg";
 
 const App = () => {
-  z;
   return (
     <div className="relative">
       <Navbar />
