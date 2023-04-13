@@ -9,25 +9,25 @@ const SponsersGallery = () => {
         </h1>
         <div className="carousel-item p-5 border-4  border-white rounded-full">
           <img
-            src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/sponsers/spons.jpg?updatedAt=1681389713146"
+            src="/"
             className="rounded-full object-cover w-32 hover:scale-110 cursor-pointer transition-all ease-in-out duration-300"
           />
         </div>
         <div className="carousel-item p-5 border-4  border-white rounded-full">
           <img
-            src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/sponsers/spons.jpg?updatedAt=1681389713146"
+            src="/"
             className="rounded-full object-cover w-32 hover:scale-110 cursor-pointer transition-all ease-in-out duration-300"
           />
         </div>
         <div className="carousel-item p-5 border-4  border-white rounded-full">
           <img
-            src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/sponsers/spons.jpg?updatedAt=1681389713146"
+            src="/"
             className="rounded-full object-cover w-32 hover:scale-110 cursor-pointer transition-all ease-in-out duration-300"
           />
         </div>
         <div className="carousel-item p-5 border-4  border-white rounded-full">
           <img
-            src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/sponsers/spons.jpg?updatedAt=1681389713146"
+            src="/"
             className="rounded-full object-cover w-32 hover:scale-110 cursor-pointer transition-all ease-in-out duration-300"
           />
         </div>
