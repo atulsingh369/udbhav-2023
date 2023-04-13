@@ -46,8 +46,8 @@ export const Department = {
       name: "Akash Lalit Chaudhary",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/InShot_20230411_201213485.jpg?updatedAt=1681224202419",
-      contact: 123456789,
-      email: "test@test.test",
+      contact: 9721800959,
+      email: "akashchaudhary0405@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -65,8 +65,8 @@ export const Department = {
       name: "Abhisht pandey",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-11_at_20.04.25.jpg?updatedAt=1681223721330",
-      contact: 123456789,
-      email: "test@test.test",
+      contact: 8381972949,
+      email: "pandeyabhisht8@gmail.com",
       show: true,
       post: "",
     },
@@ -74,8 +74,8 @@ export const Department = {
       name: "Prakhar Singh",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-11_at_21.20.21.jpg?updatedAt=1681229042458",
-      contact: 123456789,
-      email: "test@test.test",
+      contact: 6388937168,
+      email: "prakharsingh2402@gmail.com",
       show: true,
       post: "",
     },
@@ -101,7 +101,7 @@ export const Department = {
     {
       name: "Shreya Rai",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_000014.jpg?updatedAt=1681237991933",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_01.34.57.jpg?updatedAt=1681376509338",
       contact: 9336041946,
       email: "shreyarai1508@gmail.com",
       show: true,
@@ -177,8 +177,8 @@ export const Department = {
       name: "Abhishek kant",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/img.jpeg?updatedAt=1681230978329",
-      contact: 123456789,
-      email: "test@test.test",
+      contact: 8824282137,
+      email: "kant34477@gmail.com",
       show: true,
       post: "",
     },
@@ -243,7 +243,7 @@ export const Department = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/1657459916513.jpg?updatedAt=1681242987132",
       contact: 9696620562,
-      email: "test@test.test",
+      email: "Sudhirkyadav580@gmail.com",
       show: true,
       post: "",
     },
@@ -314,11 +314,20 @@ export const Department = {
       post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Anusha gupta",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230411_225747_-_Anusha_Gupta.jpg?updatedAt=1681377694859",
+      contact: 8267897702,
+      email: "anusha.gupta.g4@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Pallavi Mishra",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20221225-WA0005.jpg?updatedAt=1681375895559",
+      contact: 9887367536,
+      email: "pallavimishra1109@gmail.com",
       show: true,
       post: "",
     },
@@ -455,11 +464,11 @@ export const Department = {
       id: "dep-3",
     },
     {
-      name: "Abhishek kant",
+      name: "Shivangi Kumari",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_09.17.31.jpg?updatedAt=1681377499204",
+      contact: 6207145817,
+      email: "shivangiarya41@gmail.com",
       show: true,
       post: "",
     },
@@ -473,20 +482,21 @@ export const Department = {
       post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Atul Kumar Singh",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230321-WA0059.jpg?updatedAt=1681244555817",
+      contact: 7518299883,
+      email: "atulsinghkumar0369@gmail.com",
       show: true,
       post: "",
+      id: "dep-3",
     },
     {
-      name: "Abhishek kant",
+      name: "Ramji Patel",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_01.44.56.jpg?updatedAt=1681244817222",
+      contact: 7355210631,
+      email: "btechelexram547@gmail.com",
       show: true,
       post: "",
     },
