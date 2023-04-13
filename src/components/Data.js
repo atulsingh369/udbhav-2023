@@ -41,6 +41,97 @@ export const Department = {
       post: "",
     },
   ],
+  Discipline: [
+    {
+      name: "Piyush Singh Rajput",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_010413.jpg?updatedAt=1681241761770",
+      contact: 9936513754,
+      email: "ps8335691@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Nityam Upadhyay",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Screenshot_20230411-234301-503.png?updatedAt=1681236949967",
+      contact: 9696766400,
+      email: "iamnityamupadhyay@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Rohit Kumar",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/rohitsir.jpg?updatedAt=1681238717369",
+      contact: 6387540764,
+      email: "rkflash22@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Madhav Dubey",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+      contact: 8740849130,
+      email: "manisdubey2001@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Suraj Yadav",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/suraj.jpg?updatedAt=1681237246505",
+      contact: 7054044344,
+      email: "yadavsuraj0443@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Siddhant Sharanroy",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20211017-WA0021.jpg?updatedAt=1681237316602",
+      contact: 6386823704,
+      email: "siddhantsharanroy@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Udit Pratap Singh",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230225_225336.jpg?updatedAt=1681237502189",
+      contact: 9897415620,
+      email: "uditpratap7075@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Yash Srivastava",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/yashsir.jpg?updatedAt=1681238821003",
+      contact: 6391550263,
+      email: "shekhar.yash01@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Divyanshu Singh",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Screenshot_20230412-002034_2.png?updatedAt=1681240283524",
+      contact: 9839221142,
+      email: "divyanshusinghpbh00@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+  ],
   Captain: [
     {
       name: "Akash Lalit Chaudhary",
@@ -359,88 +450,6 @@ export const Department = {
       email: "therealukd@gmail.com",
       show: true,
       post: "",
-    },
-  ],
-  Discipline: [
-    {
-      name: "Nityam Upadhyay",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Screenshot_20230411-234301-503.png?updatedAt=1681236949967",
-      contact: 9696766400,
-      email: "iamnityamupadhyay@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
-    {
-      name: "Suraj Yadav",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/suraj.jpg?updatedAt=1681237246505",
-      contact: 7054044344,
-      email: "yadavsuraj0443@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
-    {
-      name: "Siddhant Sharanroy",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20211017-WA0021.jpg?updatedAt=1681237316602",
-      contact: 6386823704,
-      email: "siddhantsharanroy@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
-    {
-      name: "Udit Pratap Singh",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230225_225336.jpg?updatedAt=1681237502189",
-      contact: 9897415620,
-      email: "uditpratap7075@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
-    {
-      name: "Rohit Kumar",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/rohitsir.jpg?updatedAt=1681238717369",
-      contact: 6387540764,
-      email: "rkflash22@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
-    {
-      name: "Yash Srivastava",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/yashsir.jpg?updatedAt=1681238821003",
-      contact: 6391550263,
-      email: "shekhar.yash01@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
-    {
-      name: "Divyanshu Singh",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Screenshot_20230412-002034_2.png?updatedAt=1681240283524",
-      contact: 9839221142,
-      email: "divyanshusinghpbh00@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
-    {
-      name: "Piyush Singh Rajput",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_010413.jpg?updatedAt=1681241761770",
-      contact: 9936513754,
-      email: "ps8335691@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
     },
   ],
   Technical: [
