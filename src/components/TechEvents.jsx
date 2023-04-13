@@ -49,7 +49,7 @@ const TechEvents = () => {
                           />
                         </figure>
                         <div className="card-body">
-                          <h2 className="card-title ext-2xl ">{value.title}</h2>
+                          <h2 className="card-title ext-2xl text-white ">{value.title}</h2>
                           <p className="text-justify font-semibold text-white">
                             {value.describe}
                           </p>

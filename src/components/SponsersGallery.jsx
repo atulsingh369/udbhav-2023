@@ -4,7 +4,7 @@ const SponsersGallery = () => {
   return (
     <>
       <div className=" flex flex-row gap-5 bg-base-100 w-full items-center justify-center p-5 overflow-y-scroll">
-        <h1 className="text-2xl font-semibold tracking-widest">
+        <h1 className="text-2xl text-white font-semibold tracking-widest">
           Event Sponsers
         </h1>
         <div className="carousel-item p-5 border-4  border-white rounded-full">
