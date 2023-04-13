@@ -12,6 +12,7 @@ const Navbar = () => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [open, setOpen] = useState();
 
   const [loading, setLoading] = useState(false);
 
@@ -37,7 +38,10 @@ const Navbar = () => {
         <div className="navbar w-full fixed top-0 bg-base-100 text-white z-50">
           <div className="navbar-start">
             <div className="dropdown">
-              <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <label
+                tabIndex={0}
+                onClick={() => setOpen((prev) => !prev)}
+                className="btn btn-ghost lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -56,38 +60,25 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                 {user && (
-                  <li>
+                  <li
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
                     <Link to="/tour">IERT TOUR</Link>
                   </li>
                 )}
                 {user && (
-                  <li>
+                  <li
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
                     <Link to="/events">EVENTS</Link>
                   </li>
                 )}
-
-                {/* <li tabIndex={0}>
-                  <Link to="/forms" className="justify-between">
-                    FORMS
-                    <svg
-                      className="fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24">
-                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                    </svg>
-                  </Link>
-                  <ul className="p-2">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
-                  </ul>
-                </li> */}
-                <li>
+                <li
+                  onClick={() => {
+                    setOpen(false);
+                  }}>
                   <Link to="/contact-us">CONTACT US</Link>
                 </li>
               </ul>
@@ -144,7 +135,10 @@ const Navbar = () => {
               </button>
             ) : (
               <div className="dropdown dropdown-hover">
-                <span tabIndex={0} className="btn m-1">
+                <span
+                  tabIndex={0}
+                  onClick={() => setOpen((prev) => !prev)}
+                  className="btn m-1">
                   <span id="hello">
                     {" "}
                     Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
@@ -161,10 +155,16 @@ const Navbar = () => {
                 <ul
                   tabIndex={0}
                   className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                  <li>
+                  <li
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
                     <Link to="/profile">Profile</Link>
                   </li>
-                  <li>
+                  <li
+                    onClick={() => {
+                      setOpen(false);
+                    }}>
                     <span onClick={logOut}>Logout</span>
                   </li>
                 </ul>
