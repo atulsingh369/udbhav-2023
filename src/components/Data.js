@@ -92,7 +92,7 @@ export const Department = {
       id: "dep-3",
     },
     {
-      name: "Siddhant Sharanroy",
+      name: "Siddhant Sharan Roy",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20211017-WA0021.jpg?updatedAt=1681237316602",
       contact: 6386823704,
@@ -423,44 +423,7 @@ export const Department = {
       post: "",
     },
   ],
-  "Vice Captain": [
-    {
-      name: "Ankita  Mall",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230412-WA0002.jpg?updatedAt=1681241319302",
-      contact: 7007204032,
-      email: "ankitamall1405@gmail.com",
-      show: true,
-      post: "",
-    },
-    {
-      name: "Aditi Sharma",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20220204_172222.jpg?updatedAt=1681241529300",
-      contact: 7408099356,
-      email: "22sharmaaditi@gmail.com",
-      show: true,
-      post: "",
-    },
-    {
-      name: "Avneesh Tripathi",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/fghjoiu.jpg?updatedAt=1681242181439",
-      contact: 8423039502,
-      email: "avneeshtripathi08c1@gmail.com",
-      show: true,
-      post: "",
-    },
-    {
-      name: "Utkarsh Kumar Dubey",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_000850.jpg?updatedAt=1681242230028",
-      contact: 8004410957,
-      email: "therealukd@gmail.com",
-      show: true,
-      post: "",
-    },
-  ],
+  
   Technical: [
     {
       name: "Mukul Pandey",
@@ -567,7 +530,45 @@ export const Department = {
       show: true,
       post: "",
     },
-  ],
+	],
+	"Vice Captain": [
+		{
+			name: "Ankita  Mall",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230412-WA0002.jpg?updatedAt=1681241319302",
+			contact: 7007204032,
+			email: "ankitamall1405@gmail.com",
+			show: true,
+			post: "",
+		},
+		{
+			name: "Aditi Sharma",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20220204_172222.jpg?updatedAt=1681241529300",
+			contact: 7408099356,
+			email: "22sharmaaditi@gmail.com",
+			show: true,
+			post: "",
+		},
+		{
+			name: "Avneesh Tripathi",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/fghjoiu.jpg?updatedAt=1681242181439",
+			contact: 8423039502,
+			email: "avneeshtripathi08c1@gmail.com",
+			show: true,
+			post: "",
+		},
+		{
+			name: "Utkarsh Kumar Dubey",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_000850.jpg?updatedAt=1681242230028",
+			contact: 8004410957,
+			email: "therealukd@gmail.com",
+			show: true,
+			post: "",
+		},
+	],
 };
 
 export const cultEvents = {
