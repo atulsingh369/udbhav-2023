@@ -89,11 +89,11 @@ export const Department = {
       post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Aryan Mishra",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG20230122165045_2.jpg?updatedAt=1681229834609",
-      contact: 123456789,
-      email: "test@test.test",
+      contact: 7037715090,
+      email: "aryanmishra22802@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -493,48 +493,58 @@ export const Department = {
   ],
   "Fooding & Lodging": [
     {
-      name: "Abhishek kant",
+      name: "Aryan Mishra",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG20230122165045_2.jpg?updatedAt=1681229834609",
+      contact: 7037715090,
+      email: "aryanmishra22802@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
     },
     {
-      name: "Abhishek kant",
+      name: "Komal Kanojia",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_01.38.56.jpg?updatedAt=1681243926144",
+      contact: 9120108525,
+      email: "komalkanojia079@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Aditya Singh",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Picsart_23-04-12_00-35-28-332.jpg?updatedAt=1681240669235",
+      contact: 6396764402,
+      email: "adisingh2402@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Sachin Yadav",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/20220607_120337.jpg?updatedAt=1681242917376",
+      contact: 8958881612,
+      email: "sachinydv895@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Sudhir Kumar Yadav",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/1657459916513.jpg?updatedAt=1681242987132",
+      contact: 9696620562,
       email: "test@test.test",
       show: true,
       post: "",
     },
     {
-      name: "Abhishek kant",
+      name: "Pallavi Mishra",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-      post: "",
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
-      show: true,
-      post: "",
-    },
-    {
-      name: "Abhishek kant",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
-      contact: 123456789,
-      email: "test@test.test",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20221225-WA0005.jpg?updatedAt=1681375895559",
+      contact: 9887367536,
+      email: "pallavimishra1109@gmail.com",
       show: true,
       post: "",
     },
