@@ -447,7 +447,7 @@ export const Department = {
     {
       name: "Abhishek kant",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/img.jpeg?updatedAt=1681230978329",
       contact: 123456789,
       email: "test@test.test",
       show: true,
@@ -469,6 +469,15 @@ export const Department = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_01.44.56.jpg?updatedAt=1681244817222",
       contact: 7355210631,
       email: "btechelexram547@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Shashank Shekhar",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/shekhar.jpg?updatedAt=1681459584674",
+      contact: 7408380335,
+      email: "s.shekhar5657335@gmail.com",
       show: true,
       post: "",
     },
