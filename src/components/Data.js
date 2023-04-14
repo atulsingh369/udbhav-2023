@@ -44,12 +44,11 @@ export const Department = {
   Discipline: [
     {
       name: "Piyush Singh Rajput",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_010413.jpg?updatedAt=1681241761770",
+      image: piyush,
       contact: 9936513754,
       email: "ps8335691@gmail.com",
       show: true,
-      post: "",
+      post: "Captain",
       id: "dep-3",
     },
     {
@@ -75,7 +74,7 @@ export const Department = {
     {
       name: "Madhav Dubey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        madhav,
       contact: 8740849130,
       email: "manisdubey2001@gmail.com",
       show: true,
