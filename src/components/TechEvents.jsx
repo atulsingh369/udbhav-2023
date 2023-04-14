@@ -23,7 +23,7 @@ const TechEvents = () => {
           TECHNOVATION
         </h1>
       </div>
-      <SponsersGallery />
+      {/* <SponsersGallery /> */}
       {user && (
         <div className=" bg-home-background bg-cover flex flex-row flex-wrap justify-center h-max">
           {Object.entries(techEvents).map((item, i) => {
