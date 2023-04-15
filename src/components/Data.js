@@ -390,7 +390,7 @@ export const Department = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230321-WA0059.jpg?updatedAt=1681244555817",
       contact: 7518299883,
-      email: "atulsinghkumar0369@gmail.com",
+      email: "atulsingh.0369@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -458,7 +458,7 @@ export const Department = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230321-WA0059.jpg?updatedAt=1681244555817",
       contact: 7518299883,
-      email: "atulsinghkumar0369@gmail.com",
+      email: "atulsingh.0369@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -678,7 +678,7 @@ export const techEvents = {
       link: "/WAB-a-thon-form",
       id: "webathon",
       limit: 4,
-      extra: ["xyx", "hafd"],
+			extra: ["Problem Statement"],
     },
   ],
   pathik: [

@@ -19,8 +19,7 @@ const ContactBox1 = () => {
                 return (
                   <div
                     className="flex flex-col shadow-md shadow-gray-500 rounded-lg overflow-hidden w-60 h-[24rem] bg-base-100 hover:scale-110 transition-all ease-in-out duration-300"
-                    key={index}
-                  >
+                    key={index}>
                     <figure>
                       <img
                         src={value.image}
@@ -29,11 +28,20 @@ const ContactBox1 = () => {
                       />
                     </figure>
                     <div className="flex flex-col items-center tracking-wider justify-center gap-1 h-full text-white">
-                      <p className="text-sm">{value.name}</p>
-                      <p className="text-sm">{value.email}</p>
-                      <p className="text-sm">{value.contact}</p>
+                      <p className="text-sm flex items-center justify-center">
+                        <HiUser className="mx-2" />
+                        {value.name}
+                      </p>
+                      <p className="text-sm flex items-center justify-center">
+                        <HiOutlineMail className="mx-2" />
+                        {value.email}
+                      </p>
+                      <p className="text-sm flex items-center justify-center">
+                        <HiPhone className="mx-2" />
+                        {value.contact}
+                      </p>
                       <div className="flex flex-row items-center gap-2">
-                        <p className="text-sm">{value.post}</p>
+                        <p className="text-sm font-bold">{value.post}</p>
                       </div>
                     </div>
                   </div>
