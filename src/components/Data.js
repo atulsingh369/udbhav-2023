@@ -45,7 +45,7 @@ export const Department = {
     {
       name: "Piyush Singh Rajput",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_010413.jpg?updatedAt=1681241761770",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-13_at_15.13.17.jpg?updatedAt=1681559834885",
       contact: 9936513754,
       email: "ps8335691@gmail.com",
       show: true,
@@ -75,7 +75,7 @@ export const Department = {
     {
       name: "Madhav Dubey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-13_at_15.13.17.jpg?updatedAt=1681559834885",
       contact: 8740849130,
       email: "manisdubey2001@gmail.com",
       show: true,
