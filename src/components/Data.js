@@ -541,8 +541,7 @@ export const Department = {
       post: "",
     },
   ],
-  
-
+};
 export const cultEvents = {
   fusion: [
     {
