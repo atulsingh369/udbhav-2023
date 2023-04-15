@@ -75,7 +75,7 @@ export const Department = {
     {
       name: "Madhav Dubey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-13_at_15.13.17.jpg?updatedAt=1681559834885",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/madhav_sir.jpg?updatedAt=1681560094351",
       contact: 8740849130,
       email: "manisdubey2001@gmail.com",
       show: true,
@@ -87,6 +87,16 @@ export const Department = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/suraj.jpg?updatedAt=1681237246505",
       contact: 7054044344,
       email: "yadavsuraj0443@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Yash Srivastava",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/yashsir.jpg?updatedAt=1681238821003",
+      contact: 6391550263,
+      email: "shekhar.yash01@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -111,16 +121,7 @@ export const Department = {
       post: "",
       id: "dep-3",
     },
-    {
-      name: "Yash Srivastava",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/yashsir.jpg?updatedAt=1681238821003",
-      contact: 6391550263,
-      email: "shekhar.yash01@gmail.com",
-      show: true,
-      post: "",
-      id: "dep-3",
-    },
+
     {
       name: "Divyanshu Singh",
       image:
@@ -423,7 +424,7 @@ export const Department = {
       post: "",
     },
   ],
-  
+
   Technical: [
     {
       name: "Mukul Pandey",
@@ -539,46 +540,8 @@ export const Department = {
       show: true,
       post: "",
     },
-	],
-	"Vice Captain": [
-		{
-			name: "Ankita  Mall",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230412-WA0002.jpg?updatedAt=1681241319302",
-			contact: 7007204032,
-			email: "ankitamall1405@gmail.com",
-			show: true,
-			post: "",
-		},
-		{
-			name: "Aditi Sharma",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20220204_172222.jpg?updatedAt=1681241529300",
-			contact: 7408099356,
-			email: "22sharmaaditi@gmail.com",
-			show: true,
-			post: "",
-		},
-		{
-			name: "Avneesh Tripathi",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/fghjoiu.jpg?updatedAt=1681242181439",
-			contact: 8423039502,
-			email: "avneeshtripathi08c1@gmail.com",
-			show: true,
-			post: "",
-		},
-		{
-			name: "Utkarsh Kumar Dubey",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_000850.jpg?updatedAt=1681242230028",
-			contact: 8004410957,
-			email: "therealukd@gmail.com",
-			show: true,
-			post: "",
-		},
-	],
-};
+  ],
+  
 
 export const cultEvents = {
   fusion: [
@@ -678,7 +641,7 @@ export const techEvents = {
       link: "/WAB-a-thon-form",
       id: "webathon",
       limit: 4,
-			extra: ["Problem Statement"],
+      extra: ["Problem Statement"],
     },
   ],
   pathik: [
