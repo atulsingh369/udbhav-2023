@@ -399,7 +399,7 @@ export const Department = {
     {
       name: "Ashutosh Pandey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
       contact: 9565312620,
       email: "ap4269422@gmail.com",
       show: true,
@@ -512,7 +512,16 @@ export const Department = {
       show: true,
       post: "",
       id: "dep-3",
-    },
+		},
+		{
+			name: "Ashutosh Pandey",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
+			contact: 9565312620,
+			email: "ap4269422@gmail.com",
+			show: true,
+			post: "",
+		},.
     {
       name: "Sachin Yadav",
       image:
@@ -674,7 +683,7 @@ export const techEvents = {
   rocketPropulsion: [
     {
       type: "group",
-      title: "ROCKET REPULSION",
+      title: "ROCKET PROPULSION",
       describe:
         "Reach for the stars with rocket propulsion - let the power of science launch you to new heights!",
       image:

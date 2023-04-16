@@ -8,22 +8,22 @@ import { ToastContainer, toast } from "react-toastify";
 const techForms = () => {
   const { id } = useParams();
   const user = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(false);
 
   const [count, setCount] = useState(1);
+  const [members, setMembers] = useState([]);
 
   const initialValues = {
     mName: "",
     uid: "",
     phnNo: "",
+    extra: [],
   };
 
   const [userForm, setUserForm] = useState({
     teamN: "",
-    member: initialValues,
-    extra: [],
+    details: [],
   });
-
-  const [members, setMembers] = useState([]);
 
   const [values, setValues] = useState(initialValues);
 
@@ -34,7 +34,7 @@ const techForms = () => {
       return;
     }
     setMembers([...members, values]);
-    setCount(count + 1);
+    // setCount(count + 1);
     setValues(initialValues);
     console.log(members);
   };
@@ -45,19 +45,20 @@ const techForms = () => {
     delete members[i];
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // if (!userForm.teamN || !userForm.member || !userForm.extra) {
-    //   toast.error("Enter Required Details");
-    //   setUserForm({
-    //     teamN: "",
-    //     member: [],
-    //     extra: [],
-    //   });
-    //   setLoading(false);
-    //   return;
-    // }
-    toast.warning("Enter Details");
+    setUserForm({ details: [...members] });
+    if (userForm.details === 0) {
+      toast.error("Enter Required Details");
+      setUserForm({
+        teamN: "",
+        details: [],
+      });
+      setLoading(false);
+      return;
+    }
+    console.log(userForm.details[0]);
+    toast.warning("Details submitted");
   };
 
   return (
@@ -74,7 +75,15 @@ const techForms = () => {
                     {value.type === "group" && (
                       <div className="flex flex-col gap-5">
                         <div className="user-box">
-                          <input type="text" name="" required="" />
+                          <input
+                            type="text"
+                            value={userForm.teamN}
+                            onChange={(e) =>
+                              setUserForm({ teamN: e.target.value })
+                            }
+                            name="teamN"
+                            required=""
+                          />
                           <label>Team Name*</label>
                         </div>
                         {members.length !== 0 &&
@@ -206,9 +215,17 @@ const techForms = () => {
 
                     {value.extra &&
                       value.extra.map((item, index) => (
-                        <div className="user-box mt-5">
-                          <input type="text" name="" required="" />
-                          <label>{value.extra[index]}*</label>
+                        <div key={index} className="user-box mt-5">
+                          <input
+                            type="text"
+                            value={values.extra}
+                            onChange={(e) =>
+                              setValues({ ...values, extra: e.target.value })
+                            }
+                            name="extra"
+                            required=""
+                          />
+                          <label> {item}*</label>
                         </div>
                       ))}
                     <button
