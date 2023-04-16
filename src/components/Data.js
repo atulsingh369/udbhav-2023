@@ -521,7 +521,7 @@ export const Department = {
 			email: "ap4269422@gmail.com",
 			show: true,
 			post: "",
-		},.
+		},
     {
       name: "Sachin Yadav",
       image:
