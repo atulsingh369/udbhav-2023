@@ -121,7 +121,26 @@ export const Department = {
       post: "",
       id: "dep-3",
     },
-
+    {
+      name: "Manaswi shukla",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/20230215_192338.jpg?updatedAt=1681627614267",
+      contact: 9897415620,
+      email: "uditpratap7075@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Gaurav Rai",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230415-WA0004.jpg?updatedAt=1681627006282",
+      contact: 7985738979,
+      email: "rai274466@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
     {
       name: "Divyanshu Singh",
       image:
@@ -132,6 +151,7 @@ export const Department = {
       post: "",
       id: "dep-3",
     },
+   
   ],
   Captain: [
     {
@@ -303,6 +323,15 @@ export const Department = {
       post: "",
     },
     {
+      name: "Piyush Chhonkar",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230411-WA0010.jpg?updatedAt=1681295407122",
+      contact: 9557896331,
+      email: "chhonkarpiyush90@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
       name: "Akshat Varshney",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_00.08.49.jpg?updatedAt=1681238454256",
@@ -399,7 +428,7 @@ export const Department = {
     {
       name: "Ashutosh Pandey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
       contact: 9565312620,
       email: "ap4269422@gmail.com",
       show: true,
