@@ -15,28 +15,25 @@ const techForms = () => {
 
   const initialValues = {
     mName: "",
-    uid: "",
+    email: "",
     phnNo: "",
-    extra: [],
   };
 
-  const [userForm, setUserForm] = useState({
-    teamN: "",
-    details: [],
-  });
-
   const [values, setValues] = useState(initialValues);
+  const [teamN, setTeamN] = useState("");
 
   const addMember = (e) => {
     e.preventDefault();
-    if (!values.mName) {
+		if (!values.mName || !values.email || !values.phnNo) {
+			// if (condition) {
+				
+			// }
       toast.error("Enter details");
       return;
     }
     setMembers([...members, values]);
-    // setCount(count + 1);
+    setCount(count + 1);
     setValues(initialValues);
-    console.log(members);
   };
 
   const handleUpdate = (item, i) => {
@@ -47,18 +44,9 @@ const techForms = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUserForm({ details: [...members] });
-    if (userForm.details === 0) {
-      toast.error("Enter Required Details");
-      setUserForm({
-        teamN: "",
-        details: [],
-      });
-      setLoading(false);
-      return;
+    if (!teamN || members.length === 0) {
+      toast.error("Enter Details");
     }
-    console.log(userForm.details[0]);
-    toast.warning("Details submitted");
   };
 
   return (
@@ -77,10 +65,8 @@ const techForms = () => {
                         <div className="user-box">
                           <input
                             type="text"
-                            value={userForm.teamN}
-                            onChange={(e) =>
-                              setUserForm({ teamN: e.target.value })
-                            }
+                            value={teamN}
+                            onChange={(e) => setTeamN(e.target.value)}
                             name="teamN"
                             required=""
                           />
@@ -102,20 +88,20 @@ const techForms = () => {
                                   <input
                                     contentEditable={false}
                                     type="text"
-                                    value={arr_item.uid}
+                                    value={arr_item.email}
                                   />
-                                  <label>UD Id*</label>
+                                  <label>Email Id*</label>
                                 </div>
                                 <div className="user-box">
                                   <input
                                     contentEditable={false}
-                                    type="text"
+                                    type="tel"
                                     value={arr_item.phnNo}
                                   />
                                   <label>Phone No.*</label>
                                 </div>
                                 <button
-                                  className="text-white my-5 rounded-xl p-3 border-2 border-white"
+                                  className="border-2 text-sm border-white text-white p-2 hover:text-yellow-600 hover:border-yellow-600 rounded-xl h-fit"
                                   onClick={() => handleUpdate(item, i)}>
                                   Update
                                 </button>
@@ -124,14 +110,17 @@ const techForms = () => {
                           })}
                       </div>
                     )}
-                    {value.type === "group" && (
-                      <div className="flex flex-row gap-10">
+                    {value.type === "group" && count <= value.limit && (
+                      <div className="flex justify-center flex-row gap-10">
                         <div className="user-box">
                           <input
                             type="text"
                             value={values.mName}
                             onChange={(e) =>
-                              setValues({ ...values, mName: e.target.value })
+                              setValues({
+                                ...values,
+                                mName: e.target.value,
+                              })
                             }
                             name="mName"
                             required=""
@@ -141,27 +130,38 @@ const techForms = () => {
                         <div className="user-box">
                           <input
                             type="text"
-                            value={values.uid}
+                            value={values.email}
                             onChange={(e) =>
-                              setValues({ ...values, uid: e.target.value })
+                              setValues({ ...values, email: e.target.value })
                             }
-                            name="uid"
+                            name="email"
                             required=""
                           />
-                          <label>UD Id*</label>
+                          <label>Email Id*</label>
                         </div>
                         <div className="user-box">
                           <input
-                            type="text"
+                            type="tel"
                             value={values.phnNo}
                             onChange={(e) =>
-                              setValues({ ...values, phnNo: e.target.value })
+                              setValues({
+                                ...values,
+                                phnNo: e.target.value,
+                              })
                             }
                             name="phnNo"
                             required=""
                           />
                           <label>Phone No.*</label>
                         </div>
+                        {count <= value.limit && value.type === "group" && (
+                          <button
+                            type="button"
+                            onClick={addMember}
+                            className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit">
+                            Add
+                          </button>
+                        )}
                       </div>
                     )}
                     {value.type === "solo" && (
@@ -181,14 +181,14 @@ const techForms = () => {
                         <div className="user-box">
                           <input
                             type="text"
-                            value={values.uid}
+                            value={values.email}
                             onChange={(e) =>
                               setValues({ ...values, uid: e.target.value })
                             }
-                            name="uid"
+                            name="email"
                             required=""
                           />
-                          <label>UD Id*</label>
+                          <label>Email Id*</label>
                         </div>
                         <div className="user-box">
                           <input
@@ -203,14 +203,6 @@ const techForms = () => {
                           <label>Phone No.*</label>
                         </div>
                       </div>
-                    )}
-                    {count < value.limit && value.type === "group" && (
-                      <button
-                        type="button"
-                        onClick={addMember}
-                        className="text-white my-5 rounded-xl p-3 border-2 border-white">
-                        Add more
-                      </button>
                     )}
 
                     {value.extra &&
