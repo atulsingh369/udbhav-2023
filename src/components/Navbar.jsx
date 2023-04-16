@@ -130,18 +130,28 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li> */}
-              <li>
-                <Link to="/contact-us">CONTACT US</Link>
-              </li>
+              {user && (
+                 <li>
+                 <Link to="/contact-us">CONTACT US</Link>
+               </li>
+              )}
+             
             </ul>
           </div>
           <div className="navbar-end">
             {!user ? (
+              <div className="flex flex-row items-center justify-between gap-10" >
+                <ul className="hidden lg:flex">
+                <li>
+                <Link to="/contact-us">CONTACT US</Link>
+              </li>
+                </ul>
               <button
                 className="btn glass"
                 onClick={() => navigate("/register")}>
                 Register
               </button>
+              </div>
             ) : (
               <div className="dropdown dropdown-hover">
                 <span tabIndex={0} className="btn m-1">

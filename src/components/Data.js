@@ -121,7 +121,26 @@ export const Department = {
       post: "",
       id: "dep-3",
     },
-
+    {
+      name: "Manaswi shukla",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/20230215_192338.jpg?updatedAt=1681627614267",
+      contact: 8303787302,
+      email: "manaswivns501@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Gaurav Rai",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230415-WA0004.jpg?updatedAt=1681627006282",
+      contact: 7985738979,
+      email: "rai274466@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
     {
       name: "Divyanshu Singh",
       image:
@@ -132,6 +151,7 @@ export const Department = {
       post: "",
       id: "dep-3",
     },
+   
   ],
   Captain: [
     {
@@ -299,6 +319,15 @@ export const Department = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/rohit.png?updatedAt=1681238353409",
       contact: 9112785863,
       email: "rajputrohit9049@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Piyush Chhonkar",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230411-WA0010.jpg?updatedAt=1681295407122",
+      contact: 9557896331,
+      email: "chhonkarpiyush90@gmail.com",
       show: true,
       post: "",
     },
@@ -755,7 +784,7 @@ export const Events = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/Udbhav/udbhavCard.png?updatedAt=1681228622711",
       link: "/cultural",
       rules:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Rules/acting-rules.pdf?updatedAt=1681203164561",
+        "https://drive.google.com/drive/folders/1ieYRmSqd46HIrdO-MIBjMUFfN1F0Fykd?usp=share_link",
     },
   ],
   technical: [
