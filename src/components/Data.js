@@ -784,7 +784,7 @@ export const Events = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/Udbhav/udbhavCard.png?updatedAt=1681228622711",
       link: "/cultural",
       rules:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Rules/acting-rules.pdf?updatedAt=1681203164561",
+        "https://drive.google.com/drive/folders/1ieYRmSqd46HIrdO-MIBjMUFfN1F0Fykd?usp=share_link",
     },
   ],
   technical: [
