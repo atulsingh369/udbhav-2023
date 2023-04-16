@@ -55,7 +55,7 @@ const TechEvents = () => {
                             </p>
                           </div>
                         </div>
-                      // </Link>
+                    //  </Link>
                     );
                   })}
                 </div>
