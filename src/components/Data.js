@@ -125,8 +125,8 @@ export const Department = {
       name: "Manaswi shukla",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/20230215_192338.jpg?updatedAt=1681627614267",
-      contact: 9897415620,
-      email: "uditpratap7075@gmail.com",
+      contact: 8303787302,
+      email: "manaswivns501@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
