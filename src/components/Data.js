@@ -332,6 +332,15 @@ export const Department = {
       post: "",
     },
     {
+      name: "Alvisha Khan",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-16_at_15.14.48.jpg?updatedAt=1681638357321",
+      contact: 123456789,
+      email: "khanalvisha170@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
       name: "Akshat Varshney",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_00.08.49.jpg?updatedAt=1681238454256",
@@ -512,7 +521,7 @@ export const Department = {
       post: "",
     },
   ],
-  "Fooding & Lodging": [
+  "Fooding": [
     {
       name: "Aryan Mishra",
       image:
@@ -625,7 +634,7 @@ export const cultEvents = {
   runway: [
     {
       type: "solo",
-      title: "RUNWAY",
+      title: "Fashion Show",
       describe: "Make a statement with style - let fashion be your voice!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/runway.png?updatedAt=1680541647038",

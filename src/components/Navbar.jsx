@@ -96,8 +96,8 @@ const Navbar = () => {
               UDBHAV
             </Link>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 items-center  lg:gap-5">
+          <div className="navbar-center hidden lg:flex font-semibold">
+            <ul className="menu menu-horizontal px-1 items-center font-semibold lg:gap-5">
               {user && (
                 <li>
                   <Link to="/tour">IERT TOUR</Link>
@@ -138,7 +138,7 @@ const Navbar = () => {
              
             </ul>
           </div>
-          <div className="navbar-end">
+          <div className="navbar-end font-semibold">
             {!user ? (
               <div className="flex flex-row items-center justify-between gap-10" >
                 <ul className="hidden lg:flex">
