@@ -1,14 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { techEvents } from "../Data";
+import { auth, db } from "../../config";
 import "./FormStyle.scss";
 import { ToastContainer, toast } from "react-toastify";
+import { doc, setDoc } from "firebase/firestore";
 
 const techForms = () => {
   const { id } = useParams();
-  const user = useSelector((state) => state.user);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
   const [members, setMembers] = useState([]);
@@ -24,10 +26,10 @@ const techForms = () => {
 
   const addMember = (e) => {
     e.preventDefault();
-		if (!values.mName || !values.email || !values.phnNo) {
-			// if (condition) {
-				
-			// }
+    if (!values.mName || !values.email || !values.phnNo) {
+      // if (condition) {
+
+      // }
       toast.error("Enter details");
       return;
     }
@@ -42,10 +44,58 @@ const techForms = () => {
     delete members[i];
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (!teamN || members.length === 0) {
       toast.error("Enter Details");
+      setLoading(false);
+      setTeamN("");
+      setValues(initialValues);
+      return;
+    } else {
+      await setDoc(
+        doc(db, id, teamN),
+        {
+          uid: auth.currentUser.uid,
+          "Team Name": teamN,
+          Members: members,
+        }
+      );
+      toast.success("Submitted");
+      setLoading(false);
+      setTeamN("");
+      setValues(initialValues);
+      setMembers([]);
+      setTimeout(function () {
+        navigate("/technovation");
+      }, 2000);
+    }
+  };
+
+  const submitSolo = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (!values.mName || !values.email || !values.phnNo) {
+      toast.error("Enter Details");
+      setLoading(false);
+      setValues(initialValues);
+      return;
+    } else {
+      await setDoc(
+        doc(db, id, values.email),
+        {
+          Name: values.mName,
+          Email: values.email,
+          "Phone No": values.phnNo,
+        }
+      );
+      toast.success("Submitted");
+      setLoading(false);
+      setValues(initialValues);
+      setTimeout(function () {
+        navigate("/technovation");
+      }, 2000);
     }
   };
 
@@ -183,7 +233,7 @@ const techForms = () => {
                             type="text"
                             value={values.email}
                             onChange={(e) =>
-                              setValues({ ...values, uid: e.target.value })
+                              setValues({ ...values, email: e.target.value })
                             }
                             name="email"
                             required=""
@@ -205,7 +255,7 @@ const techForms = () => {
                       </div>
                     )}
 
-                    {value.extra &&
+                    {/* {value.extra &&
                       value.extra.map((item, index) => (
                         <div key={index} className="user-box mt-5">
                           <input
@@ -219,16 +269,18 @@ const techForms = () => {
                           />
                           <label> {item}*</label>
                         </div>
-                      ))}
+                      ))} */}
                     <button
-                      onClick={handleSubmit}
+                      onClick={
+                        value.type === "group" ? handleSubmit : submitSolo
+                      }
                       className="submit"
                       type="submit">
                       <span></span>
                       <span></span>
                       <span></span>
                       <span></span>
-                      Submit
+                      {loading ? "Submitting" : "Submit"}
                     </button>
                   </div>
                 );
