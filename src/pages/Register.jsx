@@ -39,12 +39,14 @@ const Register = () => {
         name: "",
         email: "",
         password: "",
-      });
+			});
+			
       setLoading(false);
       setPasswordType("password");
       return;
     }
     try {
+      // await sendSignInLinkToEmail(auth, curUser.email, actionCodeSettings);
       const credential = await createUserWithEmailAndPassword(
         auth,
         curUser.email,
@@ -71,7 +73,7 @@ const Register = () => {
         password: "",
       });
     } catch (error) {
-      toast.error("Invalid Credential");
+      toast.error(error.code);
       setCurUser({
         name: "",
         email: "",
@@ -97,7 +99,7 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        toast.error("Invalid Credential");
+        toast.error(error.code);
         setCurUser({
           name: "",
           email: "",
