@@ -146,7 +146,7 @@ const techForms = () => {
                                 <div className="user-box">
                                   <input
                                     contentEditable={false}
-                                    type="tel"
+                                    type="number"
                                     value={arr_item.phnNo}
                                   />
                                   <label>Phone No.*</label>
@@ -184,7 +184,7 @@ const techForms = () => {
                             type="text"
                             value={values.branch}
                             onChange={(e) =>
-                              setValues({ ...values, Branch: e.target.value })
+                              setValues({ ...values, branch: e.target.value })
                             }
                             name="Branch"
                             required=""
@@ -193,7 +193,7 @@ const techForms = () => {
                         </div>
                         <div className="user-box">
                           <input
-                            type="tel"
+                            type="number"
                             value={values.phnNo}
                             onChange={(e) =>
                               setValues({
