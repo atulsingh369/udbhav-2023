@@ -11,10 +11,10 @@ export const Department = {
       id: "dep-1",
     },
     {
-      name: "Sabaa Parvez",
+      name: "Saba Parvez",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/xcvbn.jpg?updatedAt=1681236364856",
-      contact: 123456789,
+      contact: 8931926306,
       email: "sabaparvez016@gmail.com",
       show: false,
       post: "",
