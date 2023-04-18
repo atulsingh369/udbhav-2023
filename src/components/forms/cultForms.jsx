@@ -140,7 +140,7 @@ const cultForms = () => {
                                 <div className="user-box">
                                   <input
                                     contentEditable={false}
-                                    type="tel"
+                                    type="number"
                                     value={arr_item.phnNo}
                                   />
                                   <label>Phone No.*</label>
@@ -187,7 +187,7 @@ const cultForms = () => {
                         </div>
                         <div className="user-box">
                           <input
-                            type="tel"
+                            type="number"
                             value={values.phnNo}
                             onChange={(e) =>
                               setValues({
