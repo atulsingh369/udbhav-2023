@@ -32,25 +32,28 @@ const CulturalEvents = () => {
                 <div className="flex gap-5 flex-wrap justify-center items-center">
                   {item[1].map((value, index) => {
                     return (
-                      // <Link to={`/techform/${value.id}`}>
-                      <div onClick={alert}
-                        className="card w-64 h-[28rem] bg-base-100 shadow-xl"
-                        key={index}>
-                        <figure>
-                          <img
-                            src={value.image}
-                            alt="Shoes"
-                            className="object-contain"
-                          />
-                        </figure>
-                        <div className="card-body">
-                          <h2 className="card-title ext-2xl ">{value.title}</h2>
-                          <p className="text-justify font-semibold text-white">
-                            {value.describe}
-                          </p>
+                      <Link to={`/culturalform/${value.id}`}>
+                        <div
+                          onClick={alert}
+                          className="card w-64 h-[28rem] bg-base-100 shadow-xl"
+                          key={index}>
+                          <figure>
+                            <img
+                              src={value.image}
+                              alt="Shoes"
+                              className="object-contain"
+                            />
+                          </figure>
+                          <div className="card-body">
+                            <h2 className="card-title ext-2xl ">
+                              {value.title}
+                            </h2>
+                            <p className="text-justify font-semibold text-white">
+                              {value.describe}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      // </Link>
+                      </Link>
                     );
                   })}
                 </div>

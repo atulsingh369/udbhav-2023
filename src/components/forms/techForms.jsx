@@ -1,51 +1,102 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { techEvents } from "../Data";
+import { auth, db } from "../../config";
 import "./FormStyle.scss";
+import { ToastContainer, toast } from "react-toastify";
+import { doc, setDoc } from "firebase/firestore";
 
 const techForms = () => {
   const { id } = useParams();
-  const user = useSelector((state) => state.user);
-
-  const memberRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
+  const [members, setMembers] = useState([]);
 
   const initialValues = {
     mName: "",
-    uid: "",
+    email: "",
     phnNo: "",
   };
 
-  const [members, setMembers] = useState([]);
-
   const [values, setValues] = useState(initialValues);
-  const { mName, uid, phnNo } = values;
-
-  const handleSubmit = () => {
-    const { name, value } = e.target;
-
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
+  const [teamN, setTeamN] = useState("");
 
   const addMember = (e) => {
     e.preventDefault();
-    // dispatch(setEvent(...values))
+    if (!values.mName || !values.email || !values.phnNo) {
+      // if (condition) {
+
+      // }
+      toast.error("Enter details");
+      return;
+    }
     setMembers([...members, values]);
-    // setValues(initialValues);
     setCount(count + 1);
     setValues(initialValues);
-    console.log(members);
   };
 
   const handleUpdate = (item, i) => {
     setCount(count - 1);
     setValues(item);
     delete members[i];
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (!teamN || members.length === 0) {
+      toast.error("Enter Details");
+      setLoading(false);
+      setTeamN("");
+      setValues(initialValues);
+      return;
+    } else {
+      await setDoc(
+        doc(db, id, teamN),
+        {
+          uid: auth.currentUser.uid,
+          "Team Name": teamN,
+          Members: members,
+        }
+      );
+      toast.success("Submitted");
+      setLoading(false);
+      setTeamN("");
+      setValues(initialValues);
+      setMembers([]);
+      setTimeout(function () {
+        navigate("/technovation");
+      }, 2000);
+    }
+  };
+
+  const submitSolo = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (!values.mName || !values.email || !values.phnNo) {
+      toast.error("Enter Details");
+      setLoading(false);
+      setValues(initialValues);
+      return;
+    } else {
+      await setDoc(
+        doc(db, id, values.email),
+        {
+          Name: values.mName,
+          Email: values.email,
+          "Phone No": values.phnNo,
+        }
+      );
+      toast.success("Submitted");
+      setLoading(false);
+      setValues(initialValues);
+      setTimeout(function () {
+        navigate("/technovation");
+      }, 2000);
+    }
   };
 
   return (
@@ -58,155 +109,179 @@ const techForms = () => {
                 return (
                   <div key={index}>
                     <h2 className="text-2xl font-semibold">{value.title}</h2>
-                    <form>
-                      {value.type === "group" && (
-                        <div className="flex flex-col gap-5">
-                          <div className="user-box">
-                            <input type="text" name="" required="" />
-                            <label>Team Name*</label>
-                          </div>
-                          {members.length !== 0 &&
-                            members.map((arr_item, i) => {
-                              return (
-                                <div className="flex flex-row gap-10" key={i}>
-                                  <div className="user-box">
-                                    <input
-                                      contentEditable={false}
-                                      type="text"
-                                      value={arr_item.mName}
-                                    />
-                                    <label>Member {i + 1}*</label>
-                                  </div>
-                                  <div className="user-box">
-                                    <input
-                                      contentEditable={false}
-                                      type="text"
-                                      value={arr_item.uid}
-                                    />
-                                    <label>UD Id*</label>
-                                  </div>
-                                  <div className="user-box">
-                                    <input
-                                      contentEditable={false}
-                                      type="text"
-                                      value={arr_item.phnNo}
-                                    />
-                                    <label>Phone No.*</label>
-                                  </div>
-                                  <button
-                                    className="text-white my-5 rounded-xl p-3 border-2 border-white"
-                                    onClick={() => handleUpdate(item, i)}
-                                  >
-                                    Update
-                                  </button>
+
+                    {value.type === "group" && (
+                      <div className="flex flex-col gap-5">
+                        <div className="user-box">
+                          <input
+                            type="text"
+                            value={teamN}
+                            onChange={(e) => setTeamN(e.target.value)}
+                            name="teamN"
+                            required=""
+                          />
+                          <label>Team Name*</label>
+                        </div>
+                        {members.length !== 0 &&
+                          members.map((arr_item, i) => {
+                            return (
+                              <div className="flex flex-row gap-10" key={i}>
+                                <div className="user-box">
+                                  <input
+                                    contentEditable={false}
+                                    type="text"
+                                    value={arr_item.mName}
+                                  />
+                                  <label>Member {i + 1}*</label>
                                 </div>
-                              );
-                            })}
+                                <div className="user-box">
+                                  <input
+                                    contentEditable={false}
+                                    type="text"
+                                    value={arr_item.email}
+                                  />
+                                  <label>Email Id*</label>
+                                </div>
+                                <div className="user-box">
+                                  <input
+                                    contentEditable={false}
+                                    type="tel"
+                                    value={arr_item.phnNo}
+                                  />
+                                  <label>Phone No.*</label>
+                                </div>
+                                <button
+                                  className="border-2 text-sm border-white text-white p-2 hover:text-yellow-600 hover:border-yellow-600 rounded-xl h-fit"
+                                  onClick={() => handleUpdate(item, i)}>
+                                  Update
+                                </button>
+                              </div>
+                            );
+                          })}
+                      </div>
+                    )}
+                    {value.type === "group" && count <= value.limit && (
+                      <div className="flex justify-center flex-row gap-10">
+                        <div className="user-box">
+                          <input
+                            type="text"
+                            value={values.mName}
+                            onChange={(e) =>
+                              setValues({
+                                ...values,
+                                mName: e.target.value,
+                              })
+                            }
+                            name="mName"
+                            required=""
+                          />
+                          <label>Member {count}*</label>
                         </div>
-                      )}
-                      {value.type === "group" && (
-                        <div ref={memberRef} className="flex flex-row gap-10">
-                          <div className="user-box">
-                            <input
-                              type="text"
-                              value={values.mName}
-                              onChange={(e) =>
-                                setValues({ ...values, mName: e.target.value })
-                              }
-                              name="mName"
-                              required=""
-                            />
-                            <label>Member {count}*</label>
-                          </div>
-                          <div className="user-box">
-                            <input
-                              type="text"
-                              value={values.uid}
-                              onChange={(e) =>
-                                setValues({ ...values, uid: e.target.value })
-                              }
-                              name="uid"
-                              required=""
-                            />
-                            <label>UD Id*</label>
-                          </div>
-                          <div className="user-box">
-                            <input
-                              type="text"
-                              value={values.phnNo}
-                              onChange={(e) =>
-                                setValues({ ...values, phnNo: e.target.value })
-                              }
-                              name="phnNo"
-                              required=""
-                            />
-                            <label>Phone No.*</label>
-                          </div>
+                        <div className="user-box">
+                          <input
+                            type="text"
+                            value={values.email}
+                            onChange={(e) =>
+                              setValues({ ...values, email: e.target.value })
+                            }
+                            name="email"
+                            required=""
+                          />
+                          <label>Email Id*</label>
                         </div>
-                      )}
-                      {value.type === "solo" && (
-                        <div className="flex flex-col gap-10">
-                          <div className="user-box">
-                            <input
-                              type="text"
-                              value={values.mName}
-                              onChange={(e) =>
-                                setValues({ ...values, mName: e.target.value })
-                              }
-                              name="mName"
-                              required=""
-                            />
-                            <label>Name*</label>
-                          </div>
-                          <div className="user-box">
-                            <input
-                              type="text"
-                              value={values.uid}
-                              onChange={(e) =>
-                                setValues({ ...values, uid: e.target.value })
-                              }
-                              name="uid"
-                              required=""
-                            />
-                            <label>UD Id*</label>
-                          </div>
-                          <div className="user-box">
-                            <input
-                              type="text"
-                              value={values.phnNo}
-                              onChange={(e) =>
-                                setValues({ ...values, phnNo: e.target.value })
-                              }
-                              name="phnNo"
-                              required=""
-                            />
-                            <label>Phone No.*</label>
-                          </div>
+                        <div className="user-box">
+                          <input
+                            type="tel"
+                            value={values.phnNo}
+                            onChange={(e) =>
+                              setValues({
+                                ...values,
+                                phnNo: e.target.value,
+                              })
+                            }
+                            name="phnNo"
+                            required=""
+                          />
+                          <label>Phone No.*</label>
                         </div>
-                      )}
-                      {count < value.limit && value.type === "group" && (
-                        <button
-                          type="button"
-                          onClick={addMember}
-                          className="text-white my-5 rounded-xl p-3 border-2 border-white"
-                        >
-                          Add more
-                        </button>
-                      )}
-                      {value.extra && (
-                        <div className="user-box mt-5">
-                          <input type="text" name="" required="" />
-                          <label>{value.extra}*</label>
+                        {count <= value.limit && value.type === "group" && (
+                          <button
+                            type="button"
+                            onClick={addMember}
+                            className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit">
+                            Add
+                          </button>
+                        )}
+                      </div>
+                    )}
+                    {value.type === "solo" && (
+                      <div className="flex flex-col gap-10">
+                        <div className="user-box">
+                          <input
+                            type="text"
+                            value={values.mName}
+                            onChange={(e) =>
+                              setValues({ ...values, mName: e.target.value })
+                            }
+                            name="mName"
+                            required=""
+                          />
+                          <label>Name*</label>
                         </div>
-                      )}
-                      <a href="#">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Submit
-                      </a>
-                    </form>
+                        <div className="user-box">
+                          <input
+                            type="text"
+                            value={values.email}
+                            onChange={(e) =>
+                              setValues({ ...values, email: e.target.value })
+                            }
+                            name="email"
+                            required=""
+                          />
+                          <label>Email Id*</label>
+                        </div>
+                        <div className="user-box">
+                          <input
+                            type="text"
+                            value={values.phnNo}
+                            onChange={(e) =>
+                              setValues({ ...values, phnNo: e.target.value })
+                            }
+                            name="phnNo"
+                            required=""
+                          />
+                          <label>Phone No.*</label>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* {value.extra &&
+                      value.extra.map((item, index) => (
+                        <div key={index} className="user-box mt-5">
+                          <input
+                            type="text"
+                            value={values.extra}
+                            onChange={(e) =>
+                              setValues({ ...values, extra: e.target.value })
+                            }
+                            name="extra"
+                            required=""
+                          />
+                          <label> {item}*</label>
+                        </div>
+                      ))} */}
+                    <button
+                      onClick={
+                        value.type === "group" ? handleSubmit : submitSolo
+                      }
+                      className="submit"
+                      type="submit">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      {loading ? "Submitting" : "Submit"}
+                    </button>
                   </div>
                 );
               })}
@@ -214,6 +289,7 @@ const techForms = () => {
           );
         }
       })}
+      <ToastContainer />
     </div>
   );
 };

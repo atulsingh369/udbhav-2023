@@ -44,7 +44,8 @@ export const Department = {
   Discipline: [
     {
       name: "Piyush Singh Rajput",
-      image: piyush,
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-13_at_15.13.17.jpg?updatedAt=1681559834885",
       contact: 9936513754,
       email: "ps8335691@gmail.com",
       show: true,
@@ -74,7 +75,7 @@ export const Department = {
     {
       name: "Madhav Dubey",
       image:
-        madhav,
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/madhav_sir.jpg?updatedAt=1681560094351",
       contact: 8740849130,
       email: "manisdubey2001@gmail.com",
       show: true,
@@ -86,6 +87,16 @@ export const Department = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/suraj.jpg?updatedAt=1681237246505",
       contact: 7054044344,
       email: "yadavsuraj0443@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Yash Srivastava",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/yashsir.jpg?updatedAt=1681238821003",
+      contact: 6391550263,
+      email: "shekhar.yash01@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -111,11 +122,21 @@ export const Department = {
       id: "dep-3",
     },
     {
-      name: "Yash Srivastava",
+      name: "Manaswi shukla",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/yashsir.jpg?updatedAt=1681238821003",
-      contact: 6391550263,
-      email: "shekhar.yash01@gmail.com",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/20230215_192338.jpg?updatedAt=1681627614267",
+      contact: 8303787302,
+      email: "manaswivns501@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Gaurav Rai",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230415-WA0004.jpg?updatedAt=1681627006282",
+      contact: 7985738979,
+      email: "rai274466@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -130,6 +151,7 @@ export const Department = {
       post: "",
       id: "dep-3",
     },
+   
   ],
   Captain: [
     {
@@ -301,6 +323,15 @@ export const Department = {
       post: "",
     },
     {
+      name: "Piyush Chhonkar",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230411-WA0010.jpg?updatedAt=1681295407122",
+      contact: 9557896331,
+      email: "chhonkarpiyush90@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
       name: "Akshat Varshney",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-12_at_00.08.49.jpg?updatedAt=1681238454256",
@@ -389,7 +420,7 @@ export const Department = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230321-WA0059.jpg?updatedAt=1681244555817",
       contact: 7518299883,
-      email: "atulsinghkumar0369@gmail.com",
+      email: "atulsingh.0369@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -397,7 +428,7 @@ export const Department = {
     {
       name: "Ashutosh Pandey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k191.jpg?updatedAt=1680525639131",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
       contact: 9565312620,
       email: "ap4269422@gmail.com",
       show: true,
@@ -422,7 +453,7 @@ export const Department = {
       post: "",
     },
   ],
-  
+
   Technical: [
     {
       name: "Mukul Pandey",
@@ -457,7 +488,7 @@ export const Department = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230321-WA0059.jpg?updatedAt=1681244555817",
       contact: 7518299883,
-      email: "atulsinghkumar0369@gmail.com",
+      email: "atulsingh.0369@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
@@ -510,7 +541,16 @@ export const Department = {
       show: true,
       post: "",
       id: "dep-3",
-    },
+		},
+		{
+			name: "Ashutosh Pandey",
+			image:
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
+			contact: 9565312620,
+			email: "ap4269422@gmail.com",
+			show: true,
+			post: "",
+		},
     {
       name: "Sachin Yadav",
       image:
@@ -538,47 +578,8 @@ export const Department = {
       show: true,
       post: "",
     },
-	],
-	"Vice Captain": [
-		{
-			name: "Ankita  Mall",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230412-WA0002.jpg?updatedAt=1681241319302",
-			contact: 7007204032,
-			email: "ankitamall1405@gmail.com",
-			show: true,
-			post: "",
-		},
-		{
-			name: "Aditi Sharma",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20220204_172222.jpg?updatedAt=1681241529300",
-			contact: 7408099356,
-			email: "22sharmaaditi@gmail.com",
-			show: true,
-			post: "",
-		},
-		{
-			name: "Avneesh Tripathi",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/fghjoiu.jpg?updatedAt=1681242181439",
-			contact: 8423039502,
-			email: "avneeshtripathi08c1@gmail.com",
-			show: true,
-			post: "",
-		},
-		{
-			name: "Utkarsh Kumar Dubey",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230412_000850.jpg?updatedAt=1681242230028",
-			contact: 8004410957,
-			email: "therealukd@gmail.com",
-			show: true,
-			post: "",
-		},
-	],
+  ],
 };
-
 export const cultEvents = {
   fusion: [
     {
@@ -677,7 +678,7 @@ export const techEvents = {
       link: "/WAB-a-thon-form",
       id: "webathon",
       limit: 4,
-      extra: ["xyx", "hafd"],
+      extra: ["Problem Statement"],
     },
   ],
   pathik: [
@@ -711,7 +712,7 @@ export const techEvents = {
   rocketPropulsion: [
     {
       type: "group",
-      title: "ROCKET REPULSION",
+      title: "ROCKET PROPULSION",
       describe:
         "Reach for the stars with rocket propulsion - let the power of science launch you to new heights!",
       image:
@@ -783,7 +784,7 @@ export const Events = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/Udbhav/udbhavCard.png?updatedAt=1681228622711",
       link: "/cultural",
       rules:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Rules/acting-rules.pdf?updatedAt=1681203164561",
+        "https://drive.google.com/drive/folders/1ieYRmSqd46HIrdO-MIBjMUFfN1F0Fykd?usp=share_link",
     },
   ],
   technical: [

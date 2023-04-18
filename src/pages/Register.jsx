@@ -39,12 +39,14 @@ const Register = () => {
         name: "",
         email: "",
         password: "",
-      });
+			});
+			
       setLoading(false);
       setPasswordType("password");
       return;
     }
     try {
+      // await sendSignInLinkToEmail(auth, curUser.email, actionCodeSettings);
       const credential = await createUserWithEmailAndPassword(
         auth,
         curUser.email,
@@ -54,14 +56,13 @@ const Register = () => {
       await updateProfile(res, {
         displayName: curUser.name,
       });
-      await setDoc(doc(db, "users", res.uid), {
+      await setDoc(doc(db, "users", res.email), {
         uid: res.uid,
         displayName: res.displayName,
         photoURL: res.photoURL,
         email: res.email,
         branch: null,
         year: null,
-        events: null,
       });
       toast.success("Registerd Succesfully");
       setLoading(false);
@@ -72,7 +73,7 @@ const Register = () => {
         password: "",
       });
     } catch (error) {
-      toast.error("Invalid Credential");
+      toast.error(error.code);
       setCurUser({
         name: "",
         email: "",
@@ -98,7 +99,7 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        toast.error("Invalid Credential");
+        toast.error(error.code);
         setCurUser({
           name: "",
           email: "",
@@ -120,7 +121,18 @@ const Register = () => {
         toast.success(`Welcome ${user.displayName}`);
         // IdP data available using getAdditionalUserInfo(result)
         dispatch(setUser(user));
-        navigate("/");
+
+        setDoc(doc(db, "users", user.email), {
+          uid: user.uid,
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+          email: user.email,
+          branch: null,
+          year: null,
+        });
+        setTimeout(function () {
+          navigate("/");
+        }, 2000);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -207,8 +219,7 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black "
-                >
+                  className="p-4 border border-base-100 bg-white text-black ">
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -222,8 +233,7 @@ const Register = () => {
                 Already registered? &nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500"
-                >
+                  className="cursor-pointer text-blue-500">
                   Sign In
                 </span>
               </p>
@@ -265,8 +275,7 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black "
-                >
+                  className="p-4 border border-base-100 bg-white text-black ">
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -280,8 +289,7 @@ const Register = () => {
                 Don't have an account?&nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500"
-                >
+                  className="cursor-pointer text-blue-500">
                   &nbsp;Register
                 </span>
               </p>
