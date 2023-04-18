@@ -27,22 +27,20 @@ const ContactBox1 = () => {
                         className=" object-cover w-full h-[16rem]"
                       />
                     </figure>
-                    <div className="flex flex-col items-center tracking-wider justify-center gap-1 h-full text-white">
-                      <p className="text-sm flex items-center justify-center">
+                    <div className="flex flex-col items-start tracking-wider justify-center gap-1 h-full text-white">
+                      <div className="text-xs flex items-center justify-center">
                         <HiUser className="mx-2" />
                         {value.name}
-                      </p>
-                      <p className="text-sm flex items-center justify-center">
+                      </div>
+                      <div className="text-xs flex items-center justify-center">
                         <HiOutlineMail className="mx-2" />
                         {value.email}
-                      </p>
-                      <p className="text-sm flex items-center justify-center">
+                      </div>
+                      <div className="text-xs flex items-center justify-center">
                         <HiPhone className="mx-2" />
                         {value.contact}
-                      </p>
-                      <div className="flex flex-row items-center gap-2">
-                        <p className="text-sm font-bold">{value.post}</p>
                       </div>
+                        <p className="text-sm font-bold text-center w-full">{value.post}</p>
                     </div>
                   </div>
                 );
