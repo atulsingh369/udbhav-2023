@@ -13,23 +13,23 @@ const FormsCards = () => {
             <div className="flex gap-5 flex-wrap justify-center items-center">
               {item[1].map((value, index) => {
                 return (
-                  <Link to={value.link}>
+                  <Link to={value.link} target="_blank">
                     <div
-                      className="card w-full h-[20rem] bg-base-100 shadow-xl"
+                      className="flex flex-col  rounded-lg overflow-hidden w-60 h-[30rem] bg-base-100 hover:scale-110 transition-all ease-in-out duration-300"
                       key={index}
                     >
                       <figure>
                         <img
                           src={value.image}
-                          alt="Shoes"
-                          className="object-cover"
+                          alt={value.alt}
+                          className="object-cover w-full h-[16rem]"
                         />
                       </figure>
                       <div className="card-body">
                         <h2 className="card-title justify-center text-2xl ">
                           {value.title}
                         </h2>
-                        <p className="text-justify font-semibold text-white">
+                        <p className="text-justify font-semibold text-white ">
                           {value.describe}
                         </p>
                       </div>

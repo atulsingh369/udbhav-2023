@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-// import Forms from "./pages/Forms";
+import Forms from "./pages/Forms";
 import ContactUs from "./pages/ContactUs";
 import Register from "./pages/Register";
 import Events from "./pages/Events";
@@ -20,7 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/tour" element={<Tour />} />
-        {/* <Route path="/forms" element={<Forms />} /> */}
+        <Route path="/forms" element={<Forms />} />
         <Route path="/events" element={<Events />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/register" element={<Register />} />

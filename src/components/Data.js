@@ -766,22 +766,15 @@ export const techEvents = {
 export const Forms = {
   poster: [
     {
-      title: "POSTER MAKING COMPETITION",
-      describe: "",
+      title: "Technovation 2k23 data collection from",
+      describe: "Please take a few minutes to fill out the form.",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "/forms",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/technovation/technovationCard.png?updatedAt=1681228832027",
+      link: "https://forms.gle/bfYCV4dyiwAqFp6o8",
+      alt:"technovation_card_image",
     },
   ],
-  logo: [
-    {
-      title: "POSTER MAKING COMPETITION",
-      describe: "",
-      image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/wabathon.png?updatedAt=1680496248059",
-      link: "/forms",
-    },
-  ],
+  
 };
 
 export const Events = {

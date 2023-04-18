@@ -109,7 +109,7 @@ const Navbar = () => {
                 </li>
               )}
 
-              {/* <li tabIndex={0}>
+              <li tabIndex={0}>
                 <Link to="/forms">
                   UPDATES
                   <svg
@@ -123,13 +123,11 @@ const Navbar = () => {
                 </Link>
                 <ul className="p-2">
                   <li>
-                    <a>Forms</a>
+                    <Link to="/forms">Forms</Link>
                   </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
+                  
                 </ul>
-              </li> */}
+              </li>
               {user && (
                  <li>
                  <Link to="/contact-us">CONTACT US</Link>
