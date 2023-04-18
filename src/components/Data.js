@@ -599,13 +599,13 @@ export const cultEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/fusion.png?updatedAt=1680540755181",
       link: "",
       id: "fusion",
-      limit: 4,
+      limit: 8,
       extra: "",
     },
   ],
   melodia: [
     {
-      type: "solo",
+      type: "group",
       title: "MELODIA",
       describe:
         "Unleash your voice and set your soul free - sing your heart out!",
@@ -613,7 +613,7 @@ export const cultEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/melodia.png?updatedAt=1680541071833",
       link: "",
       id: "melodia",
-      limit: 4,
+      limit: 12,
       extra: "",
     },
   ],
@@ -627,26 +627,26 @@ export const cultEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/spotlight.png?updatedAt=1680541374488",
       link: "",
       id: "spotLight",
-      limit: 4,
+      limit: 10,
       extra: "",
     },
   ],
   runway: [
     {
-      type: "solo",
+      type: "group",
       title: "Fashion Show",
       describe: "Make a statement with style - let fashion be your voice!",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/runway.png?updatedAt=1680541647038",
       link: "",
       id: "runway",
-      limit: 4,
+      limit: 12,
       extra: "",
     },
   ],
   harmonize: [
     {
-      type: "group",
+      type: "solo",
       title: "HARMONIZE",
       describe:
         "Create a symphony with your fingertips - let your music speak louder than words!",
@@ -654,14 +654,14 @@ export const cultEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/harmonize.png?updatedAt=1680541886718",
       link: "",
       id: "harmonize",
-      limit: 4,
+      limit: 1,
       extra: "",
     },
   ],
 
   kavyanical: [
     {
-      type: "group",
+      type: "solo",
       title: "KAVYANICAL",
       describe:
         "Paint a picture with your words - let your poetry capture the heart and soul!",
@@ -669,7 +669,7 @@ export const cultEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/kavyanical.png?updatedAt=1680542035401",
       link: "",
       id: "kavyanical",
-      limit: 4,
+      limit: 1,
       extra: "",
     },
   ],
@@ -700,13 +700,13 @@ export const techEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/pathik.png?updatedAt=1680497789564",
       link: "/pathik-form-event",
       id: "pathik",
-      limit: 4,
+      limit: 6,
       extra: "",
     },
   ],
   spartans: [
     {
-      type: "solo",
+      type: "group",
       title: "SPARTANS",
       describe:
         "Get ready to rev your robots - navigate obstacles and race to the finish line!",
@@ -714,7 +714,7 @@ export const techEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/spartans.png?updatedAt=1680497823254",
       link: "",
       id: "spartans",
-      limit: 4,
+      limit: 6,
       extra: "",
     },
   ],
@@ -742,7 +742,7 @@ export const techEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/bridgeIt.png?updatedAt=1680497824188",
       link: "/bridge-it-form",
       id: "bridgeIt",
-      limit: 4,
+      limit: 3,
       extra: "",
     },
   ],
@@ -757,7 +757,7 @@ export const techEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/roboSoccer.png?updatedAt=1680497825112",
       link: "",
       id: "roboSoccer",
-      limit: 4,
+      limit: 6,
       extra: "",
     },
   ],

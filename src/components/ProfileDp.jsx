@@ -103,9 +103,9 @@ const ProfileDp = () => {
 
   return (
     <>
-      {loading ? (
+      {/* {loading ? (
         <MainLoader />
-      ) : (
+      ) : ( */}
         <div className="flex flex-col items-center  justify-center gap-28 md:gap-10 ">
           <div className=" ">
             <div className="avatar w-fit flex flex-col items-end  ">
@@ -167,7 +167,7 @@ const ProfileDp = () => {
           </div>
           <ToastContainer />
         </div>
-      )}
+      {/* )} */}
     </>
   );
 };

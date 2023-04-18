@@ -17,7 +17,7 @@ const cultForms = () => {
 
   const initialValues = {
     mName: "",
-    email: "",
+    branch: "",
     phnNo: "",
   };
 
@@ -26,7 +26,7 @@ const cultForms = () => {
 
   const addMember = (e) => {
     e.preventDefault();
-    if (!values.mName || !values.email || !values.phnNo) {
+    if (!values.mName || !values.branch || !values.phnNo) {
       // if (condition) {
 
       // }
@@ -73,7 +73,7 @@ const cultForms = () => {
   const submitSolo = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (!values.mName || !values.email || !values.phnNo) {
+    if (!values.mName || !values.branch || !values.phnNo) {
       toast.error("Enter Details");
       setLoading(false);
       setValues(initialValues);
@@ -81,7 +81,7 @@ const cultForms = () => {
     } else {
       await setDoc(doc(db, id, values.email), {
         Name: values.mName,
-        Email: values.email,
+        Branch: values.branch,
         "Phone No": values.phnNo,
       });
       toast.success("Submitted");
@@ -130,11 +130,12 @@ const cultForms = () => {
                                 </div>
                                 <div className="user-box">
                                   <input
+                                  placeholder="CSE/A3"
                                     contentEditable={false}
                                     type="text"
-                                    value={arr_item.email}
+                                    value={arr_item.branch}
                                   />
-                                  <label>Email Id*</label>
+                                  <label>Branch/Year*</label>
                                 </div>
                                 <div className="user-box">
                                   <input
@@ -173,15 +174,16 @@ const cultForms = () => {
                         </div>
                         <div className="user-box">
                           <input
+                          placeholder="CSE/A3"
                             type="text"
-                            value={values.email}
+                            value={values.branch}
                             onChange={(e) =>
-                              setValues({ ...values, email: e.target.value })
+                              setValues({ ...values, branch: e.target.value })
                             }
-                            name="email"
+                            name="branch"
                             required=""
                           />
-                          <label>Email Id*</label>
+                          <label>Branch/Year*</label>
                         </div>
                         <div className="user-box">
                           <input
@@ -224,15 +226,16 @@ const cultForms = () => {
                         </div>
                         <div className="user-box">
                           <input
+                          placeholder="CSE/A3"
                             type="text"
-                            value={values.email}
+                            value={values.branch}
                             onChange={(e) =>
-                              setValues({ ...values, email: e.target.value })
+                              setValues({ ...values, branch: e.target.value })
                             }
-                            name="email"
+                            name="branch"
                             required=""
                           />
-                          <label>Email Id*</label>
+                          <label>Branch/Year*</label>
                         </div>
                         <div className="user-box">
                           <input
