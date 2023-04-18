@@ -23,7 +23,7 @@ const ProfileDp = () => {
    getDoc(doc(db, "users", user.email)).then((docSnap) => {
     if (docSnap.exists()) {
       data = docSnap.data();
-      console.log(data);
+      // console.log(data);
       toast.success(data);
       setLoading(false);
     } else {
@@ -31,7 +31,7 @@ const ProfileDp = () => {
     }
   });
 
-  console.log(data);
+  // console.log(data);
   toast.success(data);
 
   const change = async (e) => {
