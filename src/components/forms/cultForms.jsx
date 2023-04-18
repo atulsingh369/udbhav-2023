@@ -38,9 +38,10 @@ const cultForms = () => {
     setValues(initialValues);
   };
 
-  const handleUpdate = (item, i) => {
+  const handleUpdate = (i) => {
+    // console.log(members,i,members[i])
+    setValues(members[i]);
     setCount(count - 1);
-    setValues(item);
     delete members[i];
   };
 
@@ -94,11 +95,11 @@ const cultForms = () => {
   };
 
   return (
-    <div className="h-screen  ">
+    <div className="h-screen ">
       {Object.entries(cultEvents).map((item, i) => {
         if (item[0] === id) {
           return (
-            <div className="login-box scrollbar-hidden overflow-y-auto" key={i}>
+            <div className="login-box scrollbar-hidden md:w-fit w-full overflow-y-scroll h-4/5 md:h-fit mt-4 " key={i}>
               {item[1].map((value, index) => {
                 return (
                   <div key={index}>
@@ -119,12 +120,12 @@ const cultForms = () => {
                         {members.length !== 0 &&
                           members.map((arr_item, i) => {
                             return (
-                              <div className="flex flex-row gap-10" key={i}>
+                              <div className="flex flex-col md:flex-row gap-10" key={i}>
                                 <div className="user-box">
                                   <input
                                     contentEditable={false}
                                     type="text"
-                                    value={arr_item.mName}
+                                    value={arr_item && arr_item.mName}
                                   />
                                   <label>Member {i + 1}*</label>
                                 </div>
@@ -133,7 +134,7 @@ const cultForms = () => {
                                   placeholder="CSE/A3"
                                     contentEditable={false}
                                     type="text"
-                                    value={arr_item.branch}
+                                    value={arr_item && arr_item.branch}
                                   />
                                   <label>Branch/Year*</label>
                                 </div>
@@ -141,26 +142,26 @@ const cultForms = () => {
                                   <input
                                     contentEditable={false}
                                     type="number"
-                                    value={arr_item.phnNo}
+                                    value={arr_item && arr_item.phnNo}
                                   />
                                   <label>Phone No.*</label>
                                 </div>
-                                <button
+                                {/* <button
                                   className="border-2 text-sm border-white text-white p-2 hover:text-yellow-600 hover:border-yellow-600 rounded-xl h-fit"
-                                  onClick={() => handleUpdate(item, i)}>
+                                  onClick={() => handleUpdate(i)}>
                                   Update
-                                </button>
+                                </button> */}
                               </div>
                             );
                           })}
                       </div>
                     )}
                     {value.type === "group" && count <= value.limit && (
-                      <div className="flex justify-center flex-row gap-10">
+                      <div className="flex justify-center flex-col md:flex-row  md:gap-10">
                         <div className="user-box">
                           <input
                             type="text"
-                            value={values.mName}
+                            value={values && values.mName}
                             onChange={(e) =>
                               setValues({
                                 ...values,
@@ -176,7 +177,7 @@ const cultForms = () => {
                           <input
                           placeholder="CSE/A3"
                             type="text"
-                            value={values.branch}
+                            value={values && values.branch}
                             onChange={(e) =>
                               setValues({ ...values, branch: e.target.value })
                             }
@@ -188,7 +189,7 @@ const cultForms = () => {
                         <div className="user-box">
                           <input
                             type="number"
-                            value={values.phnNo}
+                            value={values && values.phnNo}
                             onChange={(e) =>
                               setValues({
                                 ...values,
@@ -239,7 +240,7 @@ const cultForms = () => {
                         </div>
                         <div className="user-box">
                           <input
-                            type="text"
+                            type="number"
                             value={values.phnNo}
                             onChange={(e) =>
                               setValues({ ...values, phnNo: e.target.value })

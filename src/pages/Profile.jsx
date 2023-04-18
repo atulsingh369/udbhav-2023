@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProfileDp from "../components/ProfileDp";
 import ProfileInfo from "../components/ProfileInfo";
 import RegisteredEvents from "../components/RegisteredEvents";
+import { db } from "../config";
+import { collection, getDocs } from "firebase/firestore";
 
 const Profile = () => {
   return (
@@ -9,6 +11,7 @@ const Profile = () => {
       <ProfileDp />
       <ProfileInfo />
     </div>
+   
   );
 };
 
