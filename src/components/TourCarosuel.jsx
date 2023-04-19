@@ -4,14 +4,14 @@ const TourCarosuel = () => {
   return (
     <>
       <section className="w-full    flex flex-row justify-center  pt-10 lg:pt-10 ">
-        <div className="carousel lg:w-11/12 md:w-11/12">
+        <div className="carousel h-1/5  ">
           <div
             id="slide1"
             className="carousel-item relative w-full flex flex-row items-center justify-center"
           >
             <img
-              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner.jpg?updatedAt=1680522269752"
-              className="lg:h-11/12 "
+              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/iert_tour/DSC_6644.JPG?updatedAt=1681930243390"
+              className="object-center"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide4" className="btn btn-circle bg-transparent">
