@@ -109,6 +109,8 @@ const techForms = () => {
               {item[1].map((value, index) => {
                 return (
                   <div key={index}>
+                  <p className="text-white font-semibold flex items-end justify-end" >Min - 1 and Max - {value.limit}</p>
+
                     <h2 className="text-2xl font-semibold">{value.title}</h2>
 
                     {value.type === "group" && (
