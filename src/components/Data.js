@@ -335,7 +335,7 @@ export const Department = {
       name: "Alvisha Khan",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-16_at_15.14.48.jpg?updatedAt=1681638357321",
-      contact: 123456789,
+      contact: 9412540419,
       email: "khanalvisha170@gmail.com",
       show: true,
       post: "",
