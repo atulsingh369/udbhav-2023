@@ -95,14 +95,14 @@ const cultForms = () => {
   };
 
   return (
-    <div className="h-screen ">
+    <div className=" ">
       {Object.entries(cultEvents).map((item, i) => {
         if (item[0] === id) {
           return (
             <div className="grid grid-cols-1
-             md:grid-cols-3 h-full p-5">
+             md:grid-cols-3 h-screen w-full   ">
               <div
-                className="login-box scrollbar-hidden md:w-fit w-full overflow-scroll h-4/5 md:h-fit mt-4 relative md:col-span-2"
+                className="login-box scrollbar-hidden w-full md:w-4/5 pt-20 md:pt-5 overflow-scroll h-screen md:h-fit mt-4 relative md:col-span-2"
                 key={i}
               >
                 {item[1].map((value, index) => {
@@ -329,9 +329,10 @@ const cultForms = () => {
                   );
                 })}
               </div>
-              <div className=" h-5/6 my-auto p-2 text-white bg-[#101a26] rounded-lg shadow-lg shadow-black/80 flex flex-col gap-4 overflow-y-scroll">
-                <h3 className="font-bold text-3xl text-center">{item[1][0].title}</h3>
-                <ul className="list-disc space-y-1 font-semibold pl-8">
+             
+              <div className=" h-screen w-full p-5 pt-10 md:pt-24  text-white bg-[#101a26] md:rounded-lg md:shadow-lg md:shadow-black/80 flex flex-col gap-4 overflow-y-scroll">
+                <h3 className="font-bold text-3xl text-center underline">{item[1][0].title}</h3>
+                <ul className="list-disc space-y-1  pl-8 leading-8">
                   {item[1][0].rules.map((rule, num) => {
                     return <li >{rule}</li>;
                   })}

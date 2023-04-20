@@ -683,11 +683,10 @@ export const cultEvents = {
       limit: 5,
       extra: "",
       ruleHead: "Harmonize Rules",
-      rule1: "This is a Group as well as solo event.",
-      rule2: "Maximun number of members for this event is 5",
-      linkRule:
-        "https://drive.google.com/file/d/11CEAIK5AJd4VUKQU-S9G09CKdkxn4Adx/view?usp=sharing",
-      ruleDrive: "Read More descriptive rules here, before filling the form.",
+      rules: ["Eligibility: The competition is open to all students of our college who have registered for the event.",
+    "Event Style: This is a GROUP+SOLO Event. Participants (any year) should register before the start of the session and a total 5 Team will be finalised after audition. Also, bring your own instrument."],
+      
+      
     },
   ],
 
@@ -705,27 +704,20 @@ export const cultEvents = {
       extra: "",
       ruleHead: "Kavyanical Rules",
       rules: [
-        "This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 2","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 1","This is a solo event.",
-        "Maximun number of members for this event is 2","This is a solo event.",
-        "Maximun number of members for this event is 2",
+        "Eligibility: The competition is open to all students of our college who have registered for the event.",
+        "Event Style: This is a solo Event. Participants (any year) should register before the start of the session and a total 5 member will be finalised after audition.",
+        "Musical style: Participants can play any style of background music, including rock, jazz, blues, funk, and more. Remix songs are also allowed for this event.",
+        "Time limit: For auditions, each member will be allowed to play for a maximum of 2 minutes, and for finals, the time limit will be 5 minutes. Time limits must be strictly observed.",
+        "Judging panel: Members will be judged on their Tone, Words and overall quality of performance and Plagiarism is strictly prohibited.",
+        "Scoring system: Scores will be given based on a 10-point scale.",
+        "Winner selection: The member with the highest total score will be declared the winner of the competition.",
+        "Code of conduct: Participants must present themselves in a respectful and professional manner. Any inappropriate behaviour will result in disqualification.",
+        "Disqualification: The judges reserve the right to disqualify any member that does not comply with the rules of the competition or behaves inappropriately.",
+        "Organizers' decision: The decision of the competition organizers and judges will be final and binding. No correspondence will be entertained in this regard.",
+        "These rules can be modified as per the requirements of the college event.",
+        
       ],
-      linkRule:
-        "https://drive.google.com/file/d/1ytJlUGMNFlOl1ni6sVuCHoQfrK9L8ugs/view?usp=sharing",
-      ruleDrive: "Read More descriptive rules here, before filling the form.",
+
     },
   ],
   // talentShow: [
