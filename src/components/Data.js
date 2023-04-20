@@ -151,7 +151,6 @@ export const Department = {
       post: "",
       id: "dep-3",
     },
-   
   ],
   Captain: [
     {
@@ -521,7 +520,7 @@ export const Department = {
       post: "",
     },
   ],
-  "Fooding": [
+  Fooding: [
     {
       name: "Aryan Mishra",
       image:
@@ -550,16 +549,16 @@ export const Department = {
       show: true,
       post: "",
       id: "dep-3",
-		},
-		{
-			name: "Ashutosh Pandey",
-			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
-			contact: 9565312620,
-			email: "ap4269422@gmail.com",
-			show: true,
-			post: "",
-		},
+    },
+    {
+      name: "Ashutosh Pandey",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
+      contact: 9565312620,
+      email: "ap4269422@gmail.com",
+      show: true,
+      post: "",
+    },
     {
       name: "Sachin Yadav",
       image:
@@ -601,11 +600,12 @@ export const cultEvents = {
       id: "fusion",
       limit: 8,
       extra: "",
-      ruleHead:"Fusion Rules",
-      rule1:"This is a Group as well as solo event.",
-      rule2:"Maximun number of members in this event is allowed to 8",
-      linkRule:"https://drive.google.com/drive/folders/1I4ebk93oP-XhMjA-kRyQPJ-z6yX3ffxP?usp=sharing",
-      ruleDrive:"Read More descriptive rules here, before filling the form.",
+      ruleHead: "Fusion Rules",
+      rule1: "This is a Group as well as solo event.",
+      rule2: "Maximun number of members in this event is allowed to 8",
+      linkRule:
+        "https://drive.google.com/drive/folders/1I4ebk93oP-XhMjA-kRyQPJ-z6yX3ffxP?usp=sharing",
+      ruleDrive: "Read More descriptive rules here, before filling the form.",
     },
   ],
   melodia: [
@@ -620,11 +620,13 @@ export const cultEvents = {
       id: "melodia",
       limit: 12,
       extra: "",
-      ruleHead:"Melodia Rules",
-      rule1:"This is a Group(JAMMING) as well as solo singing event.",
-      rule2:"Maximun number of members in this event is allowed to 12 and minimum number of members in group will be 8. No duet is allowed in this event",
-      linkRule:"https://drive.google.com/file/d/1CUS9GBvTZZU3KVI63cVDLNqDmdyBhSGv/view?usp=share_link",
-      ruleDrive:"Read More descriptive rules here, before filling the form.",
+      ruleHead: "Melodia Rules",
+      rule1: "This is a Group(JAMMING) as well as solo singing event.",
+      rule2:
+        "Maximun number of members in this event is allowed to 12 and minimum number of members in group will be 8. No duet is allowed in this event",
+      linkRule:
+        "https://drive.google.com/file/d/1CUS9GBvTZZU3KVI63cVDLNqDmdyBhSGv/view?usp=share_link",
+      ruleDrive: "Read More descriptive rules here, before filling the form.",
     },
   ],
   spotLight: [
@@ -639,11 +641,14 @@ export const cultEvents = {
       id: "spotLight",
       limit: 10,
       extra: "",
-      ruleHead:"SpotLight Rules",
-      rule1:"This is a Group as well as solo event. You can perform -mono-act, -nukkad-nattak, -skit, -mime",
-      rule2:"Maximun number of members for -nukkad-nattak is 10, for -skit is 8 and for -mime is 5",
-      linkRule:"https://drive.google.com/file/d/1z-gN-W908TfgIpGEpBtudrGRnYyCnLKA/view?usp=sharing",
-      ruleDrive:"Read More descriptive rules here, before filling the form.",
+      ruleHead: "SpotLight Rules",
+      rule1:
+        "This is a Group as well as solo event. You can perform -mono-act, -nukkad-nattak, -skit, -mime",
+      rule2:
+        "Maximun number of members for -nukkad-nattak is 10, for -skit is 8 and for -mime is 5",
+      linkRule:
+        "https://drive.google.com/file/d/1z-gN-W908TfgIpGEpBtudrGRnYyCnLKA/view?usp=sharing",
+      ruleDrive: "Read More descriptive rules here, before filling the form.",
     },
   ],
   runway: [
@@ -657,11 +662,12 @@ export const cultEvents = {
       id: "runway",
       limit: 12,
       extra: "",
-      ruleHead:"Fashion Show Rules",
-      rule1:"This is a Group event.",
-      rule2:"Maximun number of members for this event is 12",
-      linkRule:"https://drive.google.com/file/d/1k0nxgzcMQwYVQvrorl-EvJQzZJNxcuNx/view?usp=sharing",
-      ruleDrive:"Read More descriptive rules here, before filling the form.",
+      ruleHead: "Fashion Show Rules",
+      rule1: "This is a Group event.",
+      rule2: "Maximun number of members for this event is 12",
+      linkRule:
+        "https://drive.google.com/file/d/1k0nxgzcMQwYVQvrorl-EvJQzZJNxcuNx/view?usp=sharing",
+      ruleDrive: "Read More descriptive rules here, before filling the form.",
     },
   ],
   harmonize: [
@@ -676,11 +682,12 @@ export const cultEvents = {
       id: "harmonize",
       limit: 5,
       extra: "",
-      ruleHead:"Harmonize Rules",
-      rule1:"This is a Group as well as solo event.",
-      rule2:"Maximun number of members for this event is 5",
-      linkRule:"https://drive.google.com/file/d/11CEAIK5AJd4VUKQU-S9G09CKdkxn4Adx/view?usp=sharing",
-      ruleDrive:"Read More descriptive rules here, before filling the form.",
+      ruleHead: "Harmonize Rules",
+      rule1: "This is a Group as well as solo event.",
+      rule2: "Maximun number of members for this event is 5",
+      linkRule:
+        "https://drive.google.com/file/d/11CEAIK5AJd4VUKQU-S9G09CKdkxn4Adx/view?usp=sharing",
+      ruleDrive: "Read More descriptive rules here, before filling the form.",
     },
   ],
 
@@ -696,11 +703,29 @@ export const cultEvents = {
       id: "kavyanical",
       limit: 1,
       extra: "",
-      ruleHead:"Kavyanical Rules",
-      rule1:"This is a solo event.",
-      rule2:"Maximun number of members for this event is 1",
-      linkRule:"https://drive.google.com/file/d/1ytJlUGMNFlOl1ni6sVuCHoQfrK9L8ugs/view?usp=sharing",
-      ruleDrive:"Read More descriptive rules here, before filling the form.",
+      ruleHead: "Kavyanical Rules",
+      rules: [
+        "This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1","This is a solo event.",
+        "Maximun number of members for this event is 1",
+      ],
+      linkRule:
+        "https://drive.google.com/file/d/1ytJlUGMNFlOl1ni6sVuCHoQfrK9L8ugs/view?usp=sharing",
+      ruleDrive: "Read More descriptive rules here, before filling the form.",
     },
   ],
   // talentShow: [
@@ -737,6 +762,13 @@ export const techEvents = {
       id: "webathon",
       limit: 4,
       extra: ["Problem Statement"],
+      ruleHead: "Melodia Rules",
+      rule1: "This is a Group(JAMMING) as well as solo singing event.",
+      rule2:
+        "Maximun number of members in this event is allowed to 12 and minimum number of members in group will be 8. No duet is allowed in this event",
+      linkRule:
+        "https://drive.google.com/file/d/1CUS9GBvTZZU3KVI63cVDLNqDmdyBhSGv/view?usp=share_link",
+      ruleDrive: "Read More descriptive rules here, before filling the form.",
     },
   ],
   pathik: [
@@ -751,7 +783,6 @@ export const techEvents = {
       id: "pathik",
       limit: 6,
       extra: "",
-      
     },
   ],
   spartans: [
@@ -821,10 +852,9 @@ export const Forms = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/technovation/technovationCard.png?updatedAt=1681228832027",
       link: "https://forms.gle/bfYCV4dyiwAqFp6o8",
-      alt:"technovation_card_image",
+      alt: "technovation_card_image",
     },
   ],
-  
 };
 
 export const Events = {

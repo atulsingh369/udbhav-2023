@@ -95,7 +95,7 @@ const cultForms = () => {
   };
 
   return (
-    <div className="h-screen ">
+    <div className="h-screen relative">
       {Object.entries(cultEvents).map((item, i) => {
         if (item[0] === id) {
           return (
@@ -106,7 +106,6 @@ const cultForms = () => {
               {item[1].map((value, index) => {
                 return (
                   <div key={index}>
-                    
                     <h2 className="text-2xl font-semibold">{value.title}</h2>
 
                     {value.type === "group" && (
@@ -292,7 +291,10 @@ const cultForms = () => {
                       </button>
                       {/* The button to open modal */}
                       <div>
-                        <label htmlFor="my-modal-4" className="submit cursor-pointer">
+                        <label
+                          htmlFor="my-modal-4"
+                          className="submit cursor-pointer"
+                        >
                           <span></span>
                           <span></span>
                           <span></span>
@@ -313,7 +315,7 @@ const cultForms = () => {
                                         id="my-modal-4"
                                         className="modal-toggle"
                                       />
-                                      <div className="modal bg-[#243b55] ">
+                                      <div className="modal bg-[#243b55] h-full w-full pt-20 overflow-y-scroll ">
                                         <div className="modal-box relative  bg-[#0d141f] ">
                                           <label
                                             htmlFor="my-modal-4"
@@ -324,13 +326,22 @@ const cultForms = () => {
                                           <h3 className="text-2xl underline font-bold text-center text-white">
                                             {value.ruleHead}
                                           </h3>
-                                          <p className="py-4 text-[#03e9f4] font-semibold text-sm tracking-wider">
-                                            {value.rule1}
-                                          </p>
-                                          <p className="text-[#03e9f4] font-semibold text-sm tracking-wider">
-                                            {value.rule2}
-                                          </p>
-                                          <a href={value.linkRule} target="_blank">
+                                          <ul className="list-disc">
+                                            {value.rules.map((rule, num) => {
+                                              return (
+                                                <li 
+                                                  className="text-[#03e9f4] font-semibold text-sm tracking-wider"
+                                                  key={num}
+                                                >
+                                                  {rule}
+                                                </li>
+                                              );
+                                            })}
+                                          </ul>
+                                          <a
+                                            href={value.linkRule}
+                                            target="_blank"
+                                          >
                                             <p className="text-[#ffffff]  font-light text-sm pt-5">
                                               {value.ruleDrive}
                                             </p>
