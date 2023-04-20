@@ -1,17 +1,17 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore'
+import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyDYOyKkZwmCiant4WQYiRNqN9AiC87pqA8",
-	authDomain: "udbhav-22dbd.firebaseapp.com",
-	databaseURL: "https://udbhav-22dbd-default-rtdb.firebaseio.com",
-	projectId: "udbhav-22dbd",
-	storageBucket: "udbhav-22dbd.appspot.com",
-	messagingSenderId: "334534691997",
-	appId: "1:334534691997:web:2ec5c47e9db55032b7d874"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
