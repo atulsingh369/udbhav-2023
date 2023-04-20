@@ -99,11 +99,14 @@ const cultForms = () => {
       {Object.entries(cultEvents).map((item, i) => {
         if (item[0] === id) {
           return (
-            <div className="login-box scrollbar-hidden md:w-fit w-full overflow-y-scroll h-4/5 md:h-fit mt-4 " key={i}>
+            <div
+              className="login-box scrollbar-hidden md:w-fit w-full overflow-y-scroll h-4/5 md:h-fit mt-4 "
+              key={i}
+            >
               {item[1].map((value, index) => {
                 return (
                   <div key={index}>
-                    <p className="text-white font-semibold flex items-end justify-end" >Min - 1 and Max - {value.limit}</p>
+                    
                     <h2 className="text-2xl font-semibold">{value.title}</h2>
 
                     {value.type === "group" && (
@@ -121,7 +124,10 @@ const cultForms = () => {
                         {members.length !== 0 &&
                           members.map((arr_item, i) => {
                             return (
-                              <div className="flex flex-col md:flex-row gap-10" key={i}>
+                              <div
+                                className="flex flex-col md:flex-row gap-10"
+                                key={i}
+                              >
                                 <div className="user-box">
                                   <input
                                     contentEditable={false}
@@ -132,7 +138,7 @@ const cultForms = () => {
                                 </div>
                                 <div className="user-box">
                                   <input
-                                  placeholder="CSE/A3"
+                                    placeholder="CSE/A3"
                                     contentEditable={false}
                                     type="text"
                                     value={arr_item && arr_item.branch}
@@ -176,7 +182,7 @@ const cultForms = () => {
                         </div>
                         <div className="user-box">
                           <input
-                          placeholder="CSE/A3"
+                            placeholder="CSE/A3"
                             type="text"
                             value={values && values.branch}
                             onChange={(e) =>
@@ -206,7 +212,8 @@ const cultForms = () => {
                           <button
                             type="button"
                             onClick={addMember}
-                            className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit">
+                            className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit"
+                          >
                             Add
                           </button>
                         )}
@@ -228,7 +235,7 @@ const cultForms = () => {
                         </div>
                         <div className="user-box">
                           <input
-                          placeholder="CSE/A3"
+                            placeholder="CSE/A3"
                             type="text"
                             value={values.branch}
                             onChange={(e) =>
@@ -269,18 +276,76 @@ const cultForms = () => {
                           <label> {item}*</label>
                         </div>
                       ))} */}
-                    <button
-                      onClick={
-                        value.type === "group" ? handleSubmit : submitSolo
-                      }
-                      className="submit"
-                      type="submit">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      {loading ? "Submitting" : "Submit"}
-                    </button>
+                    <div className="flex gap-5 items-center ">
+                      <button
+                        onClick={
+                          value.type === "group" ? handleSubmit : submitSolo
+                        }
+                        className="submit"
+                        type="submit"
+                      >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        {loading ? "Submitting" : "Submit"}
+                      </button>
+                      {/* The button to open modal */}
+                      <div>
+                        <label htmlFor="my-modal-4" className="submit cursor-pointer">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          Rules
+                        </label>
+
+                        {/* Put this part before </body> tag */}
+                        {Object.entries(cultEvents).map((item, i) => {
+                          if (item[0] == id) {
+                            return (
+                              <div key={i}>
+                                {item[1].map((value, index) => {
+                                  return (
+                                    <div key={index}>
+                                      <input
+                                        type="checkbox"
+                                        id="my-modal-4"
+                                        className="modal-toggle"
+                                      />
+                                      <div className="modal bg-[#243b55] ">
+                                        <div className="modal-box relative  bg-[#0d141f] ">
+                                          <label
+                                            htmlFor="my-modal-4"
+                                            className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#0d141f]"
+                                          >
+                                            ✕
+                                          </label>
+                                          <h3 className="text-2xl underline font-bold text-center text-white">
+                                            {value.ruleHead}
+                                          </h3>
+                                          <p className="py-4 text-[#03e9f4] font-semibold text-sm tracking-wider">
+                                            {value.rule1}
+                                          </p>
+                                          <p className="text-[#03e9f4] font-semibold text-sm tracking-wider">
+                                            {value.rule2}
+                                          </p>
+                                          <a href={value.linkRule} target="_blank">
+                                            <p className="text-[#ffffff]  font-light text-sm pt-5">
+                                              {value.ruleDrive}
+                                            </p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            );
+                          }
+                        })}
+                      </div>
+                    </div>
                   </div>
                 );
               })}

@@ -601,6 +601,11 @@ export const cultEvents = {
       id: "fusion",
       limit: 8,
       extra: "",
+      ruleHead:"Fusion Rules",
+      rule1:"This is a Group as well as solo event.",
+      rule2:"Maximun number of members in this event is allowed to 8",
+      linkRule:"https://drive.google.com/drive/folders/1I4ebk93oP-XhMjA-kRyQPJ-z6yX3ffxP?usp=sharing",
+      ruleDrive:"Read More descriptive rules here, before filling the form.",
     },
   ],
   melodia: [
@@ -615,6 +620,11 @@ export const cultEvents = {
       id: "melodia",
       limit: 12,
       extra: "",
+      ruleHead:"Melodia Rules",
+      rule1:"This is a Group(JAMMING) as well as solo singing event.",
+      rule2:"Maximun number of members in this event is allowed to 12 and minimum number of members in group will be 8. No duet is allowed in this event",
+      linkRule:"https://drive.google.com/file/d/1CUS9GBvTZZU3KVI63cVDLNqDmdyBhSGv/view?usp=share_link",
+      ruleDrive:"Read More descriptive rules here, before filling the form.",
     },
   ],
   spotLight: [
@@ -629,6 +639,11 @@ export const cultEvents = {
       id: "spotLight",
       limit: 10,
       extra: "",
+      ruleHead:"SpotLight Rules",
+      rule1:"This is a Group as well as solo event. You can perform -mono-act, -nukkad-nattak, -skit, -mime",
+      rule2:"Maximun number of members for -nukkad-nattak is 10, for -skit is 8 and for -mime is 5",
+      linkRule:"https://drive.google.com/file/d/1z-gN-W908TfgIpGEpBtudrGRnYyCnLKA/view?usp=sharing",
+      ruleDrive:"Read More descriptive rules here, before filling the form.",
     },
   ],
   runway: [
@@ -642,11 +657,16 @@ export const cultEvents = {
       id: "runway",
       limit: 12,
       extra: "",
+      ruleHead:"Fashion Show Rules",
+      rule1:"This is a Group event.",
+      rule2:"Maximun number of members for this event is 12",
+      linkRule:"https://drive.google.com/file/d/1k0nxgzcMQwYVQvrorl-EvJQzZJNxcuNx/view?usp=sharing",
+      ruleDrive:"Read More descriptive rules here, before filling the form.",
     },
   ],
   harmonize: [
     {
-      type: "solo",
+      type: "group",
       title: "HARMONIZE",
       describe:
         "Create a symphony with your fingertips - let your music speak louder than words!",
@@ -654,8 +674,13 @@ export const cultEvents = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/harmonize.png?updatedAt=1680541886718",
       link: "",
       id: "harmonize",
-      limit: 1,
+      limit: 5,
       extra: "",
+      ruleHead:"Harmonize Rules",
+      rule1:"This is a Group as well as solo event.",
+      rule2:"Maximun number of members for this event is 5",
+      linkRule:"https://drive.google.com/file/d/11CEAIK5AJd4VUKQU-S9G09CKdkxn4Adx/view?usp=sharing",
+      ruleDrive:"Read More descriptive rules here, before filling the form.",
     },
   ],
 
@@ -671,8 +696,32 @@ export const cultEvents = {
       id: "kavyanical",
       limit: 1,
       extra: "",
+      ruleHead:"Kavyanical Rules",
+      rule1:"This is a solo event.",
+      rule2:"Maximun number of members for this event is 1",
+      linkRule:"https://drive.google.com/file/d/1ytJlUGMNFlOl1ni6sVuCHoQfrK9L8ugs/view?usp=sharing",
+      ruleDrive:"Read More descriptive rules here, before filling the form.",
     },
   ],
+  // talentShow: [
+  //   {
+  //     type: "group",
+  //     title: "Talent Odyssey",
+  //     describe:
+  //       "Discover the star within and let your talent shine on our stage!",
+  //     image:
+  //       "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/Udbhav/T.png?updatedAt=1681970266729",
+  //     link: "",
+  //     id: "kavyanical",
+  //     limit: 5,
+  //     extra: "",
+  //     ruleHead:"Talent Odyssey Rules",
+  //     rule1:"This is a group as well as solo event.",
+  //     rule2:"Maximun number of members for this event is 5",
+  //     linkRule:"https://drive.google.com/file/d/1FofuvYwwClXq4RktOwlEVtW6R-4fFXC1/view?usp=sharing",
+  //     ruleDrive:"Read More descriptive rules here, before filling the form.",
+  //   },
+  // ],
 };
 
 export const techEvents = {
@@ -702,6 +751,7 @@ export const techEvents = {
       id: "pathik",
       limit: 6,
       extra: "",
+      
     },
   ],
   spartans: [
