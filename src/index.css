@@ -1,9 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/samarkan');
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap");
-@font-face {
+/* @font-face {
   font-family: 'Samarkan';
   src: local('Samarkan'), url("../public/SAMAN___.ttf") format('ttf');
-}
+} */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
