@@ -45,31 +45,44 @@ const techForms = () => {
     delete members[i];
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    if (!teamN || members.length === 0) {
-      toast.error("Enter Details");
-      setLoading(false);
-      setTeamN("");
-      setValues(initialValues);
-      return;
-    } else {
-      await setDoc(doc(db, id, teamN), {
-        uid: auth.currentUser.uid,
-        "Team Name": teamN,
-        Members: members,
-      });
-      toast.success("Submitted");
-      setLoading(false);
-      setTeamN("");
-      setValues(initialValues);
-      setMembers([]);
-      setTimeout(function () {
-        navigate("/technovation");
-      }, 2000);
-    }
-  };
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     setLoading(true);
+     if (!teamN || members.length === 0) {
+       toast.error("Enter Details");
+       setLoading(false);
+       setTeamN("");
+       setValues(initialValues);
+       return;
+     } else {
+       // set data in event collection
+       await setDoc(doc(db, id, teamN), {
+         uid: auth.currentUser.uid,
+         teamName: teamN,
+         Members: members,
+       });
+
+       members.forEach(async (item) => {
+         //  set event in user collecction
+         await updateDoc(doc(db, "users", item.email), {
+           events: arrayUnion({
+             eventName: id,
+             teamName: teamN,
+             Members: members,
+           }),
+         });
+       });
+
+       toast.success("Submitted");
+       setLoading(false);
+       setTeamN("");
+       setValues(initialValues);
+       setMembers([]);
+       setTimeout(function () {
+         navigate("/cultural");
+       }, 2000);
+     }
+   };
 
   const submitSolo = async (e) => {
     e.preventDefault();
@@ -83,7 +96,7 @@ const techForms = () => {
       await setDoc(doc(db, id, values.branch), {
         Name: values.mName,
         Branch: values.branch,
-        "Phone No": values.phnNo,
+        phoneNo: values.phnNo,
       });
       toast.success("Submitted");
       setLoading(false);
@@ -101,8 +114,7 @@ const techForms = () => {
           return (
             <div
               className="login-box scrollbar-hidden md:w-fit w-full overflow-y-scroll h-4/5 md:h-fit mt-4 "
-              key={i}
-            >
+              key={i}>
               {item[1].map((value, index) => {
                 return (
                   <div key={index}>
@@ -129,8 +141,7 @@ const techForms = () => {
                             return (
                               <div
                                 className="flex flex-col md:flex-row gap-10"
-                                key={i}
-                              >
+                                key={i}>
                                 <div className="user-box">
                                   <input
                                     contentEditable={false}
@@ -215,8 +226,7 @@ const techForms = () => {
                           <button
                             type="button"
                             onClick={addMember}
-                            className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit"
-                          >
+                            className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit">
                             Add
                           </button>
                         )}
@@ -285,8 +295,7 @@ const techForms = () => {
                           value.type === "group" ? handleSubmit : submitSolo
                         }
                         className="submit"
-                        type="submit"
-                      >
+                        type="submit">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -297,8 +306,7 @@ const techForms = () => {
                       <div>
                         <label
                           htmlFor="my-modal-4"
-                          className="submit cursor-pointer"
-                        >
+                          className="submit cursor-pointer">
                           <span></span>
                           <span></span>
                           <span></span>
@@ -323,8 +331,7 @@ const techForms = () => {
                                         <div className="modal-box relative  bg-[#0d141f] ">
                                           <label
                                             htmlFor="my-modal-4"
-                                            className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#0d141f]"
-                                          >
+                                            className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#0d141f]">
                                             ✕
                                           </label>
                                           <h3 className="text-2xl underline font-bold text-center text-white">
@@ -338,8 +345,7 @@ const techForms = () => {
                                           </p>
                                           <a
                                             href={value.linkRule}
-                                            target="_blank"
-                                          >
+                                            target="_blank">
                                             <p className="text-[#ffffff]  font-light text-sm pt-5">
                                               {value.ruleDrive}
                                             </p>

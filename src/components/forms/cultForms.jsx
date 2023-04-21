@@ -39,12 +39,12 @@ const cultForms = () => {
     setValues(initialValues);
   };
 
-  const handleUpdate = (i) => {
-    // console.log(members,i,members[i])
-    setValues(members[i]);
-    setCount(count - 1);
-    delete members[i];
-  };
+  // const handleUpdate = (i) => {
+  //   // console.log(members,i,members[i])
+  //   setValues(members[i]);
+  //   setCount(count - 1);
+  //   delete members[i];
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,7 +59,7 @@ const cultForms = () => {
       // set data in event collection
       await setDoc(doc(db, id, teamN), {
         uid: auth.currentUser.uid,
-        "Team Name": teamN,
+        teamName: teamN,
         Members: members,
       });
 
@@ -68,7 +68,7 @@ const cultForms = () => {
         await updateDoc(doc(db, "users", item.email), {
           events: arrayUnion({
             eventName: id,
-            "Team Name": teamN,
+            teamName: teamN,
             Members: members,
           }),
         });
@@ -97,7 +97,7 @@ const cultForms = () => {
       await setDoc(doc(db, id, values.email), {
         Name: values.mName,
         Email: values.email,
-        "Phone No": values.phnNo,
+        phoneNo: values.phnNo,
       });
       toast.success("Submitted");
       setLoading(false);
