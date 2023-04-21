@@ -9,6 +9,7 @@ import { doc, setDoc } from "firebase/firestore";
 
 const cultForms = () => {
   const { id } = useParams();
+  const user = useSelector((state) => state.user);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -55,11 +56,24 @@ const cultForms = () => {
       setValues(initialValues);
       return;
     } else {
+      // set data in event collection
       await setDoc(doc(db, id, teamN), {
         uid: auth.currentUser.uid,
         "Team Name": teamN,
         Members: members,
       });
+
+      members.forEach(async (item) => {
+        //  set event in user collecction
+        await updateDoc(doc(db, "users", item.email), {
+          events: arrayUnion({
+            eventName: id,
+            "Team Name": teamN,
+            Members: members,
+          }),
+        });
+      });
+
       toast.success("Submitted");
       setLoading(false);
       setTeamN("");
@@ -99,8 +113,10 @@ const cultForms = () => {
       {Object.entries(cultEvents).map((item, i) => {
         if (item[0] === id) {
           return (
-            <div className="grid grid-cols-1
-             md:grid-cols-3 h-screen w-full   ">
+            <div
+              className="grid grid-cols-1
+             md:grid-cols-3 h-screen w-full   "
+            >
               <div
                 className="login-box scrollbar-hidden w-full md:w-4/5 pt-20 md:pt-5 overflow-scroll h-screen md:h-fit mt-4 relative md:col-span-2"
                 key={i}
@@ -262,21 +278,6 @@ const cultForms = () => {
                         </div>
                       )}
 
-                      {/* {value.extra &&
-                      value.extra.map((item, index) => (
-                        <div key={index} className="user-box mt-5">
-                          <input
-                            type="text"
-                            value={values.extra}
-                            onChange={(e) =>
-                              setValues({ ...values, extra: e.target.value })
-                            }
-                            name="extra"
-                            required=""
-                          />
-                          <label> {item}*</label>
-                        </div>
-                      ))} */}
                       <div className="flex gap-5 items-center ">
                         <button
                           onClick={
@@ -291,50 +292,19 @@ const cultForms = () => {
                           <span></span>
                           {loading ? "Submitting" : "Submit"}
                         </button>
-                        {/* The button to open modal */}
-
-                        {/* <label htmlFor="my-modal-3" className="submit">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>Rules
-                      </label>
-                      <input
-                        type="checkbox"
-                        id="my-modal-3"
-                        className="modal-toggle"
-                      />
-                      <div className="modal h-fit">
-                        <div className="modal-box relative">
-                          <label
-                            htmlFor="my-modal-3"
-                            className="btn btn-sm btn-circle absolute right-2 top-2"
-                          >
-                            ✕
-                          </label>
-                          <h3 className="text-lg font-bold">
-                            {item[1][0].title}
-                          </h3>
-                          <ul className="list-disc">
-                            {item[1][0].rules.map((rule,num)=>{
-                              return(
-                                <li key={num}>{rule}</li>
-                              )
-                            })}
-                          </ul>
-                        </div>
-                      </div> */}
                       </div>
                     </div>
                   );
                 })}
               </div>
-             
+
               <div className=" h-screen w-full p-5 pt-10 md:pt-24  text-white bg-[#101a26] md:rounded-lg md:shadow-lg md:shadow-black/80 flex flex-col gap-4 overflow-y-scroll">
-                <h3 className="font-bold text-3xl text-center underline">{item[1][0].title}</h3>
+                <h3 className="font-bold text-3xl text-center underline">
+                  {item[1][0].title}
+                </h3>
                 <ul className="list-disc space-y-1  pl-8 leading-8">
                   {item[1][0].rules.map((rule, num) => {
-                    return <li >{rule}</li>;
+                    return <li>{rule}</li>;
                   })}
                 </ul>
               </div>
