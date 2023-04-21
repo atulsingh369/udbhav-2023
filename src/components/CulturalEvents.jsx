@@ -28,17 +28,14 @@ const CulturalEvents = () => {
             return (
               <div
                 className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105 transition-all ease-in-out duration-300"
-                key={i}
-              >
+                key={i}>
                 <div className="flex gap-5 flex-wrap justify-center items-center">
                   {item[1].map((value, index) => {
                     return (
-                      <Link to={`/culturalform/${value.id}`}>
+                      <Link key={index} to={`/culturalform/${value.id}`}>
                         <div
                           onClick={alert}
-                          className="card w-64 h-[28rem] bg-base-100 shadow-xl"
-                          key={index}
-                        >
+                          className="card w-64 h-[28rem] bg-base-100 shadow-xl">
                           <figure>
                             <img
                               src={value.image}
@@ -70,18 +67,15 @@ const CulturalEvents = () => {
             return (
               <div
                 className="flex flex-col gap-8 justify-center items-center p-8 cursor-pointer hover:scale-105 transition-all ease-in-out duration-300"
-                key={i}
-              >
+                key={i}>
                 <div
                   onClick={login}
-                  className="flex gap-5 flex-wrap justify-center items-center"
-                >
+                  className="flex gap-5 flex-wrap justify-center items-center">
                   {item[1].map((value, index) => {
                     return (
                       <div
                         className="card w-64 h-[28rem] bg-base-100 shadow-xl"
-                        key={index}
-                      >
+                        key={index}>
                         <figure>
                           <img
                             src={value.image}

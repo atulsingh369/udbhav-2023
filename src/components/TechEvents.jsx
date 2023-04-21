@@ -34,11 +34,10 @@ const TechEvents = () => {
                 <div className="flex gap-5 flex-wrap justify-center items-center">
                   {item[1].map((value, index) => {
                     return (
-                      <Link to={`/techform/${value.id}`}>
+                      <Link key={index} to={`/techform/${value.id}`}>
                         <div
                           onClick={alert}
-                          className="card w-64 h-[28rem] bg-base-100 shadow-xl"
-                          key={index}>
+                          className="card w-64 h-[28rem] bg-base-100 shadow-xl">
                           <figure>
                             <img
                               src={value.image}
@@ -55,7 +54,7 @@ const TechEvents = () => {
                             </p>
                           </div>
                         </div>
-                     </Link>
+                      </Link>
                     );
                   })}
                 </div>
