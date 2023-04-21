@@ -8,18 +8,33 @@ import Tour from "./pages/Tour";
 import TechEventsPage from "./pages/TechEventsPage";
 import CulturalEventPage from "./pages/CulturalEventPage";
 import Profile from "./pages/Profile";
-import Landing from "./components/Landing";
+// import Landing from "./components/Landing";
 import TechForm from "./components/forms/techForms";
 import CultForm from "./components/forms/cultForms";
 import EasterEgg from "./components/EasterEgg";
-import env from "react-dotenv";
+import { lazy, Suspense } from "react";
+
+const Landing = lazy(() => import("./components/Landing"));
 
 const App = () => {
   return (
     <div className="relative">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route
+          path="/"
+          element={
+            <Suspense
+              fallback={
+                <div className="grid h-screen w-screen place-items-center text-white">
+                  Loading...
+                </div>
+              }
+            >
+              <Landing />
+            </Suspense>
+          }
+        />
         <Route path="/tour" element={<Tour />} />
         <Route path="/forms" element={<Forms />} />
         <Route path="/events" element={<Events />} />
