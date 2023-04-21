@@ -5,7 +5,7 @@ import { cultEvents } from "../Data";
 import { auth, db } from "../../config";
 import "./FormStyle.scss";
 import { ToastContainer, toast } from "react-toastify";
-import { doc, setDoc } from "firebase/firestore";
+import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 
 const cultForms = () => {
   const { id } = useParams();
