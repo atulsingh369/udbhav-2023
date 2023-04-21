@@ -67,8 +67,8 @@ const Navbar = () => {
                 )}
                 {user && (
                   <li tabIndex={0}>
-                  <Link to="/forms" className="justify-between">
-                    FORMS
+                  <Link to="#!" className="justify-between">
+                    Updates
                     <svg
                       className="fill-current"
                       xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ const Navbar = () => {
                   </Link>
                   <ul className="p-2">
                     <li>
-                      <a>Submenu 1</a>
+                      <Link to="/forms">Forms</Link>
                     </li>
                     <li>
                       <a>Submenu 2</a>
