@@ -27,8 +27,8 @@ const TourCarosuel = () => {
             className="carousel-item relative w-full flex flex-row items-center justify-center"
           >
             <img
-              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner2.jpg?updatedAt=1680522535923"
-              className="lg:h-11/12"
+              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/iert_tour/DSC_6665.JPG?updatedAt=1682066864815"
+              className="object-center"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide1" className="btn btn-circle bg-transparent">
@@ -44,8 +44,8 @@ const TourCarosuel = () => {
             className="carousel-item relative w-full flex flex-row items-center justify-center"
           >
             <img
-              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/udbhav2k19banner3.jpg?updatedAt=1680524722184"
-              className="lg:h-11/12 md:h-96"
+              src="https://ik.imagekit.io/e5ixuxrlb/Udbhav/iert_tour/DSC_6648.JPG?updatedAt=1682067282578"
+              className="object-center"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide2" className="btn btn-circle bg-transparent">
