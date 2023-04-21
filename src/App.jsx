@@ -12,6 +12,7 @@ import Landing from "./components/Landing";
 import TechForm from "./components/forms/techForms";
 import CultForm from "./components/forms/cultForms";
 import EasterEgg from "./components/EasterEgg";
+import ExtraForms from "./components/forms/ExtraForms";
 
 const App = () => {
   return (
@@ -30,6 +31,9 @@ const App = () => {
         {/* Form pages */}
         <Route path="/techform/:id" element={<TechForm />} />
         <Route path="/culturalform/:id" element={<CultForm />} />
+        {/* extra forms */}
+
+        <Route path="/forms/:id" element={<ExtraForms />} />
         {/* Profile page */}
         <Route path="/profile" element={<Profile />} />
         {/* hidden eatser */}
