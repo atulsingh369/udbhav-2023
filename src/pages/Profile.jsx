@@ -26,7 +26,7 @@ const Profile = () => {
         <ProfileInfo />
       </div>
       <div className="flex flex-col gap-10">
-        <h1 className="text-white font-bold text-3xl text-center">Cards</h1>
+        <h1 className="text-white font-bold text-3xl text-center">Events</h1>
       <div className="w-full h-fit p-5 flex flex-col md:flex-row flex-wrap gap-10 justify-around items-center text-white">
         {event &&
           event.map((item, i) => {
