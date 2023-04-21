@@ -12,7 +12,6 @@ import Landing from "./components/Landing";
 import TechForm from "./components/forms/techForms";
 import CultForm from "./components/forms/cultForms";
 import EasterEgg from "./components/EasterEgg";
-import env from "react-dotenv";
 
 const App = () => {
   return (
