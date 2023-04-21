@@ -12,6 +12,7 @@ import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MainLoader from "./MainLoader";
+import "../components/forms/FormStyle.scss"
 
 const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
@@ -19,8 +20,8 @@ const ProfileDp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-	const [data, setData] = useState([]);
-	
+  const [data, setData] = useState([]);
+
   useEffect(() => {
     const unSub = onSnapshot(doc(db, "users", user.email), (doc) => {
       doc.exists() && setData(doc.data());
@@ -117,7 +118,8 @@ const ProfileDp = () => {
                         className="hidden"
                         type="file"
                         accept="image/*"
-                        onChange={change}></input>
+                        onChange={change}
+                      ></input>
                       <button className="btn" onClick={editProfile}>
                         Edit Profile
                       </button>
@@ -129,7 +131,8 @@ const ProfileDp = () => {
           </div>
           <div
             id="card-profile"
-            className="card w-96 text-white border border-white">
+            className="card w-96 text-white border border-white"
+          >
             <div className="card-body">
               <h2 className="card-title">{data.displayName}</h2>
               <div className="flex flex-row">
@@ -145,9 +148,45 @@ const ProfileDp = () => {
                 <p>{data.year ? data.year : "N/A"}</p>
               </div>
               <div className="card-actions mt-8 justify-end">
-                <button className="btn btn-primary" onClick={editProfile}>
+                {/* <button className="btn btn-primary" onClick={editProfile}>
                   Edit Profile
-                </button>
+                </button> */}
+                {/* The button to open modal */}
+                <label htmlFor="my-modal-3" className="btn">
+                  Edit Details
+                </label>
+
+                {/* Put this part before </body> tag */}
+                <input
+                  type="checkbox"
+                  id="my-modal-3"
+                  className="modal-toggle"
+                />
+                <div className="modal">
+                  <div className="modal-box relative h-96 w-96">
+                    <label
+                      htmlFor="my-modal-3"
+                      className="btn btn-sm btn-circle absolute right-2 top-2"
+                    >
+                      ✕
+                    </label>
+                   
+
+                    <h1 className="text-2xl font-semibold text-center">Enter Your Details</h1>
+                    <form className="flex flex-col items-center justify-evenly h-full">
+                      <div className="w-full flex flex-col justify-evenly gap-3">
+                        <label>Branch</label>
+                        <input type="text" name="" required=""  className="h-[3rem] p-2 w-full rounded-xl bg-base-300"/>
+                      </div>
+                      <div className="w-full flex flex-col justify-evenly gap-3">
+                        <label className="font-semibold " >Year</label>
+                        <input type="text" name="" required=""  className="h-[3rem] p-2 w-full rounded-xl bg-base-300"/>
+                      </div>
+                     
+                      <button className="w-full border border-white h-[3rem] rounded-lg btn font-bold text-lg">Submit</button>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
