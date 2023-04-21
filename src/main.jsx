@@ -3,9 +3,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+// import App from "./App";
 import "./index.css";
 import authReducer from "./store";
+import { lazy, Suspense } from "react";
+
+const App = lazy(() => import("./App"));
 
 import {
   persistStore,
@@ -37,7 +40,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistStore(store)}>
         <BrowserRouter>
-          <App />
+          <Suspense
+            fallback={
+              <div className="grid h-screen w-screen place-items-center text-white">
+                Loading...
+              </div>
+            }
+          >
+            <App />
+          </Suspense>
         </BrowserRouter>
       </PersistGate>
     </Provider>
