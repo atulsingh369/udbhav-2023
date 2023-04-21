@@ -6,6 +6,8 @@ import {
   updateProfile,
   GoogleAuthProvider,
   signInWithPopup,
+  sendEmailVerification,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { auth, db } from "../config";
 import { useDispatch } from "react-redux";
@@ -39,8 +41,8 @@ const Register = () => {
         name: "",
         email: "",
         password: "",
-			});
-			
+      });
+
       setLoading(false);
       setPasswordType("password");
       return;
@@ -56,6 +58,7 @@ const Register = () => {
       await updateProfile(res, {
         displayName: curUser.name,
       });
+      await sendEmailVerification(res);
       await setDoc(doc(db, "users", res.email), {
         uid: res.uid,
         displayName: res.displayName,
@@ -71,6 +74,21 @@ const Register = () => {
         name: "",
         email: "",
         password: "",
+      });
+      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        if (currentUser && currentUser.uid === user.uid) {
+          currentUser.reload();
+          if (currentUser.emailVerified) {
+            // Email is verified, do nothing
+            unsubscribe(); // Stop listening for changes
+          } else {
+            // Email is not verified, delete the user
+            deleteDoc(doc(db, "users", user.email));
+            currentUser.delete();
+            toast.error("Email not verified, account deleted.");
+            unsubscribe(); // Stop listening for changes
+          }
+        }
       });
     } catch (error) {
       toast.error(error.code);
@@ -219,7 +237,8 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black ">
+                  className="p-4 border border-base-100 bg-white text-black "
+                >
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -233,7 +252,8 @@ const Register = () => {
                 Already registered? &nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500">
+                  className="cursor-pointer text-blue-500"
+                >
                   Sign In
                 </span>
               </p>
@@ -275,7 +295,8 @@ const Register = () => {
                 />
                 <button
                   onClick={togglePassword}
-                  className="p-4 border border-base-100 bg-white text-black ">
+                  className="p-4 border border-base-100 bg-white text-black "
+                >
                   {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
@@ -289,7 +310,8 @@ const Register = () => {
                 Don't have an account?&nbsp;
                 <span
                   onClick={changeState}
-                  className="cursor-pointer text-blue-500">
+                  className="cursor-pointer text-blue-500"
+                >
                   &nbsp;Register
                 </span>
               </p>
