@@ -20,25 +20,46 @@ const Profile = () => {
     };
   }, []);
   return (
-    <div className="flex flex-col">
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center bg-home-background bg-cover sticky h-screen">
+    <div className="flex flex-col  bg-home-background bg-cover">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center sticky h-screen">
         <ProfileDp />
         <ProfileInfo />
       </div>
-      <div className="w-full h-fit p-5 flex justify-around items-center text-white">
+      <div className="w-full h-fit p-5 flex flex-wrap justify-around items-center text-white">
         {event &&
           event.map((item, i) => {
             return (
-              <div
-                className="rounded-lg flex flex-col p-3 justify-center items-start border-2 border-white"
-                key={i}
-              >
-                <h3 className="text-center font-bold text-2xl capitalize">
-                  {item.eventName}
-                </h3>
-                {item.Members.map((member, index) => {
-                  return <p key={index}>{member.mName}</p>;
-                })}
+              // <div
+              //   className="rounded-lg flex flex-col p-3 justify-center items-start border-2 border-white"
+              //   key={i}
+              // >
+              //   <h3 className="text-center font-bold text-2xl capitalize">
+              //     {item.eventName}
+              //   </h3>
+              //   {item.Members.map((member, index) => {
+              //     return <p key={index}>{member.mName}</p>;
+              //   })}
+              // </div>
+              <div className="card w-96 shadow-md border border-white shadow-white animate-pulse cursor-no-drop hover:scale-105 transition-all duration-500">
+                <div className="card-body">
+                  <h2 className="card-title capitalize text-2xl self-center ">
+                    {item.eventName}
+                  </h2>
+                  <h2 className="card-title capitalize text-lg">
+                    Team : &nbsp;{item.teamName}
+                  </h2>
+                  {item.Members.map((member, index) => {
+                    return (
+                      <div
+                        className="flex "
+                        key={index}
+                      >
+                        <p>{member.mName}</p>
+                        <p>{member.phnNo}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
