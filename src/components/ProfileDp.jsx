@@ -2,16 +2,14 @@ import { useEffect, useState } from "react";
 import { setUser } from "../store";
 import { IoMdAddCircle } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../config";
 import { useNavigate } from "react-router-dom";
-import { updateProfile } from "firebase/auth";
-import { BiCopy } from "react-icons/bi";
 import { auth, db } from "../config";
 import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MainLoader from "./MainLoader";
+import { IKImage } from "imagekitio-react";
+import ImageKit from "imagekit";
 
 const ProfileDp = () => {
   const [edit, setEdit] = useState(false);
@@ -19,8 +17,14 @@ const ProfileDp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-	const [data, setData] = useState([]);
-	
+  const [data, setData] = useState([]);
+
+  const imagekit = new ImageKit({
+    urlEndpoint: "https://ik.imagekit.io/e5ixuxrlb",
+    publicKey: "public_KUoEgXsGThYvi+kFeeYXZ/prspI=",
+    privateKey: "private_7hFPnXWDAqLHe6IBAj74Y0KJqNs=",
+  });
+
   useEffect(() => {
     const unSub = onSnapshot(doc(db, "users", user.email), (doc) => {
       doc.exists() && setData(doc.data());
@@ -33,45 +37,37 @@ const ProfileDp = () => {
   }, []);
 
   const change = async (e) => {
-    e.preventDefault();
-
+    var result = imagekit.getAuthenticationParameters();
+    console.log(result);
     const reader = new FileReader();
 
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setAvatarPreview(reader.result);
-        setAvatar(reader.result);
-      }
-    };
-
     reader.readAsDataURL(e.target.files[0]);
-
     const file = e.target[0]?.files[0];
+    if (!file) toast.error("Enter Image properly");
 
-    if (!file) navigate("/profile");
+    // const storageRef = ref(storage, `/files/${file.name}`);
+    // const uploadTask = uploadBytesResumable(storageRef, file);
 
-    const storageRef = ref(storage, `/files/${file.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, file);
-
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgresspercent(progress);
-      },
-      (error) => {
-        toast(error);
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          user.photoURL = downloadURL;
-          console.log(downloadURL);
-          console.log("hi");
-        });
-      }
-    );
+    // uploadTask.on(
+    //   "state_changed",
+    //   (snapshot) => {
+    //     const progress = Math.round(
+    //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+    //     );
+    //     setProgresspercent(progress);
+    //   },
+    //   (error) => {
+    //     toast(error);
+    //   },
+    //   () => {
+    //     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+    //       user.photoURL = downloadURL;
+    //       console.log(downloadURL);
+    //       console.log("hi");
+    //     });
+    //   }
+    // );
+    toast.warning("url");
   };
 
   const editProfile = async () => {
@@ -83,15 +79,15 @@ const ProfileDp = () => {
         year: year,
       });
     } catch (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   };
 
   return (
     <>
-      {loading ? (
+      {/* {loading ? (
         <MainLoader />
-      ) : (
+      ) : ( */}
         <div className="flex flex-col items-center  justify-center gap-28 md:gap-10 ">
           <div className=" ">
             <div className="avatar w-fit flex flex-col items-end  ">
@@ -103,7 +99,7 @@ const ProfileDp = () => {
               </div>
               <IoMdAddCircle
                 onClick={() => setEdit(!edit)}
-                className="text-5xl md:text-6xl text-white  -translate-y-16"
+                className="text-5xl md:text-6xl cursor-pointer text-white  -translate-y-16"
               />
               {edit && (
                 <div>
@@ -153,7 +149,7 @@ const ProfileDp = () => {
           </div>
           <ToastContainer />
         </div>
-      )}
+      {/* )} */}
     </>
   );
 };
