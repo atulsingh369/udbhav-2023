@@ -68,7 +68,7 @@ const Navbar = () => {
                 {user && (
                   <li tabIndex={0}>
                   <Link to="#!" className="justify-between">
-                    Updates
+                    UPDATES
                     <svg
                       className="fill-current"
                       xmlns="http://www.w3.org/2000/svg"
@@ -78,13 +78,11 @@ const Navbar = () => {
                       <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                     </svg>
                   </Link>
-                  <ul className="p-2">
-                    <li>
-                      <Link to="/forms">Forms</Link>
+                  <ul className="p-2 ">
+                    <li className="btn">
+                      <Link to="/forms" className="font-semibold">Forms</Link>
                     </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
+                    
                   </ul>
                 </li>
                 )}
@@ -113,7 +111,7 @@ const Navbar = () => {
               )}
               {user && (
                 <li tabIndex={0}>
-                <Link to="/forms">
+                <Link to="#!">
                   UPDATES
                   <svg
                     className="fill-current"
@@ -125,8 +123,8 @@ const Navbar = () => {
                   </svg>
                 </Link>
                 <ul className="p-2">
-                  <li>
-                    <Link to="/forms">Forms</Link>
+                  <li className="btn">
+                    <Link to="/forms" className="text-white font-semibold ">Forms</Link>
                   </li>
                   
                 </ul>
