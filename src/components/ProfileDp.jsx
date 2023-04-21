@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { BiCopy } from "react-icons/bi";
 import { auth, db } from "../config";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MainLoader from "./MainLoader";
@@ -19,20 +19,18 @@ const ProfileDp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  var data;
-   getDoc(doc(db, "users", user.email)).then((docSnap) => {
-    if (docSnap.exists()) {
-      data = docSnap.data();
-      // console.log(data);
-      toast.success(data);
-      setLoading(false);
-    } else {
-      console.log("No such document!");
-    }
-  });
+	const [data, setData] = useState([]);
+	
+  useEffect(() => {
+    const unSub = onSnapshot(doc(db, "users", user.email), (doc) => {
+      doc.exists() && setData(doc.data());
+    });
 
-  // console.log(data);
-  toast.success(data);
+    return () => {
+      unSub();
+      setLoading(false);
+    };
+  }, []);
 
   const change = async (e) => {
     e.preventDefault();
@@ -79,33 +77,21 @@ const ProfileDp = () => {
   const editProfile = async () => {
     let branch = prompt("Enter Branch");
     let year = prompt("Enter Year");
-    // try {
-    //   await updateDoc(doc(db, "users", auth.currentUser.uid), {
-    //     branch: branch,
-    //     year: year,
-    //   });
-    //   const res = await getDoc(doc(db, "users", auth.currentUser.uid));
-    //   const newData = res._document.data.value.mapValue.fields;
-
-    //   console.log(newData);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    // return newData;
-
-    await auth
-      .setCustomUserClaims(auth.currentUser.uid, { branch: branch, year: year })
-      .then(() => {
-        const res = auth.currentUser;
-        console.log(res);
+    try {
+      await updateDoc(doc(db, "users", user.email), {
+        branch: branch,
+        year: year,
       });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <>
-      {/* {loading ? (
+      {loading ? (
         <MainLoader />
-      ) : ( */}
+      ) : (
         <div className="flex flex-col items-center  justify-center gap-28 md:gap-10 ">
           <div className=" ">
             <div className="avatar w-fit flex flex-col items-end  ">
@@ -145,18 +131,18 @@ const ProfileDp = () => {
             id="card-profile"
             className="card w-96 text-white border border-white">
             <div className="card-body">
-              <h2 className="card-title">{user.displayName}</h2>
+              <h2 className="card-title">{data.displayName}</h2>
               <div className="flex flex-row">
                 <p>Email: </p>
-                <p>{user.email}</p>
+                <p>{data.email ? data.email : "N/A"}</p>
               </div>
               <div className="flex flex-row">
                 <p>Branch: </p>
-                <p>{user.branch ? user.branch : "N/A"}</p>
+                <p>{data.branch ? data.branch : "N/A"}</p>
               </div>
               <div className="flex flex-row">
                 <p>Year: </p>
-                <p>{user.year ? user.year : "N/A"}</p>
+                <p>{data.year ? data.year : "N/A"}</p>
               </div>
               <div className="card-actions mt-8 justify-end">
                 <button className="btn btn-primary" onClick={editProfile}>
@@ -167,7 +153,7 @@ const ProfileDp = () => {
           </div>
           <ToastContainer />
         </div>
-      {/* )} */}
+      )}
     </>
   );
 };
