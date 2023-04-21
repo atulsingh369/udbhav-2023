@@ -25,7 +25,9 @@ const Profile = () => {
         <ProfileDp />
         <ProfileInfo />
       </div>
-      <div className="w-full h-fit p-5 flex flex-wrap justify-around items-center text-white">
+      <div className="flex flex-col gap-10">
+        <h1 className="text-white font-bold text-3xl text-center">Cards</h1>
+      <div className="w-full h-fit p-5 flex flex-col md:flex-row flex-wrap gap-10 justify-around items-center text-white">
         {event &&
           event.map((item, i) => {
             return (
@@ -40,7 +42,7 @@ const Profile = () => {
               //     return <p key={index}>{member.mName}</p>;
               //   })}
               // </div>
-              <div className="card w-96 shadow-md border border-white shadow-white animate-pulse cursor-no-drop hover:scale-105 transition-all duration-500">
+              <div className="card w-96 shadow-md border border-white shadow-white h-60 overflow-scroll cursor-no-drop hover:scale-105 transition-all duration-500">
                 <div className="card-body">
                   <h2 className="card-title capitalize text-2xl self-center ">
                     {item.eventName}
@@ -51,11 +53,11 @@ const Profile = () => {
                   {item.Members.map((member, index) => {
                     return (
                       <div
-                        className="flex "
+                        className="flex justify-between"
                         key={index}
                       >
-                        <p>{member.mName}</p>
-                        <p>{member.phnNo}</p>
+                        <h1>{member.mName}</h1>
+                        <h1>{member.phnNo}</h1>
                       </div>
                     );
                   })}
@@ -63,6 +65,7 @@ const Profile = () => {
               </div>
             );
           })}
+      </div>
       </div>
     </div>
   );
