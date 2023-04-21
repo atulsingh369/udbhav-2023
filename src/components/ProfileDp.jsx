@@ -82,7 +82,7 @@ const ProfileDp = () => {
       {/* {loading ? (
         <MainLoader />
       ) : ( */}
-        <div className="flex flex-col items-center  justify-center gap-28 md:gap-10 ">
+        <div className="flex flex-col items-center  justify-center gap-28 md:gap-10  pt-24">
           <div className=" ">
             <div className="avatar w-fit flex flex-col items-end  ">
               <div className="w-48 md:w-48 rounded-full ">
@@ -151,11 +151,11 @@ const ProfileDp = () => {
                   id="my-modal-3"
                   className="modal-toggle"
                 />
-                <div className="modal">
-                  <div className="modal-box relative h-96 w-96">
+                <div className="modal ">
+                  <div className="modal-box relative h-96 w-96 bg-[#141e30]">
                     <label
                       htmlFor="my-modal-3"
-                      className="btn btn-sm btn-circle absolute right-2 top-2"
+                      className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]"
                     >
                       ✕
                     </label>
@@ -164,15 +164,15 @@ const ProfileDp = () => {
                     <h1 className="text-2xl font-semibold text-center">Enter Your Details</h1>
                     <form className="flex flex-col items-center justify-evenly h-full">
                       <div className="w-full flex flex-col justify-evenly gap-3">
-                        <label>Branch</label>
-                        <input type="text" name="" required=""  className="h-[3rem] p-2 w-full rounded-xl bg-base-300"/>
+                        <label className="text-[#03e9f4] font-semibold">Branch</label>
+                        <input type="text" name="" required=""  className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"/>
                       </div>
                       <div className="w-full flex flex-col justify-evenly gap-3">
-                        <label className="font-semibold " >Year</label>
-                        <input type="text" name="" required=""  className="h-[3rem] p-2 w-full rounded-xl bg-base-300"/>
+                        <label className="font-semibold text-[#03e9f4]" >Year</label>
+                        <input type="text" name="" required=""  className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"/>
                       </div>
                      
-                      <button className="w-full border border-white h-[3rem] rounded-lg btn font-bold text-lg">Submit</button>
+                      <button className="w-full h-[3rem] rounded-lg btn font-bold text-lg">Submit</button>
                     </form>
                   </div>
                 </div>
