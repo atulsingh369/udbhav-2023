@@ -910,14 +910,24 @@ export const techEvents = {
 };
 
 export const Forms = {
-	poster: [
+	// technoData: [
+	// 	{
+	// 		title: "Technovation 2k23 data collection from",
+	// 		describe: "Please take a few minutes to fill out the form.",
+	// 		image:
+	// 			"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/technovation/technovationCard.png?updatedAt=1681228832027",
+	// 		link: "/forms",
+	// 		alt: "technovation_card_image",
+	// 	},
+	// ],
+	logo: [
 		{
-			title: "Technovation 2k23 data collection from",
+			title: "Logo design competition",
 			describe: "Please take a few minutes to fill out the form.",
 			image:
-				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/technovation/technovationCard.png?updatedAt=1681228832027",
-			link: "/forms",
-			alt: "technovation_card_image",
+				"https://ik.imagekit.io/e5ixuxrlb/Udbhav/Card_Images/forms/LOGO.png?updatedAt=1682069291848",
+			link: "https://forms.gle/Q9g9DEHBBZHNAHnA9",
+			alt: "logo_card_image",
 		},
 	],
 };

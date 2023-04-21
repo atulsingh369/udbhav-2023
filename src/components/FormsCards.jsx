@@ -13,7 +13,7 @@ const FormsCards = () => {
             <div className="flex gap-16  flex-wrap justify-center items-center">
               {item[1].map((value, index) => {
                 return (
-                  <Link to={value.link}>
+                  <Link to={value.link} target="_blank">
                     <div
                       className="flex flex-col  rounded-lg overflow-hidden w-60 h-[30rem] bg-base-100 hover:scale-110 transition-all ease-in-out duration-300"
                       key={index}
