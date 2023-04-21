@@ -39,13 +39,6 @@ const cultForms = () => {
     setValues(initialValues);
   };
 
-  // const handleUpdate = (i) => {
-  //   // console.log(members,i,members[i])
-  //   setValues(members[i]);
-  //   setCount(count - 1);
-  //   delete members[i];
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -166,11 +159,6 @@ const cultForms = () => {
                                     />
                                     <label>Phone No.*</label>
                                   </div>
-                                  {/* <button
-                                  className="border-2 text-sm border-white text-white p-2 hover:text-yellow-600 hover:border-yellow-600 rounded-xl h-fit"
-                                  onClick={() => handleUpdate(i)}>
-                                  Update
-                                </button> */}
                                 </div>
                               );
                             })}
