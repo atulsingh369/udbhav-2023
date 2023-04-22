@@ -49,7 +49,7 @@ export const Department = {
       contact: 9936513754,
       email: "ps8335691@gmail.com",
       show: true,
-      post: "Captain",
+      post: "",
       id: "dep-3",
     },
     {
