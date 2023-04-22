@@ -112,10 +112,10 @@ const ProfileDp = () => {
               <div>
                 <ul>
                   <li className="flex flex-col md:flex-row absolute  -translate-y-24 gap-2">
-                    <label htmlFor="files" className="btn">
+                    <label htmlFor="files" className="btn ">
                       Edit DP
                     </label>
-                    <input
+                    {/* <input
                       id="files"
                       className="hidden"
                       type="file"
@@ -123,7 +123,7 @@ const ProfileDp = () => {
                       onChange={change}></input>
                     <label htmlFor="my-modal-3" className="btn">
                       Edit Details
-                    </label>
+                    </label> */}
                   </li>
                 </ul>
               </div>

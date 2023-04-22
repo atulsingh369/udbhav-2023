@@ -148,7 +148,7 @@ const Navbar = () => {
                   </li>
                 </ul>
                 <button
-                  className="btn glass"
+                  className="btn glass "
                   onClick={() => navigate("/register")}>
                   Register
                 </button>
