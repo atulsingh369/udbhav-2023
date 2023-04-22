@@ -72,7 +72,7 @@ const ExtraForms = () => {
                   return (
                     <div key={index} className="grid place-items-center p-5 border-2 border-[#03e9f4] rounded-lg">
                       <h2 className="text-2xl font-semibold">{value.title}</h2>
-                      <div className="user-box w-80">
+                      <div className="user-box w-full md:w-80">
                         <input
                           maxlength="10"
                           type="tel"
