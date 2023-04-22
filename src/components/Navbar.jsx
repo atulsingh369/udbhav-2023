@@ -157,7 +157,7 @@ const Navbar = () => {
               <div className="dropdown dropdown-hover">
                 <span
                   tabIndex={0}
-                  className="flex glass px-3 rounded-md items-center justify-center m-1">
+                  className="flex glass p-3 rounded-md items-center justify-center m-1">
                   <span id="hello">
                     {" "}
                     Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;

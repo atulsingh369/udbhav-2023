@@ -5,7 +5,7 @@ export const Department = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/DSC_0084_2.JPG?updatedAt=1681229117353",
       contact: 6391511267,
-      email: "fahack111@gmail.com",
+      email: "ksr19101999@gmail.com",
       show: true,
       post: "",
       id: "dep-1",
