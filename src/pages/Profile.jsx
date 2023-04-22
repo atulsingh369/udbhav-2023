@@ -21,8 +21,7 @@ const Profile = () => {
     };
   }, []);
   return (
-    <div className="flex flex-col  bg-home-background bg-cover relative">
-      {/* <PdfPrint /> */}
+    <div className="flex flex-col h-full gap-5 bg-home-background bg-cover">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center sticky h-screen">
         <ProfileDp />
         <ProfileInfo />

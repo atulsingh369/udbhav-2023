@@ -154,10 +154,10 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <div className="dropdown dropdown-hover">
+              <div className="dropdown dropdown-hover dropdown-end">
                 <span
                   tabIndex={0}
-                  className="flex glass p-3 rounded-md items-center justify-center m-1">
+                  className="flex glass p-1  rounded-md items-center justify-center m-1">
                   <span id="hello">
                     {" "}
                     Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
@@ -173,7 +173,7 @@ const Navbar = () => {
                 </span>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                  className="dropdown-content menu divide-y-2 divide-base-300 shadow bg-base-100 rounded-box w-52">
                   <li>
                     <Link to="/profile">Profile</Link>
                   </li>

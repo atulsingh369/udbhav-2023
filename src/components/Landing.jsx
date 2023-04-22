@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { EarthCanvas, StarsCanvas } from "./canvas";
+import Spline from '@splinetool/react-spline';
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,16 +24,16 @@ const Landing = () => {
       ) : (
         <div className="">
           <div
-            className={` flex xl:flex-row flex-col-reverse gap-10 overflow-hidden  bg-home-background bg-cover h-screen items-center`}
+            className={` grid grid-cols-1 md:grid-cols-2  overflow-hidden  bg-home-background bg-cover h-screen items-center`}
           >
-            <motion.div
-              variants={slideIn("left", "tween", 0.2, 1)}
+            <div
+              
               className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
             >
               <div className="flex flex-col justify-center items-center gap-5">
                 <div
                   id="text-drop"
-                  className=" flex flex-row items-center justify-center p-5  "
+                  className=" flex flex-row items-center justify-center h-fit pt-16 md:pt-0  "
                 >
                   <div className="u text-white font-semibold text-8xl lg:text-8xl xl:text-[7rem]">
                     U
@@ -82,14 +83,16 @@ const Landing = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
+            {/* <motion.div
               variants={slideIn("right", "tween", 0.2, 1)}
               className=" xl:flex-1  h-[550px] w-full justify-center items-center"
             >
               <EarthCanvas />
-            </motion.div>
+            </motion.div> */}
+            <div className=" h-full w-full flex scale-90 ">
+            <Spline scene="https://prod.spline.design/axq93FKbWAxwOAkP/scene.splinecode" />            </div>
           </div>
           <ToastContainer />
         </div>

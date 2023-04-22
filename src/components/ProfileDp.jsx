@@ -75,7 +75,7 @@ const ProfileDp = () => {
       {/* {loading ? (
         <MainLoader />
       ) : ( */}
-      <div className="flex flex-col items-center  justify-center gap-28 md:gap-10  pt-24">
+      <div className="flex flex-col items-center w-full  justify-center gap-28 md:gap-10  pt-24">
         <div className=" ">
           <div className="avatar w-fit flex flex-col items-end  ">
             <div className="w-48 md:w-48 rounded-full ">
@@ -97,7 +97,7 @@ const ProfileDp = () => {
         </div>
         <div
           id="card-profile"
-          className="card w-96 text-white border border-white"
+          className="card w-80 md:w-96 text-white border border-white"
         >
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
@@ -172,17 +172,26 @@ const ProfileDp = () => {
                         className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
                       />
                     </div>
-
-                    <button className="w-full h-[3rem] rounded-lg btn font-bold text-lg">
+                    <div className="modal-action">
+                      <button type="submit">
+                        <label
+                          htmlFor="my-modal-3"
+                          className="btn"
+                          type="submit"
+                        >
+                          Submit
+                        </label>
+                      </button>
+                    </div>
+                    {/* <button htmlFor="my-modal-3" className="btn">
                       Submit
-                    </button>
+                    </button> */}
                   </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <ToastContainer />
       </div>
       {/* )} */}
     </>
