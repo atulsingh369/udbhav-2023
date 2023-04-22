@@ -193,7 +193,7 @@ body {
 }
 /* loader */
 #loader-container {
-  background: rgb(255, 255, 255)
+  background: #0A0869
     url("https://ik.imagekit.io/e5ixuxrlb/Udbhav/Loaders/loaderUdbhav.gif?updatedAt=1682157256818")
     no-repeat center center;
   height: 100vh;
