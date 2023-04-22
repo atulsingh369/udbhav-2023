@@ -145,7 +145,7 @@ const ProfileDp = () => {
 
                         <input
                         className=" h-[3rem]  p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                          maxlength="10"
+                          maxLength="10"
                           type="tel"
                           name="phnNo"
                           value={branchYear.phnNo}

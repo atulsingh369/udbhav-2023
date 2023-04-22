@@ -87,7 +87,7 @@ const ExtraForms = () => {
                         <label>Phone No*</label>
                       </div>
                       <label
-                        className="flex items-center space-x-6 border-2 border-dashed max-w-full border-[#03e9f4] p-5 rounded-xl cursor-pointer"
+                        className="flex items-center space-x-6 border-2 border-dashed  border-[#03e9f4] p-5 rounded-xl cursor-pointer"
                         htmlFor="logo"
                       >
                         <div className="shrink-0">
@@ -107,7 +107,7 @@ const ExtraForms = () => {
                         />
                       </label>
 
-                      <div className="flex gap-5 items-center ">
+                      <div className="flex flex-col md:flex-row md:gap-5 items-center ">
                         <button
                           onClick={handleSubmit}
                           className="submit"
