@@ -203,7 +203,7 @@ body {
     url("https://ik.imagekit.io/e5ixuxrlb/Udbhav/Loaders/loaderUdbhav.gif?updatedAt=1682157256818")
     no-repeat center center;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   left: 0;
   top: 0;
