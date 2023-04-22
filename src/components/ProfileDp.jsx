@@ -132,7 +132,7 @@ const ProfileDp = () => {
         </div>
         <div
           id="card-profile"
-          className="card w-96 text-white border border-white"
+          className="card w-full md:w-96 text-white border border-white"
         >
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
