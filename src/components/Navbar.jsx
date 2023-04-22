@@ -154,7 +154,7 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <div className="dropdown dropdown-end">
+              <div className="dropdown dropdown-hover dropdown-end">
                 <span
                   tabIndex={0}
                   className="flex glass p-1  rounded-md items-center justify-center m-1">
