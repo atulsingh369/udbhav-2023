@@ -139,8 +139,12 @@ const ProfileDp = () => {
                     onSubmit={editProfile}
                     className="flex flex-col items-center justify-evenly h-full">
                     <div className="w-full flex flex-col justify-evenly gap-3">
-                      {/* <div className="user-box">
+                      <div className="user-box">
+                        <div className="flex flex-col">
+                        <label className="text-[#03e9f4] font-semibold">Phone No*</label>
+
                         <input
+                        className=" h-[3rem]  p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
                           maxlength="10"
                           type="tel"
                           name="phnNo"
@@ -152,9 +156,9 @@ const ProfileDp = () => {
                             })
                           }
                           required=""
-                        />
-                        <label>Phone No*</label>
-                      </div> */}
+                          />
+                          </div>
+                      </div>
                       <label className="text-[#03e9f4] font-semibold">
                         Branch
                       </label>
