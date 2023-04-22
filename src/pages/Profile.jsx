@@ -21,13 +21,13 @@ const Profile = () => {
     };
   }, []);
   return (
-    <div className="flex flex-col h-full gap-5 bg-home-background bg-cover">
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center sticky h-screen">
+    <div className="flex flex-col h-full gap-10 bg-home-background bg-cover">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center sticky h-screen ">
         <ProfileDp />
         <ProfileInfo />
       </div>
       {event && (
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 mt-20">
           <h1 className="text-white font-bold text-3xl text-center">Events</h1>
           <div className="w-full h-fit p-5 flex flex-col md:flex-row flex-wrap gap-10 justify-around items-center text-white">
             {event.map((item, i) => {
@@ -44,7 +44,7 @@ const Profile = () => {
                 //   })}
                 // </div>
                 <div
-                  className="card w-96 shadow-md border border-white shadow-white h-60 overflow-scroll cursor-no-drop hover:scale-105 transition-all duration-500"
+                  className="card w-full md:w-96 shadow-md border border-white shadow-white h-60 overflow-scroll cursor-no-drop hover:scale-105 transition-all duration-500"
                   key={i}
                 >
                   <div className="card-body">

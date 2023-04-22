@@ -73,7 +73,7 @@ const ProfileDp = () => {
       {/* {loading ? (
         <MainLoader />
       ) : ( */}
-      <div className="flex flex-col items-center w-full  justify-center gap-28 md:gap-10  pt-24">
+      <div className="flex flex-col items-center w-full  justify-center gap-5 md:gap-10  pt-24">
         <div className=" ">
           <div className="avatar w-fit flex flex-col items-end  ">
             <div className="w-48 md:w-48 rounded-full ">
