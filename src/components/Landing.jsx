@@ -80,6 +80,7 @@ const Landing = () => {
                   </div>
                 </div>
               </div>
+              
             </div>
             {/* <motion.div
               variants={slideIn("right", "tween", 0.2, 1)}
