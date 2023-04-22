@@ -6,10 +6,7 @@
     url("https://www.mediafont.com/storage/contents/7025/SAMARN__.TTF"); /* non-IE */
 }
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap");
-/* @font-face {
-  font-family: 'Samarkan';
-  src: local('Samarkan'), url("../public/SAMAN___.ttf") format('ttf');
-} */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,7 +19,7 @@ html,
 body {
   color: rgb(0, 0, 0);
   background-color: white;
-  font-family: "Raleway", cursive;
+  font-family: "Raleway";
 }
 /* udbhav text */
 
@@ -62,7 +59,7 @@ body {
 #text-drop {
   position: relative;
   display: flex;
-  font-family: arial;
+  font-family: Raleway;
   font-weight: 900;
 }
 
