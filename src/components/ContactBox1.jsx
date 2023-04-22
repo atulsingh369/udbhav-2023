@@ -28,6 +28,7 @@ const ContactBox1 = () => {
                       />
                     </figure>
                     <div className="flex flex-col items-start tracking-wider justify-center gap-1 h-full text-white">
+                        <p className="text-sm mb-2 font-bold text-center w-full">{value.post}</p>
                       <div className="text-xs flex items-center justify-center">
                         <HiUser className="mx-2" />
                         {value.name}
@@ -40,7 +41,6 @@ const ContactBox1 = () => {
                         <HiPhone className="mx-2" />
                         {value.contact}
                       </div>
-                        <p className="text-sm font-bold text-center w-full">{value.post}</p>
                     </div>
                   </div>
                 );
