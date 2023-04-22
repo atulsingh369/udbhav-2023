@@ -34,7 +34,7 @@ const Navbar = () => {
       {loading ? (
         <MainLoader />
       ) : (
-        <div className="navbar w-full fixed top-0 bg-base-100 text-white z-50">
+        <div className="navbar w-full fixed top-0  text-white z-50">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -156,7 +156,7 @@ const Navbar = () => {
               </div>
             ) : (
               <div className="dropdown dropdown-hover">
-                <span tabIndex={0} className="btn m-1">
+                <span tabIndex={0} className="flex items-center justify-center m-1">
                   <span id="hello">
                     {" "}
                     Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
