@@ -19,9 +19,9 @@ const ProfileDp = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [file, setFile] = useState();
 
   const initialValues = {
+    phnNo: "",
     branch: "select",
     year: "select",
   };
@@ -60,6 +60,7 @@ const ProfileDp = () => {
         return;
       } else {
         await updateDoc(doc(db, "users", user.email), {
+          phnNo: branchYear.phnNo,
           branch: branchYear.branch,
           year: branchYear.year,
         });
@@ -105,6 +106,10 @@ const ProfileDp = () => {
               <h3>{data.email ? data.email : "N/A"}</h3>
             </div>
             <div className="flex justify-between">
+              <h3>Mbl No: </h3>
+              <h3>{data.phnNo ? data.phnNo : "N/A"}</h3>
+            </div>
+            <div className="flex justify-between">
               <h3>Branch: </h3>
               <h3>{data.branch ? data.branch : "N/A"}</h3>
             </div>
@@ -134,22 +139,25 @@ const ProfileDp = () => {
                     onSubmit={editProfile}
                     className="flex flex-col items-center justify-evenly h-full">
                     <div className="w-full flex flex-col justify-evenly gap-3">
+                      {/* <div className="user-box">
+                        <input
+                          maxlength="10"
+                          type="tel"
+                          name="phnNo"
+                          value={branchYear.phnNo}
+                          onChange={(e) =>
+                            setBranchYear({
+                              ...branchYear,
+                              phnNo: e.target.value,
+                            })
+                          }
+                          required=""
+                        />
+                        <label>Phone No*</label>
+                      </div> */}
                       <label className="text-[#03e9f4] font-semibold">
                         Branch
                       </label>
-                      {/* <input
-                        type="text"
-                        name="branch"
-                        value={branchYear && branchYear.branch}
-                        onChange={(e) =>
-                          setBranchYear({
-                            ...branchYear,
-                            branch: e.target.value,
-                          })
-                        }
-                        required=""
-                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                      /> */}
                       <select
                         name="selectedFruit"
                         className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
