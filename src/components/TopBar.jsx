@@ -14,7 +14,7 @@ const TopBar = () => {
           >
             {Object.entries(Department).map((item, i) => {
               return (
-                <li>
+                <li key={i}>
                   <a href={`#${item[0]}`}>{item[0]}</a>
                 </li>
               );

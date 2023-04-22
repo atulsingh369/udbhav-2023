@@ -259,8 +259,8 @@ export const Department = {
       name: "Abhishek Narayan Singh",
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-11_at_23.20.30.jpg?updatedAt=1681235531784",
-      contact: 123456789,
-      email: "test@test.test",
+      contact: 9559691517,
+      email: "1599abhishek@gmail.com",
       show: true,
       post: "",
     },
@@ -291,6 +291,15 @@ export const Department = {
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/img.jpeg?updatedAt=1681230978329",
       contact: 8824282137,
       email: "kant34477@gmail.com",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Bhavishya Gupta",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-19_at_02.11.47.jpg?updatedAt=1682189778736",
+      contact: 8175961682,
+      email: "bhavishya2807@gmail.com",
       show: true,
       post: "",
     },
