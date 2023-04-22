@@ -186,10 +186,10 @@ const ProfileDp = () => {
                           })
                         }
                       >
-                        <option>2019</option>
-                        <option>2020</option>
-                        <option>2021</option>
-                        <option>2022</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
                       </select>
                     </div>
                     <div className="modal-action">
