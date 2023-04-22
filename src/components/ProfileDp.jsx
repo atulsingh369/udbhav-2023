@@ -132,7 +132,8 @@ const ProfileDp = () => {
         </div>
         <div
           id="card-profile"
-          className="card w-96 text-white border border-white">
+          className="card w-96 text-white border border-white"
+        >
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
             <div className="flex flex-row">
@@ -158,7 +159,8 @@ const ProfileDp = () => {
                 <div className="modal-box relative h-96 w-96 bg-[#141e30]">
                   <label
                     htmlFor="my-modal-3"
-                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]">
+                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]"
+                  >
                     ✕
                   </label>
 
@@ -167,7 +169,8 @@ const ProfileDp = () => {
                   </h1>
                   <form
                     onSubmit={editProfile}
-                    className="flex flex-col items-center justify-evenly h-full">
+                    className="flex flex-col items-center justify-evenly h-full"
+                  >
                     <div className="w-full flex flex-col justify-evenly gap-3">
                       <label className="text-[#03e9f4] font-semibold">
                         Branch
@@ -204,10 +207,14 @@ const ProfileDp = () => {
                         className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
                       />
                     </div>
-
-                    <button className="w-full h-[3rem] rounded-lg btn font-bold text-lg">
+                    <div className="modal-action">
+                      <label htmlFor="my-modal-3" className="btn" type="submit">
+                        Submit
+                      </label>
+                    </div>
+                    {/* <button className="w-full h-[3rem] rounded-lg btn font-bold text-lg">
                       Submit
-                    </button>
+                    </button> */}
                   </form>
                 </div>
               </div>
