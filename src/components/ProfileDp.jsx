@@ -95,7 +95,7 @@ const ProfileDp = () => {
       {/* {loading ? (
         <MainLoader />
       ) : ( */}
-      <div className="flex flex-col items-center  justify-center gap-28 md:gap-10  pt-24">
+      <div className="flex flex-col items-center w-full  justify-center gap-28 md:gap-10  pt-24">
         <div className=" ">
           <div className="avatar w-fit flex flex-col items-end  ">
             <div className="w-48 md:w-48 rounded-full ">
@@ -132,7 +132,7 @@ const ProfileDp = () => {
         </div>
         <div
           id="card-profile"
-          className="card w-full md:w-96 text-white border border-white">
+          className="card w-80 md:w-96 text-white border border-white">
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
             <div className="flex flex-row">
@@ -223,7 +223,7 @@ const ProfileDp = () => {
             </div>
           </div>
         </div>
-        <ToastContainer className="z-100" />
+        
       </div>
       {/* )} */}
     </>
