@@ -7,9 +7,6 @@ import { auth, db, storage } from "../config";
 import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import MainLoader from "./MainLoader";
-import { IKImage } from "imagekitio-react";
-import ImageKit from "imagekit";
 import { getDownloadURL, ref, uploadBytes } from "@firebase/storage";
 import { updateProfile } from "@firebase/auth";
 
@@ -98,17 +95,18 @@ const ProfileDp = () => {
         </div>
         <div
           id="card-profile"
-          className="card w-80 md:w-96 text-white border border-white">
+          className="card w-80 md:w-96 text-white border border-white"
+        >
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
             <div className="flex justify-between">
               <h3>Email: </h3>
               <h3>{data.email ? data.email : "N/A"}</h3>
             </div>
-            <div className="flex justify-between">
+            {/* <div className="flex justify-between">
               <h3>Mbl No: </h3>
               <h3>{data.phnNo ? data.phnNo : "N/A"}</h3>
-            </div>
+            </div> */}
             <div className="flex justify-between">
               <h3>Branch: </h3>
               <h3>{data.branch ? data.branch : "N/A"}</h3>
@@ -128,7 +126,8 @@ const ProfileDp = () => {
                 <div className="modal-box relative h-96 w-96 bg-[#141e30]">
                   <label
                     htmlFor="my-modal-3"
-                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]">
+                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]"
+                  >
                     ✕
                   </label>
 
@@ -137,7 +136,8 @@ const ProfileDp = () => {
                   </h1>
                   <form
                     onSubmit={editProfile}
-                    className="flex flex-col items-center justify-evenly h-full">
+                    className="flex flex-col items-center justify-evenly h-full"
+                  >
                     <div className="w-full flex flex-col justify-evenly gap-3">
                       <div className="user-box">
                         <div className="flex flex-col">
@@ -170,7 +170,8 @@ const ProfileDp = () => {
                             ...branchYear,
                             branch: e.target.value,
                           })
-                        }>
+                        }
+                      >
                         <option>--SELECT--</option>
                         <option>CSE</option>
                         <option>EE</option>
@@ -193,7 +194,8 @@ const ProfileDp = () => {
                             ...branchYear,
                             year: e.target.value,
                           })
-                        }>
+                        }
+                      >
                         <option>--SELECT--</option>
                         <option>1st Year</option>
                         <option>2nd Year</option>
@@ -206,7 +208,8 @@ const ProfileDp = () => {
                         <label
                           htmlFor="my-modal-3"
                           className="btn"
-                          type="submit">
+                          type="submit"
+                        >
                           Submit
                         </label>
                       </button>

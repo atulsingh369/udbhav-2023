@@ -43,7 +43,8 @@ const Navbar = () => {
                   className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor">
+                  stroke="currentColor"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -54,7 +55,8 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
                 {user && (
                   <li>
                     <Link to="/tour">IERT TOUR</Link>
@@ -68,20 +70,21 @@ const Navbar = () => {
                 {user && (
                   <li tabIndex={0}>
                     <Link to="#!" className="justify-between">
-                      UPDATES
+                      COMPETITION
                       <svg
                         className="fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
-                        viewBox="0 0 24 24">
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                       </svg>
                     </Link>
                     <ul className="p-2 ">
                       <li className="btn">
                         <Link to="/forms" className="font-semibold">
-                          Forms
+                          LOGO
                         </Link>
                       </li>
                     </ul>
@@ -112,20 +115,21 @@ const Navbar = () => {
               {user && (
                 <li tabIndex={0}>
                   <Link to="#!">
-                    UPDATES
+                    COMPETION
                     <svg
                       className="fill-current"
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
-                      viewBox="0 0 24 24">
+                      viewBox="0 0 24 24"
+                    >
                       <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                     </svg>
                   </Link>
                   <ul className="p-2">
                     <li className="btn">
                       <Link to="/forms" className="text-white font-semibold ">
-                        Forms
+                        LOGO
                       </Link>
                     </li>
                   </ul>
@@ -149,7 +153,8 @@ const Navbar = () => {
                 </ul>
                 <button
                   className="btn glass "
-                  onClick={() => navigate("/register")}>
+                  onClick={() => navigate("/register")}
+                >
                   Register
                 </button>
               </div>
@@ -157,7 +162,8 @@ const Navbar = () => {
               <div className="dropdown dropdown-hover dropdown-end">
                 <span
                   tabIndex={0}
-                  className="flex glass p-1  rounded-md items-center justify-center m-1">
+                  className="flex glass p-1  rounded-md items-center justify-center m-1"
+                >
                   <span id="hello">
                     {" "}
                     Hi&nbsp;{user.displayName}&nbsp;&nbsp;&nbsp;
@@ -173,7 +179,8 @@ const Navbar = () => {
                 </span>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content menu divide-y-2 divide-base-300 shadow bg-base-100 rounded-box w-52">
+                  className="dropdown-content menu divide-y-2 divide-base-300 shadow bg-base-100 rounded-box w-52"
+                >
                   <li>
                     <Link to="/profile">Profile</Link>
                   </li>

@@ -15,7 +15,7 @@ const EventCards = () => {
                 {item[1].map((value, index) => {
                   return (
                     <div
-                      className="card w-64 h-[28rem] bg-base-100 shadow-xl"
+                      className="card w-64 h-[28rem] bg-base-100 shadow-xl overflow-hidden"
                       key={index}
                     >
                       {" "}
@@ -23,7 +23,7 @@ const EventCards = () => {
                         <figure>
                           <img
                             src={value.image}
-                            alt="Shoes"
+                            alt="image"
                             className="object-contain"
                           />
                         </figure>

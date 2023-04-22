@@ -108,10 +108,10 @@ const cultForms = () => {
           return (
             <div
               className="grid grid-cols-1
-             md:grid-cols-3 h-screen w-full   ">
+             md:grid-cols-3 h-screen w-full" key={i}>
               <div
                 className="login-box scrollbar-hidden w-full md:w-4/5 pt-20 md:pt-5 overflow-scroll h-screen md:h-fit mt-4 relative md:col-span-2"
-                key={i}>
+               >
                 {item[1].map((value, index) => {
                   return (
                     <div key={index}>
