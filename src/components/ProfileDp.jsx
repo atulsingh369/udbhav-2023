@@ -3,25 +3,27 @@ import { setUser } from "../store";
 import { IoMdAddCircle } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "../config";
+import { auth, db, storage } from "../config";
 import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MainLoader from "./MainLoader";
 import { IKImage } from "imagekitio-react";
 import ImageKit from "imagekit";
+import { getDownloadURL, ref, uploadBytes } from "@firebase/storage";
+import { updateProfile } from "@firebase/auth";
 
 const ProfileDp = () => {
-  const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [file, setFile] = useState();
 
   const initialValues = {
-    branch: "",
-    year: "",
+    branch: "CSE",
+    year: "2022",
   };
 
   const [branchYear, setBranchYear] = useState(initialValues);
@@ -39,38 +41,16 @@ const ProfileDp = () => {
     };
   }, []);
 
-  const change = async (e) => {
-    var result = imagekit.getAuthenticationParameters();
-    console.log(result);
-    const reader = new FileReader();
-
-    reader.readAsDataURL(e.target.files[0]);
-    const file = e.target[0]?.files[0];
-    if (!file) toast.error("Enter Image properly");
-
-    // const storageRef = ref(storage, `/files/${file.name}`);
-    // const uploadTask = uploadBytesResumable(storageRef, file);
-
-    // uploadTask.on(
-    //   "state_changed",
-    //   (snapshot) => {
-    //     const progress = Math.round(
-    //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-    //     );
-    //     setProgresspercent(progress);
-    //   },
-    //   (error) => {
-    //     toast(error);
-    //   },
-    //   () => {
-    //     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-    //       user.photoURL = downloadURL;
-    //       console.log(downloadURL);
-    //       console.log("hi");
-    //     });
-    //   }
-    // );
-    toast.warning("url");
+  const handleImgChange = async (e) => {
+    const image = e.target.files[0];
+    const imageRef = ref(storage, user.displayName);
+    await uploadBytes(imageRef, image);
+    const url = await getDownloadURL(imageRef);
+    await updateProfile(auth.currentUser, {
+      photoURL: url,
+    });
+    const res = auth.currentUser;
+    dispatch(setUser(res));
   };
 
   const editProfile = async (e) => {
@@ -154,83 +134,80 @@ const ProfileDp = () => {
                   Edit Details
                 </label>
 
-                {/* Put this part before </body> tag */}
-                <input
-                  type="checkbox"
-                  id="my-modal-3"
-                  className="modal-toggle"
-                />
-                <div className="modal ">
-                  <div className="modal-box relative h-96 w-96 bg-[#141e30]">
-                    <label
-                      htmlFor="my-modal-3"
-                      className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]">
-                      ✕
-                    </label>
+              {/* Put this part before </body> tag */}
+              <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+              <div className="modal ">
+                <div className="modal-box relative h-96 w-96 bg-[#141e30]">
+                  <label
+                    htmlFor="my-modal-3"
+                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]">
+                    ✕
+                  </label>
 
-                    <h1 className="text-2xl font-semibold text-center">
-                      Enter Your Details
-                    </h1>
-                    <form
-                      onSubmit={editProfile}
-                      className="flex flex-col items-center justify-evenly h-full">
-                      <div className="w-full flex flex-col justify-evenly gap-3">
-                        <label className="text-[#03e9f4] font-semibold">
-                          Branch
+                  <h1 className="text-2xl font-semibold text-center">
+                    Enter Your Details
+                  </h1>
+                  <form
+                    onSubmit={editProfile}
+                    className="flex flex-col items-center justify-evenly h-full">
+                    <div className="w-full flex flex-col justify-evenly gap-3">
+                      <label className="text-[#03e9f4] font-semibold">
+                        Branch
+                      </label>
+                      <input
+                        type="text"
+                        name="branch"
+                        value={branchYear && branchYear.branch}
+                        onChange={(e) =>
+                          setBranchYear({
+                            ...branchYear,
+                            branch: e.target.value,
+                          })
+                        }
+                        required=""
+                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
+                      />
+                    </div>
+                    <div className="w-full flex flex-col justify-evenly gap-3">
+                      <label className="font-semibold text-[#03e9f4]">
+                        Year
+                      </label>
+                      <input
+                        type="text"
+                        name="year"
+                        value={branchYear && branchYear.year}
+                        onChange={(e) =>
+                          setBranchYear({
+                            ...branchYear,
+                            year: e.target.value,
+                          })
+                        }
+                        required=""
+                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
+                      />
+                    </div>
+                    <div className="modal-action">
+                      <button type="submit">
+                        <label
+                          htmlFor="my-modal-3"
+                          className="btn"
+                          type="submit">
+                          Submit
                         </label>
-                        <input
-                          type="text"
-                          name="branch"
-                          value={branchYear && branchYear.branch}
-                          onChange={(e) =>
-                            setBranchYear({
-                              ...branchYear,
-                              branch: e.target.value,
-                            })
-                          }
-                          required=""
-                          className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                        />
-                      </div>
-                      <div className="w-full flex flex-col justify-evenly gap-3">
-                        <label className="font-semibold text-[#03e9f4]">
-                          Year
-                        </label>
-                        <input
-                          type="text"
-                          name="year"
-                          value={branchYear && branchYear.year}
-                          onChange={(e) =>
-                            setBranchYear({
-                              ...branchYear,
-                              year: e.target.value,
-                            })
-                          }
-                          required=""
-                          className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                        />
-                      </div>
-                      <div className="modal-action">
-                        <button type="submit">
-                          <label
-                            htmlFor="my-modal-3"
-                            className="btn"
-                            type="submit">
-                            Submit
-                          </label>
-                        </button>
-                      </div>
-                      {/* <button htmlFor="my-modal-3" className="btn">
+                      </button>
+                    </div>
+                    {/* <button htmlFor="my-modal-3" className="btn">
                       Submit
                     </button> */}
-                    </form>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
+        
+      </div>
+       )}
     </>
   );
 };

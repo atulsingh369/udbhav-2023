@@ -1,4 +1,10 @@
-@import url("https://fonts.cdnfonts.com/css/samarkan");
+/* @import url('https://fonts.cdnfonts.com/css/samarkan'); */
+@font-face {
+  font-family: Samarkan;
+  src: url("https://www.mediafont.com/storage/contents/7025/font.eot"); /* IE */
+  src: local("Samarkan"),
+    url("https://www.mediafont.com/storage/contents/7025/SAMARN__.TTF"); /* non-IE */
+}
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap");
 /* @font-face {
   font-family: 'Samarkan';
