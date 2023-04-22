@@ -22,8 +22,8 @@ const ProfileDp = () => {
   const [file, setFile] = useState();
 
   const initialValues = {
-    branch: "",
-    year: "",
+    branch: "CSE",
+    year: "2022",
   };
 
   const [branchYear, setBranchYear] = useState(initialValues);
@@ -101,17 +101,17 @@ const ProfileDp = () => {
         >
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
-            <div className="flex flex-row">
-              <p>Email: </p>
-              <p>{data.email ? data.email : "N/A"}</p>
+            <div className="flex justify-between">
+              <h3>Email: </h3>
+              <h3>{data.email ? data.email : "N/A"}</h3>
             </div>
-            <div className="flex flex-row">
-              <p>Branch: </p>
-              <p>{data.branch ? data.branch : "N/A"}</p>
+            <div className="flex justify-between">
+              <h3>Branch: </h3>
+              <h3>{data.branch ? data.branch : "N/A"}</h3>
             </div>
-            <div className="flex flex-row">
-              <p>Year: </p>
-              <p>{data.year ? data.year : "N/A"}</p>
+            <div className="flex justify-between">
+              <h3>Year: </h3>
+              <h3>{data.year ? data.year : "N/A"}</h3>
             </div>
             <div className="card-actions mt-8 justify-end">
               <label htmlFor="my-modal-3" className="btn">
@@ -140,7 +140,7 @@ const ProfileDp = () => {
                       <label className="text-[#03e9f4] font-semibold">
                         Branch
                       </label>
-                      <input
+                      {/* <input
                         type="text"
                         name="branch"
                         value={branchYear && branchYear.branch}
@@ -152,25 +152,45 @@ const ProfileDp = () => {
                         }
                         required=""
                         className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                      />
+                      /> */}
+                      <select
+                        name="selectedFruit"
+                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
+                        onChange={(e) =>
+                          setBranchYear({
+                            ...branchYear,
+                            branch: e.target.value,
+                          })
+                        }
+                      >
+                        <option>CSE</option>
+                        <option>EE</option>
+                        <option>ELEX</option>
+                        <option>CE</option>
+                        <option>ME</option>
+                        <option>ICE</option>
+                        <option>IPE</option>
+                      </select>
                     </div>
                     <div className="w-full flex flex-col justify-evenly gap-3">
                       <label className="font-semibold text-[#03e9f4]">
                         Year
                       </label>
-                      <input
-                        type="text"
-                        name="year"
-                        value={branchYear && branchYear.year}
+                      <select
+                        name="selectedFruit"
+                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
                         onChange={(e) =>
                           setBranchYear({
                             ...branchYear,
                             year: e.target.value,
                           })
                         }
-                        required=""
-                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                      />
+                      >
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                      </select>
                     </div>
                     <div className="modal-action">
                       <button type="submit">
