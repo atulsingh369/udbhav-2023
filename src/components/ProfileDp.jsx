@@ -3,25 +3,27 @@ import { setUser } from "../store";
 import { IoMdAddCircle } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "../config";
+import { auth, db, storage } from "../config";
 import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MainLoader from "./MainLoader";
 import { IKImage } from "imagekitio-react";
 import ImageKit from "imagekit";
+import { getDownloadURL, ref, uploadBytes } from "@firebase/storage";
+import { updateProfile } from "@firebase/auth";
 
 const ProfileDp = () => {
-  const [edit, setEdit] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [file, setFile] = useState();
 
   const initialValues = {
-    branch: "",
-    year: "",
+    branch: "CSE",
+    year: "2022",
   };
 
   const [branchYear, setBranchYear] = useState(initialValues);
@@ -37,38 +39,16 @@ const ProfileDp = () => {
     };
   }, []);
 
-  const change = async (e) => {
-    var result = imagekit.getAuthenticationParameters();
-    console.log(result);
-    const reader = new FileReader();
-
-    reader.readAsDataURL(e.target.files[0]);
-    const file = e.target[0]?.files[0];
-    if (!file) toast.error("Enter Image properly");
-
-    // const storageRef = ref(storage, `/files/${file.name}`);
-    // const uploadTask = uploadBytesResumable(storageRef, file);
-
-    // uploadTask.on(
-    //   "state_changed",
-    //   (snapshot) => {
-    //     const progress = Math.round(
-    //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-    //     );
-    //     setProgresspercent(progress);
-    //   },
-    //   (error) => {
-    //     toast(error);
-    //   },
-    //   () => {
-    //     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-    //       user.photoURL = downloadURL;
-    //       console.log(downloadURL);
-    //       console.log("hi");
-    //     });
-    //   }
-    // );
-    toast.warning("url");
+  const handleImgChange = async (e) => {
+    const image = e.target.files[0];
+    const imageRef = ref(storage, user.displayName);
+    await uploadBytes(imageRef, image);
+    const url = await getDownloadURL(imageRef);
+    await updateProfile(auth.currentUser, {
+      photoURL: url,
+    });
+    const res = auth.currentUser;
+    dispatch(setUser(res));
   };
 
   const editProfile = async (e) => {
@@ -104,48 +84,34 @@ const ProfileDp = () => {
                 <img src="https://ik.imagekit.io/xji6otwwkb/Profile.png?updatedAt=1680849745697" />
               )}
             </div>
-            <IoMdAddCircle
-              onClick={() => setEdit(!edit)}
-              className="text-5xl md:text-6xl cursor-pointer text-white  -translate-y-16"
+            <input
+              type="file"
+              id="img"
+              className="hidden"
+              onChange={handleImgChange}
             />
-            {edit && (
-              <div>
-                <ul>
-                  <li className="flex flex-col md:flex-row absolute  -translate-y-24 gap-2">
-                    <label htmlFor="files" className="btn ">
-                      Edit DP
-                    </label>
-                    {/* <input
-                      id="files"
-                      className="hidden"
-                      type="file"
-                      accept="image/*"
-                      onChange={change}></input>
-                    <label htmlFor="my-modal-3" className="btn">
-                      Edit Details
-                    </label> */}
-                  </li>
-                </ul>
-              </div>
-            )}
+            <label htmlFor="img">
+              <IoMdAddCircle className="text-5xl md:text-6xl cursor-pointer text-white  -translate-y-16" />
+            </label>
           </div>
         </div>
         <div
           id="card-profile"
-          className="card w-80 md:w-96 text-white border border-white">
+          className="card w-80 md:w-96 text-white border border-white"
+        >
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
-            <div className="flex flex-row">
-              <p>Email: </p>
-              <p>{data.email ? data.email : "N/A"}</p>
+            <div className="flex justify-between">
+              <h3>Email: </h3>
+              <h3>{data.email ? data.email : "N/A"}</h3>
             </div>
-            <div className="flex flex-row">
-              <p>Branch: </p>
-              <p>{data.branch ? data.branch : "N/A"}</p>
+            <div className="flex justify-between">
+              <h3>Branch: </h3>
+              <h3>{data.branch ? data.branch : "N/A"}</h3>
             </div>
-            <div className="flex flex-row">
-              <p>Year: </p>
-              <p>{data.year ? data.year : "N/A"}</p>
+            <div className="flex justify-between">
+              <h3>Year: </h3>
+              <h3>{data.year ? data.year : "N/A"}</h3>
             </div>
             <div className="card-actions mt-8 justify-end">
               <label htmlFor="my-modal-3" className="btn">
@@ -158,7 +124,8 @@ const ProfileDp = () => {
                 <div className="modal-box relative h-96 w-96 bg-[#141e30]">
                   <label
                     htmlFor="my-modal-3"
-                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]">
+                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]"
+                  >
                     ✕
                   </label>
 
@@ -167,12 +134,13 @@ const ProfileDp = () => {
                   </h1>
                   <form
                     onSubmit={editProfile}
-                    className="flex flex-col items-center justify-evenly h-full">
+                    className="flex flex-col items-center justify-evenly h-full"
+                  >
                     <div className="w-full flex flex-col justify-evenly gap-3">
                       <label className="text-[#03e9f4] font-semibold">
                         Branch
                       </label>
-                      <input
+                      {/* <input
                         type="text"
                         name="branch"
                         value={branchYear && branchYear.branch}
@@ -184,32 +152,53 @@ const ProfileDp = () => {
                         }
                         required=""
                         className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                      />
+                      /> */}
+                      <select
+                        name="selectedFruit"
+                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
+                        onChange={(e) =>
+                          setBranchYear({
+                            ...branchYear,
+                            branch: e.target.value,
+                          })
+                        }
+                      >
+                        <option>CSE</option>
+                        <option>EE</option>
+                        <option>ELEX</option>
+                        <option>CE</option>
+                        <option>ME</option>
+                        <option>ICE</option>
+                        <option>IPE</option>
+                      </select>
                     </div>
                     <div className="w-full flex flex-col justify-evenly gap-3">
                       <label className="font-semibold text-[#03e9f4]">
                         Year
                       </label>
-                      <input
-                        type="text"
-                        name="year"
-                        value={branchYear && branchYear.year}
+                      <select
+                        name="selectedFruit"
+                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
                         onChange={(e) =>
                           setBranchYear({
                             ...branchYear,
                             year: e.target.value,
                           })
                         }
-                        required=""
-                        className="h-[3rem] p-2 w-full rounded-xl border border-[#03e9f4] bg-[#141e30]"
-                      />
+                      >
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                      </select>
                     </div>
                     <div className="modal-action">
                       <button type="submit">
                         <label
                           htmlFor="my-modal-3"
                           className="btn"
-                          type="submit">
+                          type="submit"
+                        >
                           Submit
                         </label>
                       </button>
@@ -223,7 +212,6 @@ const ProfileDp = () => {
             </div>
           </div>
         </div>
-        
       </div>
       {/* )} */}
     </>
