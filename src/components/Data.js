@@ -46,7 +46,7 @@ export const Department = {
     {
       name: "Piyush Singh Rajput",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/Screenshot_20230411-234301-503.png?updatedAt=1681236949967",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/piyush_sir.jpg?updatedAt=1682148691514",
       contact: 9936513754,
       email: "ps8335691@gmail.com",
       show: true,
