@@ -478,7 +478,7 @@ export const Department = {
       image:
         "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG_20230411_233229_3.jpg?updatedAt=1681237594386",
       contact: 9936873603,
-      email: "test@test.test",
+      email: "mukulpandey2866@gmail.com",
       show: true,
       post: "",
       id: "dep-3",
