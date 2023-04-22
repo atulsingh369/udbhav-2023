@@ -42,6 +42,7 @@ export const Department = {
     },
   ],
   Discipline: [
+    
     {
       name: "Piyush Singh Rajput",
       image:
