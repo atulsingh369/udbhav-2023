@@ -34,7 +34,7 @@ const Navbar = () => {
       {loading ? (
         <MainLoader />
       ) : (
-        <div className="navbar w-full fixed top-0  text-white z-50">
+        <div className="navbar w-full fixed top-0 bg-base-100 text-white z-50">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
