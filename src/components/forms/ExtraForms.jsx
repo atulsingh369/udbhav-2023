@@ -12,7 +12,7 @@ const ExtraForms = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
-  const [phn, setPhn] = useState();
+  const [phn, setPhn] = useState(null);
 
   const [avatar, setAvatar] = useState(
     "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpZ2h0JTIwaWNvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
@@ -26,8 +26,8 @@ const ExtraForms = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (!image) {
-      toast.error("Enter Logo");
+    if (!image || !phn) {
+      toast.error("Enter Details");
       setLoading(false);
       setAvatar(
         "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpZ2h0JTIwaWNvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
@@ -70,11 +70,14 @@ const ExtraForms = () => {
               >
                 {item[1].map((value, index) => {
                   return (
-                    <div key={index} className="grid place-items-center p-5 border-2 border-[#03e9f4] rounded-lg">
+                    <div
+                      key={index}
+                      className="grid place-items-center p-5 border-2 border-[#03e9f4] rounded-lg"
+                    >
                       <h2 className="text-2xl font-semibold">{value.title}</h2>
                       <div className="user-box w-full md:w-80">
                         <input
-                          maxlength="10"
+                          maxLength="10"
                           type="tel"
                           name="phnNo"
                           value={phn}
@@ -84,7 +87,7 @@ const ExtraForms = () => {
                         <label>Phone No*</label>
                       </div>
                       <label
-                        className="flex items-center space-x-6 border-2 border-dashed border-[#03e9f4] p-5 rounded-xl cursor-pointer"
+                        className="flex items-center space-x-6 border-2 border-dashed max-w-full border-[#03e9f4] p-5 rounded-xl cursor-pointer"
                         htmlFor="logo"
                       >
                         <div className="shrink-0">
