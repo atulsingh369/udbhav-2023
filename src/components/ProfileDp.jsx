@@ -22,8 +22,8 @@ const ProfileDp = () => {
   const [file, setFile] = useState();
 
   const initialValues = {
-    branch: "CSE",
-    year: "2022",
+    branch: "select",
+    year: "select",
   };
 
   const [branchYear, setBranchYear] = useState(initialValues);
@@ -97,8 +97,7 @@ const ProfileDp = () => {
         </div>
         <div
           id="card-profile"
-          className="card w-80 md:w-96 text-white border border-white"
-        >
+          className="card w-80 md:w-96 text-white border border-white">
           <div className="card-body">
             <h2 className="card-title">{data.displayName}</h2>
             <div className="flex justify-between">
@@ -124,8 +123,7 @@ const ProfileDp = () => {
                 <div className="modal-box relative h-96 w-96 bg-[#141e30]">
                   <label
                     htmlFor="my-modal-3"
-                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]"
-                  >
+                    className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]">
                     ✕
                   </label>
 
@@ -134,8 +132,7 @@ const ProfileDp = () => {
                   </h1>
                   <form
                     onSubmit={editProfile}
-                    className="flex flex-col items-center justify-evenly h-full"
-                  >
+                    className="flex flex-col items-center justify-evenly h-full">
                     <div className="w-full flex flex-col justify-evenly gap-3">
                       <label className="text-[#03e9f4] font-semibold">
                         Branch
@@ -161,8 +158,8 @@ const ProfileDp = () => {
                             ...branchYear,
                             branch: e.target.value,
                           })
-                        }
-                      >
+                        }>
+                        <option>--SELECT--</option>
                         <option>CSE</option>
                         <option>EE</option>
                         <option>ELEX</option>
@@ -184,12 +181,12 @@ const ProfileDp = () => {
                             ...branchYear,
                             year: e.target.value,
                           })
-                        }
-                      >
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        }>
+                        <option>--SELECT--</option>
+                        <option>1st Year</option>
+                        <option>2nd Year</option>
+                        <option>3rd Year</option>
+                        <option>4th Year</option>
                       </select>
                     </div>
                     <div className="modal-action">
@@ -197,8 +194,7 @@ const ProfileDp = () => {
                         <label
                           htmlFor="my-modal-3"
                           className="btn"
-                          type="submit"
-                        >
+                          type="submit">
                           Submit
                         </label>
                       </button>
