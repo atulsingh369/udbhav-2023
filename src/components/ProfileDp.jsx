@@ -51,7 +51,7 @@ const ProfileDp = () => {
   const editProfile = async (e) => {
     e.preventDefault();
     try {
-      if (!branchYear.branch || !branchYear.year) {
+      if (!branchYear.branch || !branchYear.year || !branchYear.phnNo) {
         toast.error("Enter Details");
         setBranchYear(initialValues);
         return;
@@ -103,10 +103,10 @@ const ProfileDp = () => {
               <h3>Email: </h3>
               <h3>{data.email ? data.email : "N/A"}</h3>
             </div>
-            {/* <div className="flex justify-between">
+            <div className="flex justify-between">
               <h3>Mbl No: </h3>
               <h3>{data.phnNo ? data.phnNo : "N/A"}</h3>
-            </div> */}
+            </div>
             <div className="flex justify-between">
               <h3>Branch: </h3>
               <h3>{data.branch ? data.branch : "N/A"}</h3>
@@ -122,8 +122,8 @@ const ProfileDp = () => {
 
               {/* Put this part before </body> tag */}
               <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-              <div className="modal ">
-                <div className="modal-box relative h-96 w-96 bg-[#141e30]">
+              <div className="modal  ">
+                <div className="modal-box relative h-fit w-96 bg-[#141e30]">
                   <label
                     htmlFor="my-modal-3"
                     className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#141e30] border border-[#03e9f4]"
@@ -140,7 +140,7 @@ const ProfileDp = () => {
                   >
                     <div className="w-full flex flex-col justify-evenly gap-3">
                       <div className="user-box">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-3">
                         <label className="text-[#03e9f4] font-semibold">Phone No*</label>
 
                         <input

@@ -12,7 +12,7 @@ const ExtraForms = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
-  const [phn, setPhn] = useState(null);
+  const [phn, setPhn] = useState("");
 
   const [avatar, setAvatar] = useState(
     "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpZ2h0JTIwaWNvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
@@ -26,7 +26,7 @@ const ExtraForms = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (!image || !phn) {
+    if (!image || phn==="") {
       toast.error("Enter Details");
       setLoading(false);
       setAvatar(
@@ -34,7 +34,7 @@ const ExtraForms = () => {
       );
       return;
     } else {
-      const imageRef = ref(storage, `logo_${user.displayName}`);
+      const imageRef = ref(storage,`logoCompetition/logo_${user.displayName}`);
       await uploadBytes(imageRef, image);
       const url = await getDownloadURL(imageRef);
       await setDoc(doc(db, "logo-competition", user.displayName), {
