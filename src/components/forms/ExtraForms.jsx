@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { extraForms } from "../Data";
 import { Link, useNavigate } from "react-router-dom";
+import { storage } from "../../config";
 
 const ExtraForms = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const uploadInput = useRef(null);
 
   const initialValues = {
     name: "",
@@ -15,7 +17,14 @@ const ExtraForms = () => {
 
   const [form, setForm] = useState(initialValues);
 
-  const submitSolo = async (e) => {
+  const handleChange = (e) => {
+    const file = e.target.file[0];
+    const uploadTask = storage
+      .ref(`/images/${imageAsFile.name}`)
+      .put(imageAsFile);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     if (!values.mName || !values.email || !values.phnNo) {
@@ -55,15 +64,48 @@ const ExtraForms = () => {
                       <h2 className="text-2xl font-semibold">{value.title}</h2>
                       <div>
                         <div class="user-box">
-                          <input type="text" name="" required="" />
+                          <input
+                            type="text"
+                            name="name"
+                            value={form.name}
+                            onChange={(e) =>
+                              setForm({
+                                ...form,
+                                name: e.target.value,
+                              })
+                            }
+                            required=""
+                          />
                           <label>Name*</label>
                         </div>
                         <div class="user-box">
-                          <input type="text" name="" required="" />
+                          <input
+                            type="tel"
+                            name="phnNo"
+                            value={form.phnNo}
+                            onChange={(e) =>
+                              setForm({
+                                ...form,
+                                phnNo: e.target.value,
+                              })
+                            }
+                            required=""
+                          />
                           <label>Phone No*</label>
                         </div>
                         <div class="user-box">
-                          <input type="text" name="" required="" />
+                          <input
+                            type="email"
+                            name="email"
+                            value={form.email}
+                            onChange={(e) =>
+                              setForm({
+                                ...form,
+                                email: e.target.value,
+                              })
+                            }
+                            required=""
+                          />
                           <label>Email*</label>
                         </div>
                         {/* <div class="user-box">
@@ -88,17 +130,23 @@ const ExtraForms = () => {
                           </div>
                           <label class="block">
                             <input
+                              onChange={handleChange}
                               type="file"
+                              accept="image/jpeg,image/jpg,image/png"
+                              ref={uploadInput}
                               class="block w-full text-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#03e9f4] file:text-black hover:file:cursor-pointer"
                             />
-                            <span class="text-end text-white text-xs">
+                            <span class="text-end text-[#03e9f4] text-xs">
                               * Upload {value.upload} in PNG format
                             </span>
                           </label>
                         </div>
 
                         <div className="flex gap-5 items-center ">
-                          <button className="submit" type="submit">
+                          <button
+                            onClick={handleSubmit}
+                            className="submit"
+                            type="submit">
                             <span></span>
                             <span></span>
                             <span></span>
