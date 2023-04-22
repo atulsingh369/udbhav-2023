@@ -1,48 +1,55 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { extraForms } from "../Data";
 import { Link, useNavigate } from "react-router-dom";
-import { storage } from "../../config";
+import { db, storage } from "../../config";
+import { useSelector } from "react-redux";
+import { getDownloadURL, ref, uploadBytes } from "@firebase/storage";
+import { doc, setDoc } from "@firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
 
 const ExtraForms = () => {
+  const user = useSelector((state) => state.user);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const uploadInput = useRef(null);
 
-  const initialValues = {
-    name: "",
-    phnNo: "",
-    email: "",
-    file: "",
-  };
+  const [avatar, setAvatar] = useState(
+    "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpZ2h0JTIwaWNvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+  );
 
-  const [form, setForm] = useState(initialValues);
-
-  const handleChange = (e) => {
-    const file = e.target.file[0];
-    const uploadTask = storage
-      .ref(`/images/${imageAsFile.name}`)
-      .put(imageAsFile);
+  const handleChange = async (e) => {
+    const logo = e.target.files[0];
+    const imageRef = ref(storage, user.displayName);
+    await uploadBytes(imageRef, logo);
+    const url = await getDownloadURL(imageRef);
+    setAvatar(url);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (!values.mName || !values.email || !values.phnNo) {
+    if (!form.name || !form.email || !form.phnNo || form.file) {
       toast.error("Enter Details");
       setLoading(false);
-      setValues(initialValues);
+      setForm(initialValues);
+      setAvatar(
+        "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpZ2h0JTIwaWNvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+      );
       return;
     } else {
-      await setDoc(doc(db, id, values.email), {
-        Name: values.mName,
-        Email: values.email,
-        phoneNo: values.phnNo,
+      await setDoc(doc(db, "logo-competition", user.displayName), {
+        Name: user.displayName,
+        Email: user.email,
+        phoneNo: user.phnNo,
+        Link: avatar,
       });
-      toast.success("Submitted");
+      toast.success("Logo Submitted");
       setLoading(false);
-      setValues(initialValues);
+      setForm(initialValues);
+      setAvatar(
+        "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpZ2h0JTIwaWNvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+      );
       setTimeout(function () {
-        navigate("/cultural");
+        navigate("/");
       }, 2000);
     }
   };
@@ -53,6 +60,7 @@ const ExtraForms = () => {
         {Object.entries(extraForms).map((item, i) => {
           return (
             <div
+              key={i}
               className="grid grid-cols-1
                 md:grid-cols-3 h-screen w-full ">
               <div
@@ -63,83 +71,21 @@ const ExtraForms = () => {
                     <div key={index}>
                       <h2 className="text-2xl font-semibold">{value.title}</h2>
                       <div>
-                        <div class="user-box">
-                          <input
-                            type="text"
-                            name="name"
-                            value={form.name}
-                            onChange={(e) =>
-                              setForm({
-                                ...form,
-                                name: e.target.value,
-                              })
-                            }
-                            required=""
-                          />
-                          <label>Name*</label>
-                        </div>
-                        <div class="user-box">
-                          <input
-                            type="tel"
-                            name="phnNo"
-                            value={form.phnNo}
-                            onChange={(e) =>
-                              setForm({
-                                ...form,
-                                phnNo: e.target.value,
-                              })
-                            }
-                            required=""
-                          />
-                          <label>Phone No*</label>
-                        </div>
-                        <div class="user-box">
-                          <input
-                            type="email"
-                            name="email"
-                            value={form.email}
-                            onChange={(e) =>
-                              setForm({
-                                ...form,
-                                email: e.target.value,
-                              })
-                            }
-                            required=""
-                          />
-                          <label>Email*</label>
-                        </div>
-                        {/* <div class="user-box">
-                          <input
-                            id="files"
-                            type="file"
-                            name=""
-                            className="file:bg-red-500"
-                            required=""
-                          />
-                          <label htmlFor="files">
-                            Upload {value.upload} in PNG format*
-                          </label>
-                        </div> */}
-                        <div class="flex items-center space-x-6">
-                          <div class="shrink-0">
+                        <div className="flex items-center space-x-6">
+                          <div className="shrink-0">
                             <img
-                              class="h-16 w-16 object-cover rounded-full"
-                              src="https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpZ2h0JTIwaWNvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                              className="h-16 w-16 object-cover rounded-full"
+                              src={avatar}
                               alt="Current profile photo"
                             />
                           </div>
-                          <label class="block">
-                            <input
-                              onChange={handleChange}
-                              type="file"
-                              accept="image/jpeg,image/jpg,image/png"
-                              ref={uploadInput}
-                              class="block w-full text-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#03e9f4] file:text-black hover:file:cursor-pointer"
-                            />
-                            <span class="text-end text-[#03e9f4] text-xs">
-                              * Upload {value.upload} in PNG format
-                            </span>
-                          </label>
+
+                          <input
+                            onChange={handleChange}
+                            type="file"
+                            accept="image/jpeg,image/jpg,image/png"
+                            className="block w-full text-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#03e9f4] file:text-black hover:file:cursor-pointer"
+                          />
                         </div>
 
                         <div className="flex gap-5 items-center ">
@@ -151,7 +97,7 @@ const ExtraForms = () => {
                             <span></span>
                             <span></span>
                             <span></span>
-                            Submit
+                            {loading ? "Submitting" : "Submit"}
                           </button>
                           <button className="submit" type="submit">
                             <span></span>
@@ -174,13 +120,14 @@ const ExtraForms = () => {
                 </h3>
                 <ul className="list-disc space-y-1  pl-8 leading-8">
                   {item[1][0].description.map((desc, num) => {
-                    return <li>{desc}</li>;
+                    return <li key={num}>{desc}</li>;
                   })}
                 </ul>
               </div>
             </div>
           );
         })}
+        <ToastContainer />
       </div>
     </>
   );
