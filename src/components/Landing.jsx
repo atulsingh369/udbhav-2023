@@ -89,7 +89,7 @@ const Landing = () => {
               <EarthCanvas />
             </motion.div> */}
             {/* <div className=" h-fit w-full flex"> */}
-            <Spline scene="https://prod.spline.design/XJLCuHcCya38qy9n/scene.splinecode" />          </div>
+            <Spline scene="https://prod.spline.design/XJLCuHcCya38qy9n/scene.splinecode" />       </div>
           {/* </div> */}
           <ToastContainer />
         </div>
