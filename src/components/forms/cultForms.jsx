@@ -28,10 +28,11 @@ const cultForms = () => {
   const addMember = (e) => {
     e.preventDefault();
     if (!values.mName || !values.email || !values.phnNo) {
-      // if (condition) {
-
-      // }
       toast.error("Enter details");
+      return;
+    }
+    if (Number.isInteger(values.phnNo)) {
+      toast.error("Enter proper Numbers");
       return;
     }
     setMembers([...members, values]);
@@ -108,10 +109,9 @@ const cultForms = () => {
           return (
             <div
               className="grid grid-cols-1
-             md:grid-cols-3 h-screen w-full" key={i}>
-              <div
-                className="login-box scrollbar-hidden w-full md:w-4/5 pt-20 md:pt-5 overflow-scroll h-screen md:h-fit mt-4 relative md:col-span-2"
-               >
+             md:grid-cols-3 h-screen w-full"
+              key={i}>
+              <div className="login-box scrollbar-hidden w-full md:w-4/5 pt-20 md:pt-5 overflow-scroll h-screen md:h-fit mt-4 relative md:col-span-2">
                 {item[1].map((value, index) => {
                   return (
                     <div key={index}>
@@ -154,7 +154,8 @@ const cultForms = () => {
                                   <div className="user-box">
                                     <input
                                       contentEditable={false}
-                                      type="number"
+                                      maxLength="10"
+                                      type="tel"
                                       value={arr_item && arr_item.phnNo}
                                     />
                                     <label>Phone No.*</label>
@@ -195,7 +196,8 @@ const cultForms = () => {
                           </div>
                           <div className="user-box">
                             <input
-                              type="number"
+                              maxLength="10"
+                              type="tel"
                               value={values && values.phnNo}
                               onChange={(e) =>
                                 setValues({
@@ -247,7 +249,8 @@ const cultForms = () => {
                           </div>
                           <div className="user-box">
                             <input
-                              type="number"
+                              maxLength="10"
+                              type="tel"
                               value={values.phnNo}
                               onChange={(e) =>
                                 setValues({ ...values, phnNo: e.target.value })
