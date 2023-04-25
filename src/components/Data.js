@@ -446,7 +446,7 @@ export const Department = {
     {
       name: "Ashutosh Pandey",
       image:
-        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/ashutosh.jpg?updatedAt=1681619806385",
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/WhatsApp_Image_2023-04-19_at_10.11.30.jpg?updatedAt=1682424125613",
       contact: 9565312620,
       email: "ap4269422@gmail.com",
       show: true,
