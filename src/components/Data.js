@@ -42,7 +42,6 @@ export const Department = {
     },
   ],
   Discipline: [
-    
     {
       name: "Piyush Singh Rajput",
       image:
@@ -471,7 +470,6 @@ export const Department = {
       post: "",
     },
   ],
-
   Technical: [
     {
       name: "Mukul Pandey",
@@ -597,7 +595,39 @@ export const Department = {
       post: "",
     },
   ],
+  Developer: [
+    {
+      name: "Rohit Kumar",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/rohitsir.jpg?updatedAt=1681238717369",
+      contact: 6387540764,
+      email: "rkflash22@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+    {
+      name: "Abhishek kant",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/img.jpeg?updatedAt=1681230978329",
+      contact: 123456789,
+      email: "test@test.test",
+      show: true,
+      post: "",
+    },
+    {
+      name: "Atul Kumar Singh",
+      image:
+        "https://ik.imagekit.io/e5ixuxrlb/Udbhav/Coordinators/IMG-20230321-WA0059.jpg?updatedAt=1681244555817",
+      contact: 7518299883,
+      email: "atulsingh.0369@gmail.com",
+      show: true,
+      post: "",
+      id: "dep-3",
+    },
+  ],
 };
+
 export const cultEvents = {
   fusion: [
     {
@@ -833,7 +863,6 @@ export const cultEvents = {
       ],
     },
   ],
-
   kavyanical: [
     {
       type: "solo",
@@ -1049,7 +1078,8 @@ export const extraForms = {
         "Entries should be submitted in a high-resolution format, preferably in vector format, so that it can be easily resized without losing quality. The deadline for submissions is 25/04/2023 and a panel of judges will select the winning entry based on its creativity, relevance to the event, and overall aesthetic appeal.",
         "The winner of the competition will receive exciting goodies, as well as the recognition of having their work featured on promotional materials for the event. We can't wait to see what creative designs our talented college students come up with!",
       ],
-      driveLink:"https://drive.google.com/drive/folders/1rPW9I2z_P62wbup1RGAiEsZ4JL6MD0Bh?usp=share_link",
+      driveLink:
+        "https://drive.google.com/drive/folders/1rPW9I2z_P62wbup1RGAiEsZ4JL6MD0Bh?usp=share_link",
     },
   ],
 };
