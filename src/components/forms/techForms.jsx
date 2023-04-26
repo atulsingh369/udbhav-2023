@@ -5,11 +5,18 @@ import { techEvents } from "../Data";
 import { auth, db } from "../../config";
 import "./FormStyle.scss";
 import { ToastContainer, toast } from "react-toastify";
-import { doc, setDoc } from "firebase/firestore";
+import {
+  arrayUnion,
+  doc,
+  onSnapshot,
+  setDoc,
+  updateDoc,
+} from "firebase/firestore";
 
 const techForms = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
+  const user = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
@@ -17,7 +24,7 @@ const techForms = () => {
 
   const initialValues = {
     mName: "",
-    branch: "",
+    email: "",
     phnNo: "",
   };
 
@@ -26,76 +33,75 @@ const techForms = () => {
 
   const addMember = (e) => {
     e.preventDefault();
-    if (!values.mName || !values.branch || !values.phnNo) {
-      // if (condition) {
-
-      // }
+    if (!values.mName || !values.email || !values.phnNo) {
       toast.error("Enter details");
       return;
     }
-    setMembers([...members, values]);
-    setCount(count + 1);
-    setValues(initialValues);
+    onSnapshot(doc(db, "users", values.email), (doc) => {
+      doc.exists() &&
+        doc.data().events.forEach(async (item) => {
+          if (item.eventName === id) {
+            toast.error(`${values.mName} is already registerd in ${id}`);
+          } else {
+            setMembers([...members, values]);
+            setCount(count + 1);
+            setValues(initialValues);
+          }
+        });
+    });
   };
 
-  const handleUpdate = (i) => {
-    // console.log(members,i,members[i])
-    setValues(members[i]);
-    setCount(count - 1);
-    delete members[i];
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (!teamN || members.length === 0) {
+      toast.error("Enter Details");
+      setLoading(false);
+      setTeamN("");
+      setValues(initialValues);
+      return;
+    } else {
+      // set data in event collection
+      await setDoc(doc(db, id, teamN), {
+        uid: auth.currentUser.uid,
+        teamName: teamN,
+        Members: members,
+      });
+
+      members.forEach(async (item) => {
+        //  set event in user collecction
+        await updateDoc(doc(db, "users", item.email), {
+          events: arrayUnion({
+            eventName: id,
+            teamName: teamN,
+            Members: members,
+          }),
+        });
+      });
+
+      toast.success("Submitted");
+      setLoading(false);
+      setTeamN("");
+      setValues(initialValues);
+      setMembers([]);
+      setTimeout(function () {
+        navigate("/technovation");
+      }, 2000);
+    }
   };
-
-   const handleSubmit = async (e) => {
-     e.preventDefault();
-     setLoading(true);
-     if (!teamN || members.length === 0) {
-       toast.error("Enter Details");
-       setLoading(false);
-       setTeamN("");
-       setValues(initialValues);
-       return;
-     } else {
-       // set data in event collection
-       await setDoc(doc(db, id, teamN), {
-         uid: auth.currentUser.uid,
-         teamName: teamN,
-         Members: members,
-       });
-
-       members.forEach(async (item) => {
-         //  set event in user collecction
-         await updateDoc(doc(db, "users", item.email), {
-           events: arrayUnion({
-             eventName: id,
-             teamName: teamN,
-             Members: members,
-           }),
-         });
-       });
-
-       toast.success("Submitted");
-       setLoading(false);
-       setTeamN("");
-       setValues(initialValues);
-       setMembers([]);
-       setTimeout(function () {
-         navigate("/cultural");
-       }, 2000);
-     }
-   };
 
   const submitSolo = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (!values.mName || !values.branch || !values.phnNo) {
+    if (!values.mName || !values.email || !values.phnNo) {
       toast.error("Enter Details");
       setLoading(false);
       setValues(initialValues);
       return;
     } else {
-      await setDoc(doc(db, id, values.branch), {
+      await setDoc(doc(db, id, values.email), {
         Name: values.mName,
-        Branch: values.branch,
+        Email: values.email,
         phoneNo: values.phnNo,
       });
       toast.success("Submitted");
@@ -108,262 +114,199 @@ const techForms = () => {
   };
 
   return (
-    <div className="h-screen  ">
+    <div className=" ">
       {Object.entries(techEvents).map((item, i) => {
         if (item[0] === id) {
           return (
             <div
-              className="login-box scrollbar-hidden md:w-fit w-full overflow-y-scroll h-4/5 md:h-fit mt-4 "
+              className="grid grid-cols-1
+             md:grid-cols-3 h-screen w-full"
               key={i}>
-              {item[1].map((value, index) => {
-                return (
-                  <div key={index}>
-                    <p className="text-white font-semibold flex items-end justify-end">
-                      Min - 1 and Max - {value.limit}
-                    </p>
+              <div className="login-box scrollbar-hidden w-full md:w-4/5 pt-20 md:pt-5 overflow-scroll h-screen md:h-fit mt-4 relative md:col-span-2">
+                {item[1].map((value, index) => {
+                  return (
+                    <div key={index}>
+                      <p className="text-white font-semibold flex items-end justify-end">
+                        Min - 1 and Max - {value.limit}
+                      </p>
 
-                    <h2 className="text-2xl font-semibold">{value.title}</h2>
+                      <h2 className="text-2xl font-semibold">{value.title}</h2>
 
-                    {value.type === "group" && (
-                      <div className="flex flex-col gap-5">
-                        <div className="user-box">
-                          <input
-                            type="text"
-                            value={teamN}
-                            onChange={(e) => setTeamN(e.target.value)}
-                            name="teamN"
-                            required=""
-                          />
-                          <label>Team Name*</label>
-                        </div>
-                        {members.length !== 0 &&
-                          members.map((arr_item, i) => {
-                            return (
-                              <div
-                                className="flex flex-col md:flex-row gap-10"
-                                key={i}>
-                                <div className="user-box">
-                                  <input
-                                    contentEditable={false}
-                                    type="text"
-                                    value={arr_item && arr_item.mName}
-                                  />
-                                  <label>Member {i + 1}*</label>
+                      {value.type === "group" && (
+                        <div className="flex flex-col gap-5">
+                          <div className="user-box">
+                            <input
+                              type="text"
+                              value={teamN}
+                              onChange={(e) => setTeamN(e.target.value)}
+                              name="teamN"
+                              required=""
+                            />
+                            <label>Team Name*</label>
+                          </div>
+                          {members.length !== 0 &&
+                            members.map((arr_item, i) => {
+                              return (
+                                <div
+                                  className="flex flex-col md:flex-row gap-10"
+                                  key={i}>
+                                  <div className="user-box">
+                                    <input
+                                      contentEditable={false}
+                                      type="text"
+                                      defaultValue={arr_item && arr_item.mName}
+                                    />
+                                    <label>Member {i + 1}*</label>
+                                  </div>
+                                  <div className="user-box">
+                                    <input
+                                      contentEditable={false}
+                                      type="email"
+                                      defaultValue={arr_item && arr_item.email}
+                                    />
+                                    <label>Email*</label>
+                                  </div>
+                                  <div className="user-box">
+                                    <input
+                                      contentEditable={false}
+                                      maxLength="10"
+                                      type="tel"
+                                      defaultValue={arr_item && arr_item.phnNo}
+                                    />
+                                    <label>Phone No.*</label>
+                                  </div>
                                 </div>
-                                <div className="user-box">
-                                  <input
-                                    placeholder="CSE/A3"
-                                    contentEditable={false}
-                                    type="text"
-                                    value={arr_item && arr_item.branch}
-                                  />
-                                  <label>Branch/Year*</label>
-                                </div>
-                                <div className="user-box">
-                                  <input
-                                    contentEditable={false}
-                                    type="number"
-                                    value={arr_item && arr_item.phnNo}
-                                  />
-                                  <label>Phone No.*</label>
-                                </div>
-                                {/* <button
-                                  className="border-2 text-sm border-white text-white p-2 hover:text-yellow-600 hover:border-yellow-600 rounded-xl h-fit"
-                                  onClick={() => handleUpdate(item, i)}>
-                                  Update
-                                </button> */}
-                              </div>
-                            );
-                          })}
-                      </div>
-                    )}
-                    {value.type === "group" && count <= value.limit && (
-                      <div className="flex justify-center flex-col md:flex-row  md:gap-10">
-                        <div className="user-box">
-                          <input
-                            type="text"
-                            value={values && values.mName}
-                            onChange={(e) =>
-                              setValues({
-                                ...values,
-                                mName: e.target.value,
-                              })
-                            }
-                            name="mName"
-                            required=""
-                          />
-                          <label>Member {count}*</label>
+                              );
+                            })}
                         </div>
-                        <div className="user-box">
-                          <input
-                            placeholder="CSE/A3"
-                            type="text"
-                            value={values && values.branch}
-                            onChange={(e) =>
-                              setValues({ ...values, branch: e.target.value })
-                            }
-                            name="Branch"
-                            required=""
-                          />
-                          <label>Branch/Year*</label>
+                      )}
+                      {value.type === "group" && count <= value.limit && (
+                        <div className="flex justify-center flex-col md:flex-row  md:gap-10">
+                          <div className="user-box">
+                            <input
+                              type="text"
+                              value={values && values.mName}
+                              onChange={(e) =>
+                                setValues({
+                                  ...values,
+                                  mName: e.target.value,
+                                })
+                              }
+                              name="mName"
+                              required=""
+                            />
+                            <label>Member {count}*</label>
+                          </div>
+                          <div className="user-box">
+                            <input
+                              type="email"
+                              value={values && values.email}
+                              onChange={(e) =>
+                                setValues({ ...values, email: e.target.value })
+                              }
+                              name="email"
+                              required=""
+                            />
+                            <label>Email*</label>
+                          </div>
+                          <div className="user-box">
+                            <input
+                              maxLength="10"
+                              type="tel"
+                              value={values && values.phnNo}
+                              onChange={(e) =>
+                                setValues({
+                                  ...values,
+                                  phnNo: e.target.value,
+                                })
+                              }
+                              name="phnNo"
+                              required=""
+                            />
+                            <label>Phone No.*</label>
+                          </div>
+                          {count <= value.limit && value.type === "group" && (
+                            <button
+                              type="button"
+                              onClick={addMember}
+                              className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit">
+                              Add
+                            </button>
+                          )}
                         </div>
-                        <div className="user-box">
-                          <input
-                            type="number"
-                            value={values && values.phnNo}
-                            onChange={(e) =>
-                              setValues({
-                                ...values,
-                                phnNo: e.target.value,
-                              })
-                            }
-                            name="phnNo"
-                            required=""
-                          />
-                          <label>Phone No.*</label>
+                      )}
+                      {value.type === "solo" && (
+                        <div className="flex flex-col gap-10">
+                          <div className="user-box">
+                            <input
+                              type="text"
+                              value={values.mName}
+                              onChange={(e) =>
+                                setValues({ ...values, mName: e.target.value })
+                              }
+                              name="mName"
+                              required=""
+                            />
+                            <label>Name*</label>
+                          </div>
+                          <div className="user-box">
+                            <input
+                              placeholder="CSE/A3"
+                              type="email"
+                              value={values.email}
+                              onChange={(e) =>
+                                setValues({ ...values, email: e.target.value })
+                              }
+                              name="email"
+                              required=""
+                            />
+                            <label>Email*</label>
+                          </div>
+                          <div className="user-box">
+                            <input
+                              maxLength="10"
+                              type="tel"
+                              value={values.phnNo}
+                              onChange={(e) =>
+                                setValues({ ...values, phnNo: e.target.value })
+                              }
+                              name="phnNo"
+                              required=""
+                            />
+                            <label>Phone No.*</label>
+                          </div>
                         </div>
-                        {count <= value.limit && value.type === "group" && (
-                          <button
-                            type="button"
-                            onClick={addMember}
-                            className="border-2 text-sm border-white text-white p-2 hover:text-green-600 hover:border-green-600 rounded-xl h-fit">
-                            Add
-                          </button>
-                        )}
-                      </div>
-                    )}
-                    {value.type === "solo" && (
-                      <div className="flex flex-col gap-10">
-                        <div className="user-box">
-                          <input
-                            type="text"
-                            value={values.mName}
-                            onChange={(e) =>
-                              setValues({ ...values, mName: e.target.value })
-                            }
-                            name="mName"
-                            required=""
-                          />
-                          <label>Name*</label>
-                        </div>
-                        <div className="user-box">
-                          <input
-                            placeholder="CSE/A3"
-                            type="text"
-                            value={values.branch}
-                            onChange={(e) =>
-                              setValues({ ...values, branch: e.target.value })
-                            }
-                            name="branch"
-                            required=""
-                          />
-                          <label>Branch/Year*</label>
-                        </div>
-                        <div className="user-box">
-                          <input
-                            type="text"
-                            value={values.phnNo}
-                            onChange={(e) =>
-                              setValues({ ...values, phnNo: e.target.value })
-                            }
-                            name="phnNo"
-                            required=""
-                          />
-                          <label>Phone No.*</label>
-                        </div>
-                      </div>
-                    )}
+                      )}
 
-                    {/* {value.extra &&
-                      value.extra.map((item, index) => (
-                        <div key={index} className="user-box mt-5">
-                          <input
-                            type="text"
-                            value={values.extra}
-                            onChange={(e) =>
-                              setValues({ ...values, extra: e.target.value })
-                            }
-                            name="extra"
-                            required=""
-                          />
-                          <label> {item}*</label>
-                        </div>
-                      ))} */}
-                    <div className="flex gap-5 items-center ">
-                      <button
-                        onClick={
-                          value.type === "group" ? handleSubmit : submitSolo
-                        }
-                        className="submit"
-                        type="submit">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        {loading ? "Submitting" : "Submit"}
-                      </button>
-                      {/* The button to open modal */}
-                      <div>
-                        <label
-                          htmlFor="my-modal-4"
-                          className="submit cursor-pointer">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          Rules
-                        </label>
-
-                        {/* Put this part before </body> tag */}
-                        {Object.entries(techEvents).map((item, i) => {
-                          if (item[0] == id) {
-                            return (
-                              <div key={i}>
-                                {item[1].map((value, index) => {
-                                  return (
-                                    <div key={index}>
-                                      <input
-                                        type="checkbox"
-                                        id="my-modal-4"
-                                        className="modal-toggle"
-                                      />
-                                      <div className="modal bg-[#243b55] ">
-                                        <div className="modal-box relative  bg-[#0d141f] ">
-                                          <label
-                                            htmlFor="my-modal-4"
-                                            className="btn btn-sm btn-circle absolute right-2 top-2 text-[#03e9f4] bg-[#0d141f]">
-                                            ✕
-                                          </label>
-                                          <h3 className="text-2xl underline font-bold text-center text-white">
-                                            {value.ruleHead}
-                                          </h3>
-                                          <p className="py-4 text-[#03e9f4] font-semibold text-sm tracking-wider">
-                                            {value.rule1}
-                                          </p>
-                                          <p className="text-[#03e9f4] font-semibold text-sm tracking-wider">
-                                            {value.rule2}
-                                          </p>
-                                          <a
-                                            href={value.linkRule}
-                                            target="_blank">
-                                            <p className="text-[#ffffff]  font-light text-sm pt-5">
-                                              {value.ruleDrive}
-                                            </p>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                            );
+                      <div className="flex gap-5 items-center ">
+                        <button
+                          onClick={
+                            value.type === "group" ? handleSubmit : submitSolo
                           }
-                        })}
+                          className="submit"
+                          type="submit">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          {loading ? "Submitting" : "Submit"}
+                        </button>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+
+              <div className=" h-screen w-full p-5 pt-10 md:pt-24  text-white bg-[#101a26] md:rounded-lg md:shadow-lg md:shadow-black/80 flex flex-col gap-4 overflow-y-scroll">
+                <h3 className="font-bold text-3xl text-center underline">
+                  {item[1][0].title}
+                </h3>
+                <ul className="list-disc space-y-1  pl-8 leading-8">
+                  {item[1][0].rules.map((rule, num) => {
+                    return <li key={num}>{rule}</li>;
+                  })}
+                </ul>
+              </div>
             </div>
           );
         }

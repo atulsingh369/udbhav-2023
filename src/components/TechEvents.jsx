@@ -34,27 +34,27 @@ const TechEvents = () => {
                 <div className="flex gap-5 flex-wrap justify-center items-center">
                   {item[1].map((value, index) => {
                     return (
-                      <Link key={index} to={`/techform/${value.id}`}>
-                        <div
-                          onClick={alert}
-                          className="card w-64 h-[28rem] bg-base-100 shadow-xl">
-                          <figure>
-                            <img
-                              src={value.image}
-                              alt="Shoes"
-                              className="object-contain"
-                            />
-                          </figure>
-                          <div className="card-body">
-                            <h2 className="card-title ext-2xl text-white ">
-                              {value.title}
-                            </h2>
-                            <p className="text-justify font-semibold text-white">
-                              {value.describe}
-                            </p>
-                          </div>
+                      // <Link key={index} to={`/techform/${value.id}`}>
+                      <div
+                        onClick={alert}
+                        className="card w-64 h-[28rem] bg-base-100 shadow-xl">
+                        <figure>
+                          <img
+                            src={value.image}
+                            alt="Shoes"
+                            className="object-contain"
+                          />
+                        </figure>
+                        <div className="card-body">
+                          <h2 className="card-title ext-2xl text-white ">
+                            {value.title}
+                          </h2>
+                          <p className="text-justify font-semibold text-white">
+                            {value.describe}
+                          </p>
                         </div>
-                      </Link>
+                      </div>
+                      // </Link>
                     );
                   })}
                 </div>

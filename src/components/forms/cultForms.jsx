@@ -9,7 +9,6 @@ import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 
 const cultForms = () => {
   const { id } = useParams();
-  const user = useSelector((state) => state.user);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -139,7 +138,7 @@ const cultForms = () => {
                                     <input
                                       contentEditable={false}
                                       type="text"
-                                      value={arr_item && arr_item.mName}
+                                      defaultValue={arr_item && arr_item.mName}
                                     />
                                     <label>Member {i + 1}*</label>
                                   </div>
@@ -147,7 +146,7 @@ const cultForms = () => {
                                     <input
                                       contentEditable={false}
                                       type="email"
-                                      value={arr_item && arr_item.email}
+                                      defaultValue={arr_item && arr_item.email}
                                     />
                                     <label>Email*</label>
                                   </div>
@@ -156,7 +155,7 @@ const cultForms = () => {
                                       contentEditable={false}
                                       maxLength="10"
                                       type="tel"
-                                      value={arr_item && arr_item.phnNo}
+                                      defaultValue={arr_item && arr_item.phnNo}
                                     />
                                     <label>Phone No.*</label>
                                   </div>
