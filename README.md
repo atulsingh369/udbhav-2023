@@ -17,5 +17,5 @@ This project was bootstrapped with [React JS](https://react.dev/) and [Firebase]
 
 The Contributors for this Repo are 
 
-- @Devil-Paimon
-- @atulsingh369
+- [Abhishek Kant](https://github.com/Devil-Paimon)
+- [Atul Kumar Singh](https://github.com/atulsingh369)
