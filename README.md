@@ -14,3 +14,8 @@ This project was bootstrapped with [React JS](https://react.dev/) and [Firebase]
 - Spline for 3D Modelling
 
 ## Checkout the hosted website on [Udbhav-2k23](https://www.udbhav.life/)
+
+The Contributors for this Repo are 
+
+- @Devil-Paimon
+- @atulsingh369
